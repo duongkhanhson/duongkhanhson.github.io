@@ -17,11 +17,11 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 # Site Settings
 locale                   : "VIET NAM"
 rtl                      : # true, false (default) # turns direction of the page into right to left for RTL languages
-title                    : "Dương Khánh Sơn"
+title                    : "Đường Khánh Sơn"
 title_separator          : "-"
-subtitle                 : "Trang web cá nhân"
-name                     : "Dương Khánh Sơn"
-description              : "Trang web cá nhân của Dương Khánh Sơn - Giảng viên, Nghiên cứu sinh"
+subtitle                 : "Giảng Viên CTUT. Ngành Cơ điện tử."
+name                     : "Đường Khánh Sơn"
+description              : "Trang web cá nhân của Đường Khánh Sơn - Giảng Viên CTUT. Ngành Cơ điện tử."
 url                      : "https://duongkhanhson.github.io"
 baseurl                  : "/duongkhanhson"
 repository               : "duongkhanhson/duongkhanhson"
@@ -116,7 +116,7 @@ analytics:
 author:
   name             : "Đường Khánh Sơn"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Giảng viên, Phó trưởng bộ môn tại Trường ĐH Kỹ thuật - Công nghệ Cần Thơ. MCS ngành Kỹ thuật Cơ điện tử, NCS ngành Kỹ thuật điều khiển và tự động hóa."
+  bio              : "Giảng Viên CTUT. Ngành Cơ điện tử."
   location         : "Cần Thơ, Việt Nam"
   email            : "dkson@ctuet.edu.vn"
   # fediverse      : "@you@instance.social"  # used for fediverse:creator meta tag
