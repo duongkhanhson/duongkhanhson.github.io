@@ -115,7 +115,7 @@ analytics:
 # Site Author
 author:
   name             : "Đường Khánh Sơn"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/images/profile-pic.jpg"
   bio              : "Giảng Viên CTUT. Ngành Cơ điện tử."
   location         : "Cần Thơ, Việt Nam"
   email            : "dkson@ctuet.edu.vn"
