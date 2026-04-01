@@ -1,0 +1,32 @@
+<svg width="880" height="500" viewBox="0 0 880 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f7f9fc" />
+      <stop offset="100%" stop-color="#e5ebf4" />
+    </linearGradient>
+  </defs>
+  <rect width="880" height="500" rx="20" ry="20" fill="url(#bg)" stroke="#b0c4de" stroke-width="2" />
+  <rect x="40" y="35" width="800" height="80" rx="12" ry="12" fill="#ffffff" stroke="#d2dce9" stroke-width="2" />
+  <text x="60" y="62" font-family="Arial" font-size="22" fill="#2f4f62">Phone Camera Face Recognition</text>
+  <text x="60" y="90" font-family="Arial" font-size="14" fill="#5d6f78">Live stream URL, face detection toggle, snapshot control</text>
+  <rect x="40" y="135" width="535" height="305" rx="14" ry="14" fill="#1b283c" />
+  <rect x="65" y="160" width="490" height="260" rx="10" ry="10" fill="#2b3a51" />
+  <circle cx="160" cy="290" r="18" fill="#47d36d" />
+  <circle cx="220" cy="290" r="18" fill="#f4b940" />
+  <circle cx="280" cy="290" r="18" fill="#f45d5d" />
+  <rect x="400" y="170" width="110" height="60" rx="8" ry="8" fill="#ffffff" opacity="0.15" />
+  <rect x="400" y="260" width="110" height="60" rx="8" ry="8" fill="#ffffff" opacity="0.15" />
+  <circle cx="390" cy="355" r="28" fill="none" stroke="#6cd1ff" stroke-width="4" />
+  <polyline points="120,225 180,260 130,330" fill="none" stroke="#74c0ff" stroke-width="10" stroke-linecap="round" />
+  <text x="65" y="240" font-family="Arial" font-size="18" fill="#e9f3ff">Camera stream</text>
+  <text x="65" y="280" font-family="Arial" font-size="18" fill="#e9f3ff">Face detection</text>
+  <text x="65" y="320" font-family="Arial" font-size="18" fill="#e9f3ff">Snapshot save</text>
+  <rect x="605" y="175" width="190" height="90" rx="12" ry="12" fill="#ffffff" opacity="0.15" />
+  <text x="620" y="200" font-family="Arial" font-size="18" fill="#ffffff">Status</text>
+  <text x="620" y="230" font-family="Arial" font-size="16" fill="#b9d8ff">Connected</text>
+  <text x="620" y="255" font-family="Arial" font-size="16" fill="#b9d8ff">Faces: 2</text>
+  <text x="620" y="285" font-family="Arial" font-size="16" fill="#b9d8ff">Snapshot saved</text>
+  <rect x="605" y="285" width="190" height="70" rx="12" ry="12" fill="#ffffff" opacity="0.12" />
+  <text x="620" y="310" font-family="Arial" font-size="16" fill="#ffffff">Live preview area with face</text>
+  <text x="620" y="335" font-family="Arial" font-size="16" fill="#ffffff">bounding boxes overlay.</text>
+</svg>
