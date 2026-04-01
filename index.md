@@ -28,6 +28,11 @@ python phone-camera-face-recognition/phone_cam_face_gui.py
 - Installation guide: `phone-camera-face-recognition/README.md`
 - Dependencies: `phone-camera-face-recognition/requirements.txt`
 
+## Explore more
+
+- Visit the projects page at `/projects/`
+- For GitHub Pages source with `docs/`, visit `/projects/` as well
+
 ## Notes
 
 Add your own screenshot image as `phone-camera-face-recognition/screenshot.svg` to keep the project visually strong on GitHub.
