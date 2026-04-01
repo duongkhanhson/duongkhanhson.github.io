@@ -1,14 +1,12 @@
 # main links
 main:
-  - title: "Profile"
-    url: /profile/
+  - title: "Home"
+    url: /
   - title: "CV"
     url: /cv/
-  - title: "Project"
-    url: /project/
-  - title: "Tutorial"
-    url: /tutorial/
-  - title: "Detail"
-    url: /detail/
   - title: "Research"
     url: /research/
+  - title: "Projects"
+    url: /projects/
+  - title: "Tutorials"
+    url: /tutorials/
