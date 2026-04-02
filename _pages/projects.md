@@ -5,6 +5,7 @@ layout: single
 ---
 
 <!-- Vietnamese -->
+<h2>Tiếng Việt</h2>
 Chào mừng đến với danh mục các dự án nghiên cứu và phát triển phần mềm của tôi tại Trường Đại học Kỹ thuật - Công nghệ Cần Thơ.
 
 <!-- English -->
