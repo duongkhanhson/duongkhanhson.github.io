@@ -5,11 +5,10 @@ layout: single
 author_profile: true
 ---
 
-<!-- Vietnamese -->
-Chào mừng đến với danh mục Hướng dẫn & Phân tích chuyên sâu về lộ trình Kỹ thuật Cơ điện tử 4.0.
-
-<!-- English -->
-Welcome to the Tutorials section, featuring in‑depth guides and analyses on the Mechatronics 4.0 curriculum.
+<h2>Tiếng Việt</h2>
+<p>Chào mừng đến với danh mục Hướng dẫn & Phân tích chuyên sâu về lộ trình Kỹ thuật Cơ điện tử 4.0.</p>
+<h2>English</h2>
+<p>Welcome to the Tutorials section, featuring in‑depth guides and analyses on the Mechatronics 4.0 curriculum.</p>
 
 <div class="entries-list">
   {% for post in site.categories.Tutorials %}
