@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Nhà Thám Hiểm Nhí - Thầy Đường Khánh Sơn. MLAB</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: #f8fafc;
+            touch-action: none;
+            overflow: hidden;
+            height: 100vh;
+        }
+        .font-game { font-family: 'Bungee Inline', cursive; }
+        
+        #game-wrapper {
+            width: 100%;
+            max-width: 500px;
+            height: 100%;
+            margin: 0 auto;
+            background: white;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        #content-area {
+            flex: 1;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding: 15px;
+            scrollbar-width: none;
+        }
+        #content-area::-webkit-scrollbar { display: none; }
+
+        #scratch-canvas {
+            touch-action: none;
+            background-color: #ffffff;
+            background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+            background-size: 25px 25px;
+            cursor: crosshair;
+            border-radius: 12px;
+        }
+
+        .hp-bar { transition: width 0.5s ease-in-out; }
+        .scene-bg { transition: background 1s ease; }
+
+        footer {
+            background: #1e293b;
+            color: #94a3b8;
+            font-size: 0.75rem;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .btn-option {
+            background: white;
+            border: 2px solid #e2e8f0;
+            padding: 1rem;
+            border-radius: 0.75rem;
+            font-weight: 700;
+            transition: all 0.2s;
+            box-shadow: 0 2px 0 #e2e8f0;
+        }
+        .btn-option:active {
+            transform: translateY(2px);
+            box-shadow: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="game-wrapper">
+        <!-- Start Screen -->
+        <div id="start-screen" class="absolute inset-0 z-50 bg-emerald-600 flex flex-col items-center justify-center p-6 text-center text-white">
+            <h1 class="text-4xl font-game mb-2 leading-tight uppercase">NHÀ THÁM HIỂM<br>NHÍ</h1>
+            <p class="bg-yellow-400 text-emerald-900 px-4 py-1 rounded-full text-xs font-black mb-8 uppercase tracking-widest">ĐỊA LÝ & KHOA HỌC . MLAB</p>
+            <div class="text-8xl mb-10">🌍</div>
+            <button onclick="startGame()" class="w-full max-w-xs bg-white text-emerald-600 font-game py-5 rounded-2xl text-2xl shadow-[0_6px_0_#cbd5e1] active:translate-y-1 active:shadow-none transition-all">
+                KHÁM PHÁ NGAY!
+            </button>
+            <p class="mt-12 text-emerald-100 text-sm italic font-bold">Thầy Đường Khánh Sơn. MLAB</p>
+        </div>
+
+        <!-- Top Header -->
+        <div class="bg-slate-50 border-b-2 border-slate-200 p-4 shrink-0">
+            <div class="flex justify-between items-center gap-6">
+                <div class="flex-1">
+                    <div class="flex justify-between text-[10px] font-black text-emerald-600 mb-1">
+                        <span>NĂNG LƯỢNG (HP)</span>
+                        <span id="hp-text">100/100</span>
+                    </div>
+                    <div class="h-3 bg-slate-200 rounded-full border-2 border-slate-800 overflow-hidden">
+                        <div id="hp-bar" class="hp-bar h-full bg-green-500" style="width: 100%"></div>
+                    </div>
+                </div>
+                <div class="text-right">
+                    <div class="text-[10px] font-black text-slate-400 uppercase">TIẾN TRÌNH</div>
+                    <div id="scene-name" class="text-xs font-black text-slate-700">CẢNH 1: VIỆT NAM</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scrollable Content -->
+        <div id="content-area">
+            <!-- Scene Visualizer -->
+            <div id="scene-visual" class="h-40 flex flex-col justify-center items-center rounded-2xl mb-4 relative overflow-hidden bg-emerald-100 border-2 border-emerald-200">
+                <div id="scene-icon" class="text-7xl mb-2 transition-all duration-500">🏔️</div>
+                <div id="feedback-msg" class="absolute top-2 font-black text-lg opacity-0 transition-all pointer-events-none"></div>
+                <div id="player-avatar" class="absolute bottom-2 left-4 text-4xl transform transition-all duration-500">🧗</div>
+            </div>
+
+            <!-- Question Area -->
+            <div class="bg-white border-2 border-emerald-500 rounded-2xl p-5 mb-4 shadow-sm relative">
+                <p id="q-category" class="text-[9px] font-black text-emerald-400 uppercase text-center mb-1 tracking-widest">LĨNH VỰC: ĐỊA LÝ</p>
+                <p id="q-text" class="text-lg font-bold text-center text-slate-800 leading-tight"></p>
+            </div>
+
+            <!-- Options -->
+            <div id="options-grid" class="grid grid-cols-1 gap-2 mb-6">
+                <!-- Buttons injected by JS -->
+            </div>
+
+            <!-- Scratchpad -->
+            <div class="mt-4">
+                <div class="flex justify-between items-center mb-2 px-1">
+                    <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Bảng Nháp MLAB (800px)</span>
+                    <div class="flex gap-2">
+                        <button onclick="changeBrushColor('#3b82f6')" class="w-5 h-5 rounded-full bg-blue-500 border-2 border-white"></button>
+                        <button onclick="changeBrushColor('#ef4444')" class="w-5 h-5 rounded-full bg-red-500 border-2 border-white"></button>
+                        <button onclick="clearCanvas()" class="bg-slate-200 text-[10px] px-3 py-1 rounded font-black hover:bg-slate-300">XÓA</button>
+                    </div>
+                </div>
+                <div class="mx-4 border-2 border-slate-200 rounded-2xl overflow-hidden shadow-inner bg-white">
+                    <canvas id="scratch-canvas" style="height: 800px; width: 100%;"></canvas>
+                </div>
+                <p class="text-center text-[10px] text-slate-300 mt-3 italic font-bold">Cuộn ở mép màn hình để xem lại đề bài</p>
+            </div>
+        </div>
+
+        <!-- End Screen -->
+        <div id="end-screen" class="hidden absolute inset-0 z-50 bg-slate-900/95 flex flex-col items-center justify-center p-8 text-center text-white">
+            <div id="end-icon" class="text-8xl mb-4">🎖️</div>
+            <h2 id="end-title" class="text-3xl font-game mb-2 text-yellow-400">HOÀN THÀNH</h2>
+            <p id="final-stats" class="text-lg mb-10 opacity-80"></p>
+            <button onclick="location.reload()" class="w-full max-w-xs bg-emerald-500 py-5 rounded-2xl font-game text-xl shadow-lg">CHƠI LẠI</button>
+        </div>
+
+        <footer>Thầy Đường Khánh Sơn. MLAB</footer>
+    </div>
+
+    <script>
+        // Game Configuration
+        let hp = 100;
+        let score = 0;
+        let currentSceneIdx = 0;
+        let currentAns = "";
+        let isDrawing = false;
+        let brushColor = '#3b82f6';
+
+        const scenes = [
+            { name: "CẢNH 1: VIỆT NAM TƯƠI ĐẸP", icon: "🏔️", avatar: "🧗", color: "#ecfdf5", category: "ĐỊA LÝ" },
+            { name: "CẢNH 2: PHÒNG THÍ NGHIỆM", icon: "🧪", avatar: "🧑‍🔬", color: "#f0f9ff", category: "KHOA HỌC" },
+            { name: "CẢNH 3: NĂNG LƯỢNG XANH", icon: "🔋", avatar: "⚡", color: "#fffbeb", category: "CÔNG NGHỆ" },
+            { name: "CẢNH 4: KHÁM PHÁ NĂM CHÂU", icon: "🌍", avatar: "✈️", color: "#fdf2f8", category: "ĐỊA LÝ" }
+        ];
+
+        const questions = [
+            // Cảnh 1: Địa lý Việt Nam
+            { s: 0, q: "Phần đất liền của Việt Nam giáp với những nước nào?", a: ["Trung Quốc, Lào, Cam-pu-chia", "Lào, Thái Lan, Campuchia", "Trung Quốc, Lào, Thái Lan"], c: 0 },
+            { s: 0, q: "Diện tích vùng biển Việt Nam thuộc biển nào?", a: ["Biển Hoa Đông", "Biển Đông", "Biển Nhật Bản"], c: 1 },
+            { s: 0, q: "Đỉnh núi nào được mệnh danh là 'Nóc nhà của Đông Dương'?", a: ["Núi Bà Đen", "Núi Ngũ Hành Sơn", "Núi Phan-xi-păng"], c: 2 },
+            
+            // Cảnh 2: Khoa học
+            { s: 1, q: "Chất nào dưới đây dẫn điện tốt nhất?", a: ["Gỗ khô", "Đồng", "Nhựa"], c: 1 },
+            { s: 1, q: "Nguồn năng lượng nào không gây ô nhiễm môi trường?", a: ["Năng lượng mặt trời", "Than đá", "Dầu mỏ"], c: 0 },
+            { s: 1, q: "Để phòng tránh bị điện giật, ta không nên làm gì?", a: ["Dùng vật cách điện", "Rút phích cắm khi sửa điện", "Chơi gần trạm biến áp"], c: 2 },
+ 
+            // Cảnh 3: Công nghệ & Môi trường
+            { s: 2, q: "Việc sử dụng túi nilon gây hại gì cho môi trường?", a: ["Làm đất màu mỡ", "Khó phân hủy, gây ô nhiễm", "Giúp cây phát triển"], c: 1 },
+            { s: 2, q: "Vật liệu nào sau đây là vật liệu nhân tạo?", a: ["Gỗ", "Đá vôi", "Nhựa (Plastic)"], c: 2 },
+            { s: 2, q: "Sự biến đổi hóa học là gì?", a: ["Chất đổi màu nhưng giữ nguyên tính chất", "Sự biến đổi từ chất này thành chất khác", "Chất chỉ thay đổi hình dạng"], c: 1 },
+ 
+            // Cảnh 4: Địa lý thế giới
+            { s: 3, q: "Châu lục nào lạnh nhất trên Trái Đất?", a: ["Châu Phi", "Châu Âu", "Châu Nam Cực"], c: 2 },
+            { s: 3, q: "Đại đương nào có diện tích lớn nhất thế giới?", a: ["Thái Bình Dương", "Ấn Độ Dương", "Đại Tây Dương"], c: 0 },
+            { s: 3, q: "Châu Á có khí hậu chủ yếu là gì?", a: ["Khí hậu ôn đới", "Khí hậu nhiệt đới gió mùa", "Khí hậu hàn đới"], c: 1 }
+        ];
+
+        // Canvas Logic
+        const canvas = document.getElementById('scratch-canvas');
+        const ctx = canvas.getContext('2d');
+
+        function initCanvas() {
+            const r = canvas.getBoundingClientRect();
+            canvas.width = r.width;
+            canvas.height = 800; // Updated to 800px
+            ctx.strokeStyle = brushColor;
+            ctx.lineWidth = 3;
+            ctx.lineJoin = 'round';
+            ctx.lineCap = 'round';
+
+            const getXY = (e) => {
+                const rect = canvas.getBoundingClientRect();
+                const cx = e.touches ? e.touches[0].clientX : e.clientX;
+                const cy = e.touches ? e.touches[0].clientY : e.clientY;
+                return { 
+                    x: (cx - rect.left) * (canvas.width / rect.width), 
+                    y: (cy - rect.top) * (canvas.height / rect.height) 
+                };
+            };
+            const start = (e) => { isDrawing = true; const p = getXY(e); ctx.beginPath(); ctx.moveTo(p.x, p.y); };
+            const move = (e) => { if(!isDrawing) return; const p = getXY(e); ctx.lineTo(p.x, p.y); ctx.stroke(); };
+            const stop = () => isDrawing = false;
+
+            canvas.addEventListener('mousedown', start);
+            canvas.addEventListener('mousemove', move);
+            window.addEventListener('mouseup', stop);
+            canvas.addEventListener('touchstart', start);
+            canvas.addEventListener('touchmove', move);
+            canvas.addEventListener('touchend', stop);
+        }
+
+        function changeBrushColor(c) { brushColor = c; ctx.strokeStyle = c; }
+        function clearCanvas() { ctx.clearRect(0, 0, canvas.width, canvas.height); }
+
+        // Game Logic
+        function startGame() {
+            document.getElementById('start-screen').classList.add('hidden');
+            initCanvas();
+            loadQuestion();
+        }
+
+        function loadQuestion() {
+            const currentQuestions = questions.filter(q => q.s === currentSceneIdx);
+            if (currentQuestions.length === 0) {
+                if (currentSceneIdx < scenes.length - 1) {
+                    currentSceneIdx++;
+                    updateSceneUI();
+                    loadQuestion();
+                    return;
+                } else {
+                    endGame(true);
+                    return;
+                }
+            }
+
+            const qData = currentQuestions[Math.floor(Math.random() * currentQuestions.length)];
+            
+            document.getElementById('q-category').innerText = `LĨNH VỰC: ${scenes[currentSceneIdx].category}`;
+            document.getElementById('q-text').innerText = qData.q;
+            
+            const grid = document.getElementById('options-grid');
+            grid.innerHTML = '';
+            
+            qData.a.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = "btn-option";
+                btn.innerText = opt;
+                btn.onclick = () => checkAnswer(idx === qData.c, qData);
+                grid.appendChild(btn);
+            });
+        }
+
+        function checkAnswer(isCorrect, qData) {
+            if (isCorrect) {
+                score += 20;
+                showFeedback("CHÍNH XÁC! 🌟", "text-green-600");
+                animatePlayer("right");
+                const idx = questions.indexOf(qData);
+                questions.splice(idx, 1);
+            } else {
+                hp -= 20;
+                showFeedback("SAI RỒI! ❌", "text-red-600");
+                document.getElementById('game-wrapper').classList.add('shake');
+                setTimeout(() => document.getElementById('game-wrapper').classList.remove('shake'), 400);
+                if (hp <= 0) endGame(false);
+            }
+            
+            updateUI();
+            clearCanvas();
+            document.getElementById('content-area').scrollTop = 0;
+            setTimeout(loadQuestion, 800);
+        }
+
+        function updateSceneUI() {
+            const s = scenes[currentSceneIdx];
+            document.getElementById('scene-name').innerText = s.name;
+            document.getElementById('scene-icon').innerText = s.icon;
+            document.getElementById('player-avatar').innerText = s.avatar;
+            document.getElementById('scene-visual').style.background = s.color;
+        }
+
+        function showFeedback(txt, col) {
+            const f = document.getElementById('feedback-msg');
+            f.innerText = txt;
+            f.className = `absolute top-4 font-black text-xl opacity-100 transition-all ${col}`;
+            setTimeout(() => f.className = `absolute top-4 font-black text-xl opacity-0 transition-all pointer-events-none`, 800);
+        }
+
+        function animatePlayer(dir) {
+            const p = document.getElementById('player-avatar');
+            p.style.transform = dir === "right" ? "translateX(50px) scale(1.2)" : "translateX(-50px)";
+            setTimeout(() => p.style.transform = "translateX(0) scale(1)", 300);
+        }
+
+        function updateUI() {
+            document.getElementById('hp-bar').style.width = hp + '%';
+            document.getElementById('hp-text').innerText = `${hp}/100`;
+            if (hp < 40) document.getElementById('hp-bar').className = "hp-bar h-full bg-red-500";
+        }
+
+        function endGame(win) {
+            document.getElementById('end-screen').classList.remove('hidden');
+            document.getElementById('end-title').innerText = win ? "XUẤT SẮC!" : "CẦN CỐ GẮNG!";
+            document.getElementById('end-icon').innerText = win ? "🎖️" : "📚";
+            document.getElementById('final-stats').innerText = `Bạn đã thám hiểm qua ${currentSceneIdx + 1} vùng đất và đạt ${score} điểm!`;
+        }
+
+        window.addEventListener('resize', initCanvas);
+    </script>
+</body>
+</html>
