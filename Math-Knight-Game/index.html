@@ -137,7 +137,7 @@ path-content-area {
             <!-- Bảng nháp dưới đáp án -->
             <div class="mt-4">
                 <div class="flex justify-between items-center mb-2 px-1">
-                    <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Bảng Nháp MLAB (450px)</span>
+                    <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Bảng Nháp MLAB (800px)</span>
                     <div class="flex gap-2">
                         <button onclick="changeColor('#3b82f6')" class="w-6 h-6 rounded-full bg-blue-500 border-2 border-white"></button>
                         <button onclick="changeColor('#ef4444')" class="w-6 h-6 rounded-full bg-red-500 border-2 border-white"></button>
@@ -145,7 +145,7 @@ path-content-area {
                     </div>
                 </div>
                 <div class="border-2 border-slate-200 rounded-2xl overflow-hidden shadow-inner bg-white">
-                    <canvas id="scratch-canvas" style="height: 450px; width: 100%;"></canvas>
+                    <canvas id="scratch-canvas" style="height: 800px; width: 100%;"></canvas>
                 </div>
                 <p class="text-center text-[10px] text-slate-300 mt-3 italic font-bold">Cuộn lên để xem lại đề bài nếu cần</p>
             </div>
@@ -183,7 +183,7 @@ path-content-area {
         function initCanvas() {
             const rect = canvas.getBoundingClientRect();
             canvas.width = rect.width;
-            canvas.height = 450;
+            canvas.height = 800;
             ctx.strokeStyle = brushColor;
             ctx.lineWidth = 3;
             ctx.lineJoin = 'round';
