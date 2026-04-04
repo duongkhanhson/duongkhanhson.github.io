@@ -1,0 +1,488 @@
+---
+title: "Tổng Quan Lộ Trình: Kỹ Sư Tự Động Hóa 4.0 (Automation Hub)"
+categories:
+  - Tutorials
+tags:
+  - Automation
+  - Overview
+layout: splash
+author_profile: false
+---
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+    .archive__subtitle, .page__meta { display: none !important; }
+    .page__inner-wrap { max-width: 100% !important; padding: 0 !important; margin: 0 !important; }
+    .page__content { padding: 0 !important; max-width: 100% !important; }
+    #main { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
+    .page { padding-right: 0 !important; }
+    
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+    
+    .auto-body {
+        font-family: 'Inter', sans-serif;
+        background-color: #f8fafc;
+        color: #1e293b;
+    }
+
+    .chart-container {
+        position: relative;
+        width: 100%;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        height: 380px;
+        max-height: 450px;
+    }
+
+    .venn-box {
+        position: relative;
+        width: 320px;
+        height: 320px;
+        margin: 0 auto;
+    }
+    .venn-circle {
+        position: absolute;
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        mix-blend-mode: multiply;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: 800;
+        text-align: center;
+        font-size: 0.85rem;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+    .venn-circle:hover { transform: scale(1.05); z-index: 40; }
+    .circle-elec { background-color: rgba(37, 99, 235, 0.85); top: 0; left: 70px; }
+    .circle-ctrl { background-color: rgba(249, 115, 22, 0.85); bottom: 20px; left: 10px; }
+    .circle-it { background-color: rgba(16, 185, 129, 0.85); bottom: 20px; right: 10px; }
+    
+    .venn-center {
+        position: absolute;
+        top: 55%; left: 50%;
+        transform: translate(-50%, -50%);
+        color: #0f172a;
+        font-weight: 900;
+        z-index: 50;
+        pointer-events: none;
+        text-shadow: 0 0 10px white;
+    }
+
+    .roadmap-tab.active {
+        background-color: #2563eb;
+        color: white;
+        box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
+    }
+</style>
+
+<div class="auto-body antialiased">
+    **© Bản quyền Người tạo nội dung:** *Thầy Đường Khánh Sơn. MLAB.*
+
+    <!-- Hero Section -->
+    <header class="bg-slate-900 text-white pt-20 pb-20 px-6 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#2563eb_1px,transparent_1px)] [background-size:20px_20px]"></div>
+        <div class="max-w-5xl mx-auto relative z-10 text-center">
+            <div class="inline-block px-4 py-1.5 mb-6 bg-blue-600/20 border border-blue-500/30 rounded-full text-blue-400 text-xs font-bold uppercase tracking-widest">
+                Automation Engineering Roadmap
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
+                Lộ Trình Thành Công <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Kỹ Sư Tự Động Hóa 4.0</span>
+            </h1>
+            <p class="text-slate-400 text-lg md:text-xl max-w-3xl mx-auto mb-10">
+                Tổng quan kiến thức từ đại học đến thực tế công nghiệp. Hướng dẫn chi tiết cách học, chọn công cụ và rèn luyện kỹ năng để trở thành chuyên gia trong kỷ nguyên nhà máy thông minh.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#lo-trinh" class="px-8 py-4 bg-blue-600 hover:bg-blue-700 rounded-xl font-bold transition shadow-lg shadow-blue-500/20">Khám Phá Lộ Trình</a>
+                <a href="#cong-cu" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 rounded-xl font-bold transition">Bộ Công Cụ "Vàng"</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-16 space-y-32">
+        <!-- Section 1: Bản chất ngành -->
+        <section id="tong-quan" class="scroll-mt-24">
+            <div class="mb-12 text-center">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">1. Tự Động Hóa Là Gì?</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">
+                    Nhiều người lầm tưởng Tự động hóa chỉ là lập trình PLC. Thực tế, đây là sự giao thoa mật thiết của 3 mảng tri thức lớn giúp hệ thống "Cảm nhận - Suy nghĩ - Hành động".
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="bg-white p-10 rounded-3xl shadow-sm border border-slate-100">
+                    <div class="venn-box">
+                        <div class="venn-circle circle-elec">Kỹ Thuật<br>Điện & Điện Tử</div>
+                        <div class="venn-circle circle-ctrl">Lý Thuyết<br>Điều Khiển</div>
+                        <div class="venn-circle circle-it">Công Nghệ<br>Thông Tin</div>
+                        <div class="venn-center text-xl">AUTO</div>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-bold text-slate-800">Cấu trúc 3 trụ cột</h3>
+                    <div class="space-y-4">
+                        <div class="flex gap-4 p-4 bg-white rounded-2xl shadow-sm border border-slate-100 hover:border-blue-500 transition">
+                            <div class="text-2xl">⚡</div>
+                            <div>
+                                <h4 class="font-bold text-slate-800">Kỹ thuật Điện & Điện tử</h4>
+                                <p class="text-sm text-slate-500">Nền tảng về mạch điện, linh kiện, cảm biến và cơ cấu chấp hành (động cơ, van, xilanh).</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 p-4 bg-white rounded-2xl shadow-sm border border-slate-100 hover:border-orange-500 transition">
+                            <div class="text-2xl">📉</div>
+                            <div>
+                                <h4 class="font-bold text-slate-800">Lý thuyết Điều khiển</h4>
+                                <p class="text-sm text-slate-500">"Bộ não" thuật toán. Hiểu về PID, Fuzzy, LQR để đảm bảo hệ thống vận hành ổn định và chính xác.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 p-4 bg-white rounded-2xl shadow-sm border border-slate-100 hover:border-emerald-500 transition">
+                            <div class="text-2xl">💻</div>
+                            <div>
+                                <h4 class="font-bold text-slate-800">Công nghệ Thông tin</h4>
+                                <p class="text-sm text-slate-500">Công cụ thực thi. Từ lập trình PLC đến SCADA, IoT và ứng dụng AI trong công nghiệp.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Radar Kỹ Năng -->
+        <section id="ky-nang" class="scroll-mt-24 bg-white rounded-[2.5rem] p-8 md:p-16 shadow-sm border border-slate-100">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-6">
+                    <h2 class="text-3xl font-bold text-slate-900">2. Khung Năng Lực Kỹ Sư Hiện Đại</h2>
+                    <p class="text-slate-600 leading-relaxed">
+                        Phân tích dữ liệu từ thị trường lao động (Samsung, ABB, Siemens) cho thấy sự lệch pha giữa đào tạo và thực tế. Biểu đồ Radar dưới đây mô tả chân dung một kỹ sư "High-Quality" cần có.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="p-5 bg-slate-50 rounded-2xl border-l-4 border-blue-600">
+                            <h4 class="font-bold text-slate-800 mb-1">Tư duy hệ thống (95%)</h4>
+                            <p class="text-xs text-slate-500 uppercase font-bold tracking-widest">Kỹ năng quan trọng nhất</p>
+                        </div>
+                        <div class="p-5 bg-slate-50 rounded-2xl border-l-4 border-orange-500">
+                            <h4 class="font-bold text-slate-800 mb-1">Lập trình PLC & IT (85%)</h4>
+                            <p class="text-xs text-slate-500 uppercase font-bold tracking-widest">Công cụ thực chiến</p>
+                        </div>
+                        <div class="p-5 bg-slate-50 rounded-2xl border-l-4 border-emerald-500">
+                            <h4 class="font-bold text-slate-800 mb-1">Tiếng Anh chuyên ngành (80%)</h4>
+                            <p class="text-xs text-slate-500 uppercase font-bold tracking-widest">Để đọc Manual và làm việc quốc tế</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="chart-container">
+                        <canvas id="skillsRadarChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Lộ Trình 4 Năm -->
+        <section id="lo-trinh" class="scroll-mt-24">
+            <div class="mb-12 text-center">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">3. Lộ Trình Học Tập (4 Năm Đại Học)</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">Chia nhỏ hành trình thành các giai đoạn để sinh viên không bị "ngợp" và có mục tiêu cụ thể theo từng năm.</p>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden">
+                <div class="flex flex-wrap border-b border-slate-200 bg-slate-50/50">
+                    <button onclick="switchYear(1)" id="btn-y1" class="roadmap-tab active flex-1 px-6 py-5 text-sm font-bold uppercase tracking-wider transition">Năm 1: Nền Tảng</button>
+                    <button onclick="switchYear(2)" id="btn-y2" class="roadmap-tab flex-1 px-6 py-5 text-sm font-bold uppercase tracking-wider transition">Năm 2: Cơ Sở</button>
+                    <button onclick="switchYear(3)" id="btn-y3" class="roadmap-tab flex-1 px-6 py-5 text-sm font-bold uppercase tracking-wider transition">Năm 3: Chuyên Ngành</button>
+                    <button onclick="switchYear(4)" id="btn-y4" class="roadmap-tab flex-1 px-6 py-5 text-sm font-bold uppercase tracking-wider transition">Năm 4: Thực Chiến</button>
+                </div>
+                <div class="p-8 md:p-12 min-h-[400px]" id="roadmap-content">
+                    <!-- Content Injected via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Hệ Sinh Thái Công Cụ -->
+        <section id="cong-cu" class="scroll-mt-24">
+            <div class="mb-16 text-center">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">4. "Vũ Khí" Phải Có Của Kỹ Sư</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">Thành thạo các phần mềm này giúp bạn giải quyết 90% công việc thiết kế và lập trình trong thực tế.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- CAD -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-md transition group">
+                    <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition">📐</div>
+                    <h3 class="font-bold text-slate-800 text-lg mb-4">Thiết kế & Bản vẽ</h3>
+                    <ul class="text-sm text-slate-500 space-y-3">
+                        <li class="flex items-center gap-2"><span>▪</span> AutoCAD Electrical</li>
+                        <li class="flex items-center gap-2"><span>▪</span> EPLAN Electric</li>
+                        <li class="flex items-center gap-2"><span>▪</span> SolidWorks (Mô phỏng cơ)</li>
+                    </ul>
+                </div>
+                <!-- PLC -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-md transition group">
+                    <div class="w-14 h-14 bg-orange-100 rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition">🎛️</div>
+                    <h3 class="font-bold text-slate-800 text-lg mb-4">Lập trình PLC</h3>
+                    <ul class="text-sm text-slate-500 space-y-3">
+                        <li class="flex items-center gap-2"><span>▪</span> TIA Portal (Siemens)</li>
+                        <li class="flex items-center gap-2"><span>▪</span> GX Works (Mitsubishi)</li>
+                        <li class="flex items-center gap-2"><span>▪</span> ISPSoft (Delta)</li>
+                    </ul>
+                </div>
+                <!-- Simulation -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-md transition group">
+                    <div class="w-14 h-14 bg-emerald-100 rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition">📉</div>
+                    <h3 class="font-bold text-slate-800 text-lg mb-4">Mô phỏng & Tính toán</h3>
+                    <ul class="text-sm text-slate-500 space-y-3">
+                        <li class="flex items-center gap-2"><span>▪</span> MATLAB & Simulink</li>
+                        <li class="flex items-center gap-2"><span>▪</span> LabVIEW</li>
+                        <li class="flex items-center gap-2"><span>▪</span> Python (Data/AI)</li>
+                    </ul>
+                </div>
+                <!-- SCADA -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-md transition group">
+                    <div class="w-14 h-14 bg-indigo-100 rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition">💻</div>
+                    <h3 class="font-bold text-slate-800 text-lg mb-4">HMI & SCADA</h3>
+                    <ul class="text-sm text-slate-500 space-y-3">
+                        <li class="flex items-center gap-2"><span>▪</span> WinCC / InTouch</li>
+                        <li class="flex items-center gap-2"><span>▪</span> FactoryTalk View</li>
+                        <li class="flex items-center gap-2"><span>▪</span> Web-based HMI</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Tài nguyên -->
+        <section class="bg-slate-900 rounded-[3rem] p-12 md:p-20 text-white relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-blue-600/10 blur-[120px] rounded-full"></div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+                <div>
+                    <h2 class="text-3xl font-extrabold mb-8">5. Nguồn Tài Liệu Tự Học Uy Tín</h2>
+                    <p class="text-slate-400 mb-10 leading-relaxed">Đừng chỉ học trong giáo trình cũ. Hãy tận dụng các tài nguyên quốc tế để cập nhật công nghệ mới nhất từ các đại học và tập đoàn hàng đầu.</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="p-6 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition">
+                            <h4 class="font-bold text-blue-400 mb-2">Học thuật</h4>
+                            <p class="text-xs text-slate-400">MIT OCW (Course 6), Stanford Online, Coursera (Control Theory).</p>
+                        </div>
+                        <div class="p-6 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition">
+                            <h4 class="font-bold text-orange-400">Kỹ thuật hãng</h4>
+                            <p class="text-xs text-slate-400">Siemens Learning, Mitsubishi FA Training, Rockwell Automation University.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-10 rounded-3xl shadow-2xl">
+                    <h3 class="text-slate-900 font-bold mb-6 text-center">Nhu Cầu Việc Làm Ngành Automation</h3>
+                    <div class="chart-container" style="height: 250px;">
+                        <canvas id="marketBarChart"></canvas>
+                    </div>
+                    <p class="text-center text-xs text-slate-400 mt-4 italic">Dự báo nhu cầu tăng trưởng giai đoạn 2024 - 2030</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 py-12 text-center text-slate-500 text-sm">
+        <div class="max-w-7xl mx-auto px-4">
+            <p class="mb-4">© 2024 Lộ Trình Kỹ Sư Tự Động Hóa. Được tổng hợp dựa trên dữ liệu đào tạo và nhu cầu công nghiệp.</p>
+        </div>
+    </footer>
+</div>
+
+<script>
+    // Roadmap Data
+    const roadmapData = {
+        1: {
+            title: "Năm 1: Xây Dựng 'Gốc' Vững Chắc",
+            focus: "Khoa học cơ bản & Công cụ văn phòng.",
+            content: "Đây là giai đoạn cực kỳ quan trọng về tư duy. Đừng coi nhẹ các môn Toán và Lý vì đó là cơ sở của mọi thuật toán điều khiển sau này.",
+            items: [
+                "Toán giải tích, Đại số tuyến tính: Cơ sở cho ma trận trạng thái.",
+                "Vật lý đại cương (Điện - Từ): Hiểu về dòng điện, cảm ứng.",
+                "Lập trình cơ bản (C/C++): Ngôn ngữ 'mẹ' của hệ thống nhúng.",
+                "Kỹ năng mềm & Tiếng Anh: Bắt đầu đọc Datasheet cơ bản."
+            ],
+            tip: "Hãy bắt đầu học cách sử dụng máy tính chuyên nghiệp: Gõ 10 ngón, quản lý file, Git cơ bản."
+        },
+        2: {
+            title: "Năm 2: Bước Vào Thế Giới Kỹ Thuật",
+            focus: "Cơ sở ngành Điện - Điện tử & Bản vẽ.",
+            content: "Bạn bắt đầu hiểu máy móc vận hành ra sao và cách mô phỏng chúng trên máy tính.",
+            items: [
+                "Linh kiện điện tử & Mạch điện: Hiểu về Transistor, Op-Amp, Diode.",
+                "Vẽ kỹ thuật & CAD: Bắt đầu vẽ sơ đồ điện 2D/3D chuyên nghiệp.",
+                "Kỹ thuật số: Cơ sở cho các bộ xử lý (Vi điều khiển).",
+                "Cơ học lý thuyết: Động lực học cho Robot sau này."
+            ],
+            tip: "Học cách hàn mạch và sử dụng các dụng cụ đo (VOM, Oscilloscope) thành thạo."
+        },
+        3: {
+            title: "Năm 3: 'Linh Hồn' Của Ngành",
+            focus: "Lý thuyết Điều khiển & Lập trình PLC.",
+            content: "Đây là giai đoạn nặng nhất nhưng cũng thú vị nhất. Bạn học cách làm cho hệ thống 'thông minh' hơn.",
+            items: [
+                "Lý thuyết Điều khiển Tự động: PID, Root Locus, Bode Plot.",
+                "Lập trình PLC cơ bản & nâng cao: TIA Portal, Mitsubishi.",
+                "Vi điều khiển (Arduino, STM32): Lập trình hệ thống nhúng.",
+                "Hệ thống nén - Thủy lực: Truyền động trong công nghiệp nặng."
+            ],
+            tip: "Hãy mua một bộ Arduino hoặc PLC cũ để thực hành đấu nối tại nhà."
+        },
+        4: {
+            title: "Năm 4: Thực Chiến & Tích Hợp",
+            focus: "Robot học, SCADA & Đồ án tốt nghiệp.",
+            content: "Giai đoạn kết nối mọi thứ lại thành một hệ thống hoàn chỉnh (System Integration).",
+            items: [
+                "Robot công nghiệp: Tính toán động học cánh tay robot.",
+                "Hệ thống SCADA & Mạng truyền thông: Kết nối nhà máy.",
+                "Thị giác máy tính (AI): Robot nhìn và nhận diện vật thể.",
+                "Thực tập doanh nghiệp: Cọ xát thực tế tại nhà máy."
+            ],
+            tip: "Đồ án tốt nghiệp nên giải quyết một bài toán thực tế của doanh nghiệp, đừng chỉ làm mô hình học thuật."
+        }
+    };
+
+    function switchYear(year) {
+        const data = roadmapData[year];
+        const contentDiv = document.getElementById('roadmap-content');
+        
+        document.querySelectorAll('.roadmap-tab').forEach(btn => btn.classList.remove('active'));
+        document.getElementById(`btn-y${year}`).classList.add('active');
+
+        contentDiv.innerHTML = `
+            <div class="flex flex-col lg:flex-row gap-12 items-start animate-in fade-in slide-in-from-bottom-4 duration-500">
+                <div class="flex-1">
+                    <div class="inline-block px-3 py-1 bg-blue-100 text-blue-700 rounded-lg text-xs font-bold mb-4">GIAI ĐOẠF 0${year}</div>
+                    <h3 class="text-2xl font-extrabold text-slate-800 mb-4">${data.title}</h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed">${data.content}</p>
+                    <div class="p-6 bg-slate-50 border-l-4 border-blue-600 rounded-r-2xl">
+                        <h4 class="font-bold text-slate-800 text-sm mb-3 uppercase tracking-wider">Trọng tâm kiến thức:</h4>
+                        <p class="text-slate-700 text-sm">${data.focus}</p>
+                    </div>
+                </div>
+                <div class="w-full lg:w-80 space-y-6">
+                    <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+                        <h4 class="font-bold text-slate-800 text-sm mb-4">Môn học cốt lõi:</h4>
+                        <ul class="space-y-3">
+                            ${data.items.map(i => `<li class="text-sm text-slate-500 flex items-start gap-2"><span>🔹</span> ${i}</li>`).join('')}
+                        </ul>
+                    </div>
+                    <div class="bg-orange-50 p-6 rounded-2xl border border-orange-100">
+                        <h4 class="font-bold text-orange-800 text-sm mb-2">💎 Lời khuyên vàng:</h4>
+                        <p class="text-sm text-orange-700 italic">"${data.tip}"</p>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    (function() {
+        switchYear(1);
+
+        const wrapLabel = (label) => {
+            if (label.length <= 16) return label;
+            const words = label.split(' ');
+            let lines = [];
+            let currentLine = '';
+            words.forEach(word => {
+                if ((currentLine + word).length > 16) {
+                    lines.push(currentLine.trim());
+                    currentLine = word + ' ';
+                } else {
+                    currentLine += word + ' ';
+                }
+            });
+            lines.push(currentLine.trim());
+            return lines;
+        };
+
+        const tooltipConfig = {
+            tooltip: {
+                callbacks: {
+                    title: function(tooltipItems) {
+                        const item = tooltipItems[0];
+                        let label = item.chart.data.labels[item.dataIndex];
+                        return Array.isArray(label) ? label.join(' ') : label;
+                    }
+                }
+            }
+        };
+
+        const radarCtx = document.getElementById('skillsRadarChart').getContext('2d');
+        new Chart(radarCtx, {
+            type: 'radar',
+            data: {
+                labels: [
+                    'Lý thuyết Điều khiển',
+                    'Lập trình PLC/HMI',
+                    'Thiết kế Mạch/Bản vẽ',
+                    'Lập trình IT (Python)',
+                    'Robot học & Động lực',
+                    'Tiếng Anh Kỹ thuật',
+                    'Tư duy Hệ thống'
+                ].map(wrapLabel),
+                datasets: [
+                    {
+                        label: 'Kỹ sư Chất lượng cao',
+                        data: [95, 90, 85, 80, 85, 90, 95],
+                        backgroundColor: 'rgba(37, 99, 235, 0.2)',
+                        borderColor: '#2563eb',
+                        pointBackgroundColor: '#2563eb',
+                        borderWidth: 2
+                    },
+                    {
+                        label: 'Kỹ sư mới tốt nghiệp (TB)',
+                        data: [65, 70, 60, 40, 50, 45, 60],
+                        backgroundColor: 'rgba(249, 115, 22, 0.1)',
+                        borderColor: '#f97316',
+                        pointBackgroundColor: '#f97316',
+                        borderWidth: 1,
+                        borderDash: [5, 5]
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: tooltipConfig,
+                scales: {
+                    r: {
+                        angleLines: { display: false },
+                        suggestedMin: 0,
+                        suggestedMax: 100,
+                        ticks: { display: false }
+                    }
+                }
+            }
+        });
+
+        const marketCtx = document.getElementById('marketBarChart').getContext('2d');
+        new Chart(marketCtx, {
+            type: 'bar',
+            data: {
+                labels: ['2024', '2025', '2026', '2027', '2028', '2029', '2030'].map(wrapLabel),
+                datasets: [{
+                    label: 'Nhu cầu nhân lực (Dự báo)',
+                    data: [120, 145, 178, 220, 290, 360, 450],
+                    backgroundColor: '#2563eb',
+                    borderRadius: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    ...tooltipConfig
+                },
+                scales: {
+                    y: { beginAtZero: true, grid: { borderDash: [5, 5] } },
+                    x: { grid: { display: false } }
+                }
+            }
+        });
+    })();
+</script>
