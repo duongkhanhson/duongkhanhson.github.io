@@ -94,6 +94,20 @@ Giao diện tinh chỉnh thuật toán điều khiển tự động PID qua cổ
 
 ---
 
+## [10. Nhà Thám Hiểm Nhí PRO - Khám phá Địa lý & Khoa học (Bản Nâng cao)](https://duongkhanhson.github.io/Nha-Tham-Hiem-Nhi-Pro/)
+**Công nghệ:** HTML5, Tailwind CSS, Vanilla JavaScript
+
+Phiên bản nâng cao của trò chơi "Nhà Thám Hiểm Nhí" với giao diện hiện đại hơn, cấp độ thử thách tăng dần qua 5 môi trường khác nhau (Việt Nam, Đại dương, Phòng thí nghiệm, Thế giới và Môi trường tương lai).
+
+- **Hệ thống Level sinh động:** Tự động chuyển đổi cảnh chơi và biểu tượng theo chủ đề kiến thức.
+- **Bảng Nháp Chuyên Nghiệp:** Tích hợp bảng vẽ nháp linh hoạt ngay dưới phần câu hỏi để tính toán nhanh.
+- **Nội dung mở rộng:** Thử thách kiến thức đa dạng về Địa lý, Khoa học và Công nghệ 4.0.
+
+🎮 *CHƠI THỬ TRUY CẬP NGAY:* **[Live Web Demo Game](https://duongkhanhson.github.io/Nha-Tham-Hiem-Nhi-Pro/)**  
+📄 *Chi tiết mã nguồn:* [Thư mục Source Code Nha-Tham-Hiem-Nhi-Pro](https://github.com/duongkhanhson/duongkhanhson.github.io/tree/master/Nha-Tham-Hiem-Nhi-Pro)
+
+---
+
 <hr>
 
 <h2>English</h2>
@@ -177,6 +191,20 @@ Tuning PID control algorithms via Serial communication.
 **Technologies:** Python, Arduino, Serial Communication
 
 Real-time Servo motor control and angular monitoring via Serial protocol.
+
+---
+
+## [10. Explorer Kids PRO - Advanced Geography & Science Quest](https://duongkhanhson.github.io/Nha-Tham-Hiem-Nhi-Pro/)
+**Technologies:** HTML5, Tailwind CSS, Vanilla JavaScript
+
+The advanced version of "Explorer Kids" with a more modern UI and progressive difficulty across 5 environments: Vietnam, Ocean, Lab, World, and Eco-City.
+
+- **Dynamic Leveling System:** Automatically transitions backgrounds and icons based on progress.
+- **Professional Scratchpad:** Integrated drawing board for quick notes and math calculation.
+- **Expanded Knowledge Base:** Challenges covering Geography, Science, and Industry 4.0.
+
+🎮 *Live Demo:* **[Play Now](https://duongkhanhson.github.io/Nha-Tham-Hiem-Nhi-Pro/)**  
+📄 *Source Code:* [Nha-Tham-Hiem-Nhi-Pro Repo](https://github.com/duongkhanhson/duongkhanhson.github.io/tree/master/Nha-Tham-Hiem-Nhi-Pro)
 
 ---
 
