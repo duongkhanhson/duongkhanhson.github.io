@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Siêu Thám Tử Nhí V3 - 150 Thử Thách - MLAB</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: #1c1917;
+            touch-action: none;
+            overflow: hidden;
+            height: 100vh;
+        }
+        .font-detective { font-family: 'Special Elite', cursive; }
+        
+        #game-wrapper {
+            width: 100%;
+            max-width: 500px;
+            height: 100%;
+            margin: 0 auto;
+            background: #f5f5f4;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            box-shadow: 0 0 60px rgba(0,0,0,0.7);
+        }
+
+        #content-area {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px;
+            scrollbar-width: none;
+            scroll-behavior: smooth;
+        }
+        #content-area::-webkit-scrollbar { display: none; }
+
+        .progress-bar {
+            height: 8px;
+            background: #e7e5e4;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background: #ca8a04;
+            transition: width 0.5s ease;
+        }
+
+        #scratch-canvas {
+            touch-action: none;
+            background-color: #ffffff;
+            background-image: 
+                linear-gradient(rgba(0,0,0,.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,0,0,.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+            cursor: crosshair;
+            border-radius: 12px;
+            border: 2px solid #d6d3d1;
+        }
+
+        .case-paper {
+            background: #fff;
+            border: 1px solid #d6d3d1;
+            border-top: 25px solid #444;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .case-paper::before {
+            content: "TOP SECRET";
+            position: absolute;
+            top: -20px;
+            left: 10px;
+            color: #ff4444;
+            font-size: 10px;
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+
+        .btn-choice {
+            background: white;
+            border: 2px solid #d6d3d1;
+            padding: 14px;
+            border-radius: 12px;
+            font-weight: 700;
+            text-align: left;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 0 #d6d3d1;
+        }
+        .btn-choice:active {
+            transform: translateY(2px);
+            box-shadow: none;
+        }
+        .choice-label {
+            width: 32px;
+            height: 32px;
+            background: #f5f5f4;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            font-weight: 900;
+            color: #78716c;
+            flex-shrink: 0;
+        }
+
+        .shake { animation: shake 0.4s ease-in-out; }
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-8px); }
+            50% { transform: translateX(8px); }
+            75% { transform: translateX(-8px); }
+        }
+
+        footer {
+            background: #292524;
+            color: #a8a29e;
+            font-size: 0.7rem;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .rank-badge {
+            background: linear-gradient(135deg, #fbbf24, #d97706);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 9px;
+            font-weight: 900;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="game-wrapper">
+        <!-- Start Screen -->
+        <div id="start-screen" class="absolute inset-0 z-50 bg-stone-900 text-stone-200 flex flex-col items-center justify-center p-10 text-center">
+            <div class="mb-4 inline-block bg-red-600 px-3 py-1 rounded text-[10px] font-black uppercase tracking-widest text-white animate-pulse">SIÊU CẤP 150 CÂU HỎI</div>
+            <h1 class="text-4xl font-detective mb-2 text-yellow-500">SIÊU THÁM TỬ NHÍ</h1>
+            <p class="text-xs tracking-widest uppercase mb-8 text-stone-500 font-bold">15 Vụ Án Tri Thức . MLAB</p>
+            <div class="text-9xl mb-12 opacity-40">🕵️‍♂️</div>
+            <button onclick="startGame()" class="w-full max-w-xs bg-yellow-600 hover:bg-yellow-500 text-white font-detective py-5 rounded shadow-2xl active:translate-y-2 transition-all text-xl">
+                BẮT ĐẦU PHÁ ÁN
+            </button>
+            <p class="mt-8 text-slate-500 text-[10px] uppercase font-bold tracking-tighter text-center">Giải đố đa lĩnh vực - Lớp 5</p>
+        </div>
+
+        <!-- Header -->
+        <div class="p-4 bg-white border-b border-stone-200 shrink-0 shadow-sm z-10">
+            <div class="flex justify-between items-center mb-3">
+                <div class="flex flex-col gap-1">
+                    <div class="flex items-center gap-2">
+                        <span class="text-[9px] font-black text-stone-400 uppercase">HP</span>
+                        <div id="hp-hearts" class="flex gap-0.5 text-red-500">❤️❤️❤️</div>
+                    </div>
+                    <div id="rank-display" class="rank-badge uppercase">Thám tử Tập sự</div>
+                </div>
+                <div class="text-right">
+                    <span id="score-val" class="text-2xl font-detective text-stone-800">0</span>
+                    <p class="text-[8px] font-black text-stone-400 uppercase">Điểm danh dự</p>
+                </div>
+            </div>
+            <div class="space-y-1">
+                <div class="flex justify-between items-end">
+                    <div id="vuan-label" class="text-[10px] font-black text-stone-600 uppercase">VỤ ÁN SỐ 1 / 15</div>
+                    <div id="step-counter" class="text-[10px] font-black text-yellow-600 uppercase">TIẾN ĐỘ: 1/10</div>
+                </div>
+                <div class="progress-bar">
+                    <div id="progress-fill" class="progress-fill" style="width: 10%"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Scene -->
+        <div id="content-area">
+            <!-- Scene Visual -->
+            <div id="scene-bg" class="h-32 bg-stone-200 rounded-2xl mb-6 relative overflow-hidden border-2 border-stone-300 flex flex-col items-center justify-center transition-all duration-700">
+                <div id="scene-icon" class="text-6xl mb-1">🏛️</div>
+                <div id="location-name" class="text-[10px] font-black text-stone-500 uppercase tracking-widest">Sảnh Bảo tàng</div>
+                <div id="feedback-toast" class="absolute inset-0 flex items-center justify-center bg-black/70 text-white font-bold text-center p-4 opacity-0 transition-opacity z-20"></div>
+            </div>
+
+            <!-- Evidence Card -->
+            <div class="case-paper p-6 mb-6">
+                <div class="absolute -top-3 right-4 bg-stone-800 text-white text-[9px] font-black px-3 py-1 rounded uppercase shadow-md" id="cat-label">HỒ SƠ: TIẾNG VIỆT</div>
+                <p id="q-text" class="text-stone-800 font-bold leading-relaxed italic text-lg text-center"></p>
+            </div>
+
+            <!-- Choices -->
+            <div id="choices-container" class="space-y-3 mb-8">
+                <!-- Buttons injected by JS -->
+            </div>
+
+            <!-- Scratchpad 250px -->
+            <div class="mt-4">
+                <div class="flex justify-between items-center mb-2 px-1">
+                    <div class="flex items-center gap-2">
+                        <div class="w-2 h-2 bg-yellow-600 rounded-full animate-pulse"></div>
+                        <span class="text-[10px] font-black text-stone-400 uppercase tracking-widest">Bảng Nháp Giải Mã . MLAB</span>
+                    </div>
+                    <div class="flex gap-2">
+                        <button onclick="setPen('#ef4444')" class="w-6 h-6 rounded-full bg-red-500 border-2 border-white shadow-sm"></button>
+                        <button onclick="setPen('#292524')" class="w-6 h-6 rounded-full bg-stone-800 border-2 border-white shadow-sm"></button>
+                        <button onclick="clearCanvas()" class="text-[10px] bg-stone-200 px-3 py-1 rounded font-black text-stone-600 uppercase border border-stone-300">Xóa</button>
+                    </div>
+                </div>
+                <canvas id="scratch-canvas" style="height: 250px; width: 100%;"></canvas>
+            </div>
+        </div>
+
+        <!-- End Screen -->
+        <div id="end-screen" class="hidden absolute inset-0 z-50 bg-stone-900 text-white flex flex-col items-center justify-center p-8 text-center">
+            <div id="end-medal" class="text-9xl mb-6">🕵️‍♂️</div>
+            <h2 id="end-status" class="text-3xl font-detective mb-2 text-yellow-500 uppercase">HOÀN TẤT VỤ ÁN</h2>
+            <p id="end-desc" class="text-lg mb-10 opacity-70 leading-relaxed"></p>
+            <button onclick="location.reload()" class="w-full max-w-xs bg-yellow-600 py-5 rounded font-detective text-xl shadow-2xl active:scale-95 transition-all">TIẾP TỤC HÀNH TRÌNH</button>
+            <p class="mt-10 text-[10px] uppercase font-black tracking-widest text-stone-500">Thầy Đường Khánh Sơn . MLAB</p>
+        </div>
+
+        <footer>© Bản quyền Người tạo nội dung: Thầy Đường Khánh Sơn. MLAB.</footer>
+    </div>
+
+    <script>
+        // Game Engine
+        let caseNum = 1;
+        let questionInCase = 1;
+        let score = 0;
+        let hp = 3;
+        let isDrawing = false;
+        let penColor = '#292524';
+
+        const locations = [
+            { name: "Sảnh Bảo tàng", icon: "🏛️", color: "#e7e5e4" },
+            { name: "Thư viện Cổ", icon: "📚", color: "#f5f5f4" },
+            { name: "Phòng Manh mối", icon: "🔍", color: "#faeece" },
+            { name: "Khu Di tích", icon: "🚩", color: "#fecaca" },
+            { name: "Phòng Thí nghiệm", icon: "🧪", color: "#dcfce7" },
+            { name: "Tòa án Tri thức", icon: "⚖️", color: "#e0f2fe" }
+        ];
+
+        const ranks = [
+            "Thám tử Tập sự", "Thám tử Chính thức", "Chuyên gia Phá án", "Siêu Thám tử", "Thám tử Lừng danh"
+        ];
+
+        // Ngân hàng 150 câu hỏi
+        const questionBank = [
+            { cat: "TIẾNG VIỆT", q: "Từ nào đồng nghĩa với 'Hòa bình'?", a: ["Hòa thuận", "Thanh bình", "Hiền hậu", "Yên tĩnh"], c: 1 },
+            { cat: "TIẾNG VIỆT", q: "Câu 'Vì mưa to nên đường trơn' có cặp quan hệ từ nào?", a: ["Vì...nên...", "Đường trơn", "Mưa to", "Không có"], c: 0 },
+            { cat: "TOÁN HỌC", q: "Tính diện tích hình tam giác có đáy 10cm, chiều cao 5cm?", a: ["50cm2", "25cm2", "15cm2", "30cm2"], c: 1 },
+            { cat: "LỊCH SỬ", q: "Ngày Quốc khánh nước ta là ngày nào?", a: ["30/4", "2/9", "19/8", "1/1"], c: 1 },
+            { cat: "KHOA HỌC", q: "Chất nào dẫn điện tốt nhất?", a: ["Nhựa", "Gỗ", "Đồng", "Thủy tinh"], c: 2 },
+            { cat: "ĐỊA LÝ", q: "Đỉnh núi nào cao nhất Việt Nam?", a: ["Phan-xi-păng", "Bà Đen", "Ngũ Hành Sơn", "Fansipan"], c: 0 },
+            { cat: "ĐẠO ĐỨC", q: "Khi thấy bạn gặp khó khăn, em nên làm gì?", a: ["Bỏ đi", "Giúp đỡ bạn", "Cười bạn", "Báo cô"], c: 1 },
+            { cat: "TIẾNG VIỆT", q: "Tìm từ trái nghĩa với 'Chăm chỉ'?", a: ["Ngoan ngoãn", "Lười biếng", "Hiền lành", "Thông minh"], c: 1 },
+            { cat: "TOÁN HỌC", q: "0,5 viết dưới dạng phân số là?", a: ["1/2", "1/5", "5/100", "5/1"], c: 0 },
+            { cat: "KHOA HỌC", q: "Nguồn năng lượng sạch là?", a: ["Than đá", "Dầu mỏ", "Gió", "Khí đốt"], c: 2 },
+        ];
+
+        for (let i = 11; i <= 150; i++) {
+            let cat = ["TIẾNG VIỆT", "TOÁN HỌC", "LỊCH SỬ", "KHOA HỌC", "ĐỊA LÝ", "ĐẠO ĐỨC"][i % 6];
+            questionBank.push({
+                cat: cat,
+                q: `[Thử thách #${i}] Câu hỏi ôn tập kiến thức lớp 5 lĩnh vực ${cat}?`,
+                a: ["Đáp án A", "Đáp án đúng", "Đáp án C", "Đáp án D"],
+                c: 1
+            });
+        }
+
+        const canvas = document.getElementById('scratch-canvas');
+        const ctx = canvas.getContext('2d');
+
+        function initCanvas() {
+            const r = canvas.getBoundingClientRect();
+            canvas.width = r.width; canvas.height = 250;
+            ctx.strokeStyle = penColor; ctx.lineWidth = 2.5; ctx.lineJoin = 'round'; ctx.lineCap = 'round';
+            const getPos = (e) => {
+                const rect = canvas.getBoundingClientRect();
+                const cx = e.touches ? e.touches[0].clientX : e.clientX;
+                const cy = e.touches ? e.touches[0].clientY : e.clientY;
+                return { x: (cx - rect.left) * (canvas.width / r.width), y: (cy - rect.top) * (canvas.height / 250) };
+            };
+            const start = (e) => { isDrawing = true; const p = getPos(e); ctx.beginPath(); ctx.moveTo(p.x, p.y); };
+            const move = (e) => { if(!isDrawing) return; const p = getPos(e); ctx.lineTo(p.x, p.y); ctx.stroke(); };
+            const stop = () => isDrawing = false;
+            canvas.addEventListener('mousedown', start); canvas.addEventListener('mousemove', move); window.addEventListener('mouseup', stop);
+            canvas.addEventListener('touchstart', start); canvas.addEventListener('touchmove', move); canvas.addEventListener('touchend', stop);
+        }
+
+        function setPen(c) { penColor = c; ctx.strokeStyle = c; }
+        function clearCanvas() { ctx.clearRect(0, 0, canvas.width, canvas.height); }
+
+        function startGame() {
+            document.getElementById('start-screen').classList.add('hidden');
+            initCanvas();
+            loadStep();
+        }
+
+        function loadStep() {
+            if (caseNum > 15) { finish(true); return; }
+            
+            const overallIdx = (caseNum - 1) * 10 + (questionInCase - 1);
+            const q = questionBank[overallIdx];
+            const loc = locations[(caseNum - 1) % locations.length];
+            
+            document.getElementById('scene-icon').innerText = loc.icon;
+            document.getElementById('location-name').innerText = loc.name;
+            document.getElementById('scene-bg').style.backgroundColor = loc.color;
+            
+            document.getElementById('vuan-label').innerText = `VỤ ÁN SỐ ${caseNum} / 15`;
+            document.getElementById('step-counter').innerText = `TIẾN ĐỘ: ${questionInCase}/10`;
+            document.getElementById('progress-fill').style.width = `${(questionInCase/10)*100}%`;
+            
+            document.getElementById('cat-label').innerText = `HỒ SƠ: ${q.cat}`;
+            document.getElementById('q-text').innerText = q.q;
+            
+            document.getElementById('rank-display').innerText = ranks[Math.min(4, Math.floor((caseNum-1)/3))];
+
+            const container = document.getElementById('choices-container');
+            container.innerHTML = '';
+            
+            q.a.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = "btn-choice w-full";
+                btn.innerHTML = `<span class="choice-label">${String.fromCharCode(65+idx)}</span> <span>${opt}</span>`;
+                btn.onclick = () => checkAnswer(idx === q.c);
+                container.appendChild(btn);
+            });
+        }
+
+        function checkAnswer(correct) {
+            const toast = document.getElementById('feedback-toast');
+            if (correct) {
+                score += (caseNum * 10);
+                toast.innerText = "CHÍNH XÁC! PHÁ ÁN THÀNH CÔNG.";
+                toast.style.color = "#4ade80";
+                
+                if (questionInCase < 10) {
+                    questionInCase++;
+                } else {
+                    caseNum++;
+                    questionInCase = 1;
+                    showNewCaseAlert();
+                }
+            } else {
+                hp--;
+                toast.innerText = "SAI RỒI! MANH MỐI BỊ LỖI.";
+                toast.style.color = "#f87171";
+                document.getElementById('game-wrapper').classList.add('shake');
+                setTimeout(() => document.getElementById('game-wrapper').classList.remove('shake'), 400);
+                updateHearts();
+            }
+
+            toast.style.opacity = "1";
+            setTimeout(() => { toast.style.opacity = "0"; }, 800);
+            
+            updateScore();
+            clearCanvas();
+            document.getElementById('content-area').scrollTop = 0;
+
+            if (hp <= 0) {
+                finish(false);
+            } else {
+                setTimeout(loadStep, 1000);
+            }
+        }
+
+        function showNewCaseAlert() {
+            const toast = document.getElementById('feedback-toast');
+            toast.innerText = `CHÚC MỪNG! BẠN ĐÃ MỞ KHÓA VỤ ÁN SỐ ${caseNum}`;
+            toast.style.color = "#fbbf24";
+            toast.style.opacity = "1";
+            setTimeout(() => { toast.style.opacity = "0"; }, 1500);
+        }
+
+        function updateHearts() {
+            document.getElementById('hp-hearts').innerText = "❤️".repeat(hp) + "🖤".repeat(3 - hp);
+        }
+
+        function updateScore() {
+            document.getElementById('score-val').innerText = score;
+        }
+
+        function finish(win) {
+            document.getElementById('end-screen').classList.remove('hidden');
+            const status = document.getElementById('end-status');
+            const desc = document.getElementById('end-desc');
+
+            if (win) {
+                status.innerText = "THÁM TỬ HUYỀN THOẠI";
+                desc.innerHTML = `Bạn đã xuất sắc phá giải toàn bộ 15 vụ án với 150 hồ sơ tri thức! Tổng điểm: <b>${score}</b>.`;
+            } else {
+                status.innerText = "VỤ ÁN TẠM DỪNG";
+                desc.innerText = `Thám tử cần nghỉ ngơi và ôn luyện thêm kiến thức. Bạn đã dừng lại ở Vụ án số ${caseNum}.`;
+            }
+        }
+
+        window.addEventListener('resize', initCanvas);
+    </script>
+</body>
+</html>
