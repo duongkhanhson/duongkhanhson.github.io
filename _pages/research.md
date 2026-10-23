@@ -22,6 +22,9 @@ Chào mừng bạn đến với trang danh mục các bài báo và nghiên cứ
 | 7 | Thiết kế chế tạo máy phay CNC 3 trục | [📥 Tải về PDF]({{ site.baseurl }}/assets/papers/Thiet-Ke-Che-Tao-May-Phay-CNC-3-Truc.pdf) |
 | 8 | Tracking Control Three-Wheeled Omni-Directional Mobile Robot using PI Controller | [📥 Tải về PDF]({{ site.baseurl }}/assets/papers/Tracking-Control-Omni-Robot-PI-Controller.pdf) |
 | 9 | Ứng dụng bộ điều khiển Self-Tuning Fuzzy-PI điều khiển Omni-Directional Mobile Robot | [📥 Tải về PDF]({{ site.baseurl }}/assets/papers/Ung-Dung-Bo-Dieu-Khien-Self-Tuning-Fuzzy-PI-Robot-Omni.pdf) |
+| 10 | Thiết kế và chế tạo bộ thí nghiệm mạch số phục vụ học tập và giảng dạy | [📥 Tải về PDF]({{ site.baseurl }}/assets/papers/Thiet-Ke-Che-Tao-Bo-Thi-Nghiem-Mach-So.pdf) |
+| 11 | Phát triển mô hình robot bốn chân phục vụ giảng dạy và nghiên cứu cho chuyên ngành Robot và Trí tuệ nhân tạo | [📥 Tải về PDF]({{ site.baseurl }}/assets/papers/Phat-Trien-Mo-Hinh-Robot-Bon-Chan.pdf) |
+| 12 | Development of a Vision-Guided SCARA Robot System Based on a Refurbished Mechanical Platform for Automated Pick-and-Place Applications | [📥 Tải về PDF]({{ site.baseurl }}/assets/papers/Development-Of-A-Vision-Guided-SCARA-Robot-System.pdf) |
 
 ---
 *Ghi chú: Bản quyền nội dung thuộc về tác giả và các tạp chí tương ứng. Vui lòng trích dẫn nguồn khi sử dụng.*
