@@ -764,18 +764,20 @@ author_profile: true
               <ul style="margin-top: 4px; padding-left: 18px;">
                 <li>Làm chủ giao diện Autodesk Inventor, phương pháp đọc hiểu bản vẽ kỹ thuật 2D/3D và tư duy dựng hình tham số (Parametric Modeling).</li>
                 <li>Thiết lập ràng buộc hình học (Geometric Constraints) và kích thước chuẩn trong phác thảo 2D Sketch.</li>
-                <li>Thực hành thành thạo các lệnh dựng khối 3D chi tiết máy (Extrude, Revolve, Sweep, Loft, Coil, Rib, Shell, Hole, Fillet, Chamfer, Pattern, Mirror...).</li>
-                <li>Lắp ráp các chi tiết thành cụm cơ cấu và máy hoàn chỉnh (Assembly Constraints & Joints), kiểm tra va chạm (Interference) và mô phỏng tháo lắp (Presentation).</li>
-                <li>Xuất bản vẽ gia công 2D tiêu chuẩn TCVN/ISO (Drawing: hình chiếu, mặt cắt, hình trích, dung sai, độ nhám và bảng kê vật tư BOM tự động).</li>
+                <li><strong>Thành thạo dựng hình, vẽ chi tiết 3D, mô tả sản phẩm từ ý tưởng đến bản vẽ lắp:</strong> Thực hành đầy đủ các lệnh dựng khối 3D chi tiết máy (Extrude, Revolve, Sweep, Loft, Coil, Rib, Shell, Hole, Fillet, Chamfer, Pattern, Mirror...).</li>
+                <li>Lắp ráp các chi tiết thành cụm cơ cấu và máy hoàn chỉnh (Assembly Constraints & Joints), kiểm tra va chạm (Interference).</li>
+                <li><strong>Xuất video mô phỏng lắp ráp, hoạt động của cụm chi tiết, máy móc, robot...</strong> bằng môi trường Presentation & Inventor Studio trực quan.</li>
+                <li><strong>Xuất bản vẽ 2D cho gia công, chế tạo (Laser, CNC...):</strong> Trình bày bản vẽ kỹ thuật tiêu chuẩn TCVN/ISO (Drawing: hình chiếu, mặt cắt, hình trích, dung sai, độ nhám, bảng kê vật tư BOM tự động) và xuất file DXF/DWG/PDF đưa vào xưởng sản xuất.</li>
               </ul>
             </li>
             <li style="margin-bottom: 12px;">
               <strong style="color: #3b6ca8;">Khóa 2 – Khóa Nâng Cao: Gia Công CAM, CNC & Mô Phỏng Kỹ Thuật (Học phí: 2.500.000đ):</strong>
               <ul style="margin-top: 4px; padding-left: 18px;">
-                <li>Thiết kế và tính toán chi tiết kim loại tấm (Sheet Metal), trải phẳng phôi (Flat Pattern) xuất file DXF phục vụ cắt Laser/Plasma/Chấn CNC.</li>
-                <li>Thiết kế hệ thống khung giàn thép định hình (Frame Generator), mối hàn (Weldments) và khai thác thư viện truyền động cơ khí tiêu chuẩn (Design Accelerator: Trục, ổ lăn, bánh răng trụ/côn/trục vít, bộ truyền đai, xích, cam, lò xo...).</li>
+                <li><strong>Thiết kế các cơ cấu máy, tính toán và thiết kế các bộ truyền động đai, xích, bánh răng...</strong> tự động theo tiêu chuẩn kỹ thuật với Design Accelerator (Trục, ổ lăn, bánh răng trụ/côn/trục vít, bộ truyền đai, xích, cam, lò xo, mối ghép bu lông...).</li>
+                <li>Thiết kế và tính toán chi tiết kim loại tấm (Sheet Metal), trải phẳng phôi (Flat Pattern) phục vụ cắt Laser/Chấn CNC; Thiết kế hệ thống khung giàn thép định hình (Frame Generator) và kết cấu hàn (Weldments).</li>
                 <li>Mô phỏng động học & động lực học cơ cấu máy (Dynamic Simulation), phân tích bền phần tử hữu hạn (Stress Analysis / Nastran CAE: ứng suất, biến dạng, tần số dao động riêng, tải nhiệt).</li>
-                <li><strong>Lập trình gia công CAM & CNC thực chiến (Inventor CAM / HSM):</strong> Thiết lập gốc tọa độ phôi, chọn dao, lập trình đường chạy dao Phay CNC 2.5D/3D (Facing, 2D/3D Adaptive Clearing, Pocket, Contour, Drill...) và Tiện CNC; Mô phỏng kiểm tra va chạm dao và xuất mã G-code chuẩn cho máy CNC thực tế; Xuất file chuẩn in 3D tạo mẫu nhanh.</li>
+                <li><strong>Lập trình và xuất chương trình NC cho máy CNC (Inventor CAM / HSM):</strong> Thiết lập gốc tọa độ phôi, chọn dao, lập trình đường chạy dao Phay CNC 2.5D/3D và Tiện CNC, mô phỏng kiểm tra va chạm dao trên máy tính.</li>
+                <li><strong>Thành thạo tập lệnh G-code, vận hành máy Phay, Tiện CNC:</strong> Đọc hiểu, hiệu chỉnh cấu trúc mã lệnh G-code / M-code, kỹ thuật gá đặt phôi, xét gốc dao và vận hành gia công thực tế trên máy Phay/Tiện CNC & In 3D tạo mẫu nhanh.</li>
               </ul>
             </li>
             <li>
@@ -802,7 +804,7 @@ author_profile: true
               <div>
                 <span class="mlab-tier-badge" style="background: #0b8a42;">Khóa 1 • Cơ Bản</span>
                 <div class="mlab-tier-title">Khóa Cơ Bản: Thiết Kế & Lắp Ráp 3D Inventor</div>
-                <div class="mlab-tier-desc">Đọc bản vẽ, Sketch 2D, Dựng khối 3D, Lắp ráp cơ cấu máy & Xuất bản vẽ tiêu chuẩn.</div>
+                <div class="mlab-tier-desc">Thành thạo vẽ 3D từ ý tưởng đến bản vẽ lắp, xuất bản vẽ 2D gia công (Laser, CNC...), xuất video mô phỏng lắp ráp & hoạt động máy móc, robot.</div>
               </div>
               <div class="mlab-tier-price">1.500.000đ</div>
             </button>
@@ -811,7 +813,7 @@ author_profile: true
               <div>
                 <span class="mlab-tier-badge" style="background: #3b6ca8;">Khóa 2 • Nâng Cao</span>
                 <div class="mlab-tier-title">Khóa Nâng Cao: Gia Công CAM, CNC & Mô Phỏng</div>
-                <div class="mlab-tier-desc">Kim loại tấm, Truyền động, Mô phỏng động lực học, Sức bền CAE & Lập trình gia công CAM/CNC.</div>
+                <div class="mlab-tier-desc">Thiết kế cơ cấu máy, tính toán truyền động (đai, xích, bánh răng...), mô phỏng CAE, thành thạo G-code, lập trình xuất NC & vận hành Phay/Tiện CNC.</div>
               </div>
               <div class="mlab-tier-price">2.500.000đ</div>
             </button>
