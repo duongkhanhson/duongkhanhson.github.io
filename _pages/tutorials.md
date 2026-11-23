@@ -6,7 +6,7 @@ author_profile: true
 ---
 
 <style>
-  /* Course Section Styling */
+  /* Course Section Styling - CNS Scientific Palette (Primary Green #0b8a42, Steel Blue #3b6ca8, Ochre Orange #d47a17, Crimson #9d0c4c, Teal #179083) */
   .mlab-course-section {
     margin-bottom: 2.5rem;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -15,7 +15,7 @@ author_profile: true
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    background: linear-gradient(135deg, #076b33, #0b8a42);
     color: #fff;
     font-size: 0.78rem;
     font-weight: 700;
@@ -27,14 +27,14 @@ author_profile: true
   }
   .mlab-course-card {
     background: #ffffff;
-    border: 1px solid #e2e8f0;
+    border: 1px solid #d1e7dd;
     border-radius: 16px;
-    box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 4px 10px -2px rgba(15, 23, 42, 0.04);
+    box-shadow: 0 10px 25px -5px rgba(11, 138, 66, 0.1), 0 4px 10px -2px rgba(11, 138, 66, 0.05);
     overflow: hidden;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
   .mlab-course-header {
-    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 60%, #1d4ed8 100%);
+    background: linear-gradient(135deg, #063d1e 0%, #076b33 55%, #0b8a42 100%);
     color: #ffffff;
     padding: 24px 26px;
     position: relative;
@@ -42,32 +42,56 @@ author_profile: true
   .mlab-course-tag-row {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     gap: 8px;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
   .mlab-badge {
-    display: inline-block;
-    padding: 4px 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 11px;
     border-radius: 6px;
-    font-size: 0.75rem;
+    font-size: 0.76rem;
     font-weight: 700;
   }
   .mlab-badge-mode {
-    background: rgba(56, 189, 248, 0.2);
-    color: #7dd3fc;
-    border: 1px solid rgba(125, 211, 252, 0.35);
+    background: #3b6ca8;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.25);
   }
   .mlab-badge-discount {
-    background: #ef4444;
+    background: #9d0c4c;
     color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.25);
   }
   .mlab-badge-cert {
-    background: rgba(34, 197, 94, 0.2);
-    color: #86efac;
-    border: 1px solid rgba(134, 239, 172, 0.35);
+    background: #179083;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+  }
+  .mlab-btn-enroll-top {
+    background: linear-gradient(135deg, #d47a17, #c25e00);
+    color: #ffffff !important;
+    font-weight: 700;
+    font-size: 0.78rem;
+    padding: 6px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 7px;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.22);
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .mlab-btn-enroll-top:hover {
+    transform: translateY(-1px);
+    background: linear-gradient(135deg, #e0851d, #d47a17);
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.3);
   }
   .mlab-course-title {
-    margin: 0 0 8px 0 !important;
+    margin: 6px 0 8px 0 !important;
     font-size: 1.55rem !important;
     font-weight: 800 !important;
     color: #ffffff !important;
@@ -76,7 +100,7 @@ author_profile: true
   .mlab-course-subtitle {
     margin: 0;
     font-size: 0.95rem;
-    color: #cbd5e1;
+    color: #e2f5ea;
     font-weight: 500;
   }
   .mlab-course-meta-bar {
@@ -85,9 +109,9 @@ author_profile: true
     gap: 16px;
     margin-top: 16px;
     padding-top: 14px;
-    border-top: 1px solid rgba(255, 255, 255, 0.14);
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
     font-size: 0.83rem;
-    color: #e2e8f0;
+    color: #f0fdf4;
   }
   .mlab-course-body {
     padding: 24px 26px;
@@ -100,8 +124,8 @@ author_profile: true
     color: #334155;
   }
   .mlab-project-tags {
-    background: #f8fafc;
-    border-left: 4px solid #2563eb;
+    background: #f2fbf6;
+    border-left: 4px solid #0b8a42;
     padding: 12px 16px;
     border-radius: 0 8px 8px 0;
     margin-bottom: 20px;
@@ -115,15 +139,15 @@ author_profile: true
     margin-bottom: 20px;
   }
   .mlab-info-box {
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
+    background: #f8faf9;
+    border: 1px solid #d1e7dd;
     border-radius: 12px;
     padding: 16px;
   }
   .mlab-info-box h4 {
     margin: 0 0 10px 0 !important;
     font-size: 0.98rem !important;
-    color: #0f172a !important;
+    color: #076b33 !important;
   }
   .mlab-info-box ul {
     margin: 0;
@@ -136,16 +160,16 @@ author_profile: true
   }
   .mlab-curriculum-details {
     background: #ffffff;
-    border: 1px solid #cbd5e1;
+    border: 1px solid #bcd9c8;
     border-radius: 10px;
     margin-bottom: 22px;
     overflow: hidden;
   }
   .mlab-curriculum-details summary {
     padding: 14px 18px;
-    background: #f1f5f9;
+    background: #eef8f2;
     font-weight: 700;
-    color: #0f172a;
+    color: #063d1e;
     cursor: pointer;
     user-select: none;
     display: flex;
@@ -154,14 +178,14 @@ author_profile: true
     font-size: 0.92rem;
   }
   .mlab-curriculum-details summary:hover {
-    background: #e2e8f0;
+    background: #dff2e7;
   }
   .mlab-curriculum-content {
     padding: 16px 20px;
     font-size: 0.86rem;
     max-height: 360px;
     overflow-y: auto;
-    border-top: 1px solid #e2e8f0;
+    border-top: 1px solid #d1e7dd;
   }
   .mlab-course-footer {
     display: flex;
@@ -181,7 +205,7 @@ author_profile: true
   .mlab-price-current {
     font-size: 1.65rem;
     font-weight: 800;
-    color: #dc2626;
+    color: #0b8a42;
   }
   .mlab-price-old {
     font-size: 0.95rem;
@@ -194,7 +218,7 @@ author_profile: true
     gap: 10px;
   }
   .mlab-btn-enroll {
-    background: linear-gradient(135deg, #ea580c, #dc2626);
+    background: linear-gradient(135deg, #d47a17, #c25e00);
     color: #ffffff !important;
     font-weight: 700;
     font-size: 0.95rem;
@@ -202,7 +226,7 @@ author_profile: true
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    box-shadow: 0 4px 14px rgba(220, 38, 38, 0.35);
+    box-shadow: 0 4px 14px rgba(212, 122, 23, 0.35);
     transition: all 0.2s ease;
     text-decoration: none !important;
     display: inline-flex;
@@ -211,7 +235,7 @@ author_profile: true
   }
   .mlab-btn-enroll:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(220, 38, 38, 0.45);
+    box-shadow: 0 6px 20px rgba(212, 122, 23, 0.45);
   }
   .mlab-btn-outline {
     background: #f1f5f9;
@@ -263,7 +287,7 @@ author_profile: true
     to { opacity: 1; transform: translateY(0) scale(1); }
   }
   .mlab-modal-header {
-    background: linear-gradient(135deg, #0f172a, #1e3a8a);
+    background: linear-gradient(135deg, #063d1e, #0b8a42);
     color: #ffffff;
     padding: 18px 22px;
     display: flex;
@@ -308,13 +332,13 @@ author_profile: true
     color: #64748b;
   }
   .mlab-step-pill.active {
-    background: #dbeafe;
-    color: #1d4ed8;
-    border: 1px solid #93c5fd;
+    background: #e2f5ea;
+    color: #076b33;
+    border: 1px solid #75c696;
   }
   .mlab-step-pill.done {
     background: #dcfce7;
-    color: #15803d;
+    color: #0b8a42;
   }
   .mlab-form-group {
     margin-bottom: 13px;
@@ -390,7 +414,7 @@ author_profile: true
   }
   .mlab-btn-primary {
     width: 100%;
-    background: linear-gradient(135deg, #1d4ed8, #1e40af);
+    background: linear-gradient(135deg, #0b8a42, #076b33);
     color: #ffffff;
     border: none;
     padding: 12px 18px;
@@ -405,7 +429,7 @@ author_profile: true
   }
   .mlab-btn-success {
     width: 100%;
-    background: linear-gradient(135deg, #16a34a, #15803d);
+    background: linear-gradient(135deg, #0b8a42, #065f2c);
     color: #ffffff;
     border: none;
     padding: 13px 18px;
@@ -443,7 +467,12 @@ author_profile: true
       <div class="mlab-course-tag-row">
         <span class="mlab-badge mlab-badge-mode">🌐 Học Online & Offline tại MLAB</span>
         <span class="mlab-badge mlab-badge-discount">🔥 Ưu đãi Giảm 57%</span>
+      </div>
+      <div class="mlab-course-tag-row">
         <span class="mlab-badge mlab-badge-cert">🎓 Cấp chứng nhận hoàn thành</span>
+        <button type="button" class="mlab-btn-enroll-top" onclick="openMlabEnrollModal()">
+          ✍️ Ghi Danh & Thanh Toán QR
+        </button>
       </div>
       <h2 class="mlab-course-title">IoT CHO SINH VIÊN KỸ THUẬT</h2>
       <p class="mlab-course-subtitle">🎓 Không cần giỏi lập trình – Học từ cơ bản đến thực hành & xây dựng đồ án thực tế!</p>
@@ -491,7 +520,7 @@ author_profile: true
       <details class="mlab-curriculum-details">
         <summary>
           <span>📋 Xem chi tiết Đề cương khóa học (10 Chuyên đề & 22 Bài học thực chiến)</span>
-          <span style="color: #2563eb; font-size: 0.82rem;">Nhấn để mở rộng ▼</span>
+          <span style="color: #0b8a42; font-size: 0.82rem;">Nhấn để mở rộng ▼</span>
         </summary>
         <div class="mlab-curriculum-content">
           <p style="margin-top:0;"><strong>🧱 Phần A – 10 Chuyên đề cốt lõi:</strong></p>
@@ -533,9 +562,9 @@ author_profile: true
         <div>
           <div style="font-size: 0.78rem; color: #64748b; font-weight: 600; text-transform: uppercase;">Học phí trọn khóa (Online & Offline)</div>
           <div class="mlab-price-box">
-            <span class="mlab-price-current">1.000đ</span>
+            <span class="mlab-price-current">3.000đ</span>
             <span class="mlab-price-old">3.500.000đ</span>
-            <span style="font-size: 0.8rem; color: #16a34a; font-weight: 700;">(Giá chạy thử nghiệm)</span>
+            <span style="font-size: 0.8rem; color: #0b8a42; font-weight: 700;">(Giá chạy thử nghiệm)</span>
           </div>
         </div>
         <div class="mlab-action-group">
@@ -593,9 +622,9 @@ author_profile: true
             <div class="mlab-form-group">
               <label for="mlabMode">Hình thức đăng ký học <span style="color:#dc2626">*</span></label>
               <select id="mlabMode" class="mlab-form-control" required>
-                <option value="Kết hợp Online & Offline (1.000đ)">Kết hợp Online & Offline (1.000đ)</option>
-                <option value="Học Online qua hệ thống (1.000đ)">Học Online qua hệ thống (1.000đ)</option>
-                <option value="Học Offline thực hành tại MLAB (1.000đ)">Học Offline thực hành tại MLAB (1.000đ)</option>
+                <option value="Kết hợp Online & Offline (3.000đ)">Kết hợp Online & Offline (3.000đ)</option>
+                <option value="Học Online qua hệ thống (3.000đ)">Học Online qua hệ thống (3.000đ)</option>
+                <option value="Học Offline thực hành tại MLAB (3.000đ)">Học Offline thực hành tại MLAB (3.000đ)</option>
               </select>
             </div>
           </div>
@@ -606,7 +635,7 @@ author_profile: true
           </div>
 
           <button type="submit" class="mlab-btn-primary">
-            Tiếp tục: Tạo mã QR Thanh toán Học phí (1.000đ) &rarr;
+            Tiếp tục: Tạo mã QR Thanh toán Học phí (3.000đ) &rarr;
           </button>
         </form>
       </div>
@@ -614,19 +643,19 @@ author_profile: true
       <!-- BƯỚC 2: HIỂN THỊ MÃ VIETQR ĐỘNG & XÁC NHẬN -->
       <div id="mlabStep2" style="display: none;">
         <div class="mlab-qr-box">
-          <div style="font-weight: 700; color: #1e3a8a; font-size: 0.88rem; margin-bottom: 8px;">
+          <div style="font-weight: 700; color: #076b33; font-size: 0.88rem; margin-bottom: 8px;">
             📱 Mở App Ngân hàng bất kỳ để quét mã VietQR tự động
           </div>
           <img id="mlabVietQrImg" src="" alt="Mã VietQR Thanh toán học phí" />
           <div style="font-size: 0.78rem; color: #475569;">
-            (Mã QR đã tích hợp sẵn số tiền <strong>1.000 VNĐ</strong> và nội dung chuyển khoản tự động)
+            (Mã QR đã tích hợp sẵn số tiền <strong>3.000 VNĐ</strong> và nội dung chuyển khoản tự động)
           </div>
 
           <div class="mlab-bank-details">
             <div><span>Ngân hàng thụ hưởng:</span> <strong>VietinBank (NH Công Thương VN)</strong></div>
-            <div><span>Số tài khoản:</span> <strong style="color:#1d4ed8;">107005679531</strong></div>
+            <div><span>Số tài khoản:</span> <strong style="color:#076b33;">107005679531</strong></div>
             <div><span>Chủ tài khoản:</span> <strong>DUONG KHANH SON</strong></div>
-            <div><span>Số tiền học phí:</span> <strong style="color:#dc2626;">1.000 VNĐ</strong></div>
+            <div><span>Số tiền học phí:</span> <strong style="color:#9d0c4c;">3.000 VNĐ</strong></div>
             <div><span>Nội dung chuyển khoản:</span> <strong id="mlabOrderCodeDisplay" style="background:#fef3c7; padding: 1px 6px; border-radius: 4px; font-family: monospace;">IOT</strong></div>
           </div>
         </div>
@@ -674,7 +703,7 @@ author_profile: true
     bankId: "ICB", // Mã ngân hàng VietinBank chuẩn Napas VietQR
     accountNo: "107005679531",
     accountName: "DUONG KHANH SON",
-    amount: 1000,
+    amount: 3000,
     courseName: "IoT CHO SINH VIÊN KỸ THUẬT",
     notifyEmail: "sonduongkhanh@gmail.com",
     // URL Web App của Google Apps Script để tự động ghi vào Google Sheets (nếu đã dán URL)
@@ -734,7 +763,7 @@ author_profile: true
       organization: org || "Không ghi",
       courseName: MLAB_PAYMENT_CONFIG.courseName,
       learningMode: learningMode,
-      fee: "1.000 VNĐ",
+      fee: "3.000 VNĐ",
       note: note
     };
 
@@ -764,7 +793,7 @@ author_profile: true
     const payload = {
       ...currentEnrollmentData,
       note: combinedNote,
-      paymentStatus: "Học viên đã xác nhận quét mã VietQR (1.000 VNĐ)"
+      paymentStatus: "Học viên đã xác nhận quét mã VietQR (3.000 VNĐ)"
     };
 
     try {
