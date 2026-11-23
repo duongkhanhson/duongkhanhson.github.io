@@ -678,7 +678,7 @@ author_profile: true
     courseName: "IoT CHO SINH VIÊN KỸ THUẬT",
     notifyEmail: "sonduongkhanh@gmail.com",
     // URL Web App của Google Apps Script để tự động ghi vào Google Sheets (nếu đã dán URL)
-    googleScriptUrl: ""
+    googleScriptUrl: "https://script.google.com/macros/s/AKfycbzT-V4IbA9lEHcce9cTtjPFRhoMcJ9NJDoZn_tmJVcCNpATbHXEKT5QtS5tUvHNbSjBWw/exec"
   };
 
   let currentEnrollmentData = {};
