@@ -603,6 +603,252 @@ author_profile: true
     <span>🚀 KHÓA HỌC NGẮN HẠN & ĐÀO TẠO THỰC CHIẾN - MLAB</span>
   </div>
 
+  <!-- ==================== KHÓA HỌC 1 (ĐẦU TRANG): THIẾT KẾ CƠ KHÍ BẰNG AUTODESK INVENTOR ==================== -->
+  <div class="mlab-course-card">
+    <div class="mlab-course-header">
+      <div class="mlab-course-tag-row">
+        <span class="mlab-badge mlab-badge-mode">🌐 Học Online & Offline tại MLAB</span>
+        <span class="mlab-badge mlab-badge-discount">🔥 Học 1 Khóa – Hỗ Trợ Trọn Đời</span>
+      </div>
+      <div class="mlab-course-tag-row">
+        <span class="mlab-badge mlab-badge-cert">🎓 Lịch học linh hoạt theo học viên</span>
+        <button type="button" class="mlab-btn-enroll-top" onclick="openMlabEnrollModal(selectedInventorTierKey)">
+          ✍️ Ghi Danh & Thanh Toán QR
+        </button>
+      </div>
+      <h2 class="mlab-course-title">THIẾT KẾ CƠ KHÍ & MÔ PHỎNG 3D BẰNG AUTODESK INVENTOR</h2>
+      <p class="mlab-course-subtitle">⚙️ Đào tạo từ Khóa Cơ Bản &rarr; Khóa Nâng Cao CAM, CNC &rarr; Khóa Chuyên Sâu Khuôn Mẫu & Sản Phẩm Nhựa</p>
+      <div class="mlab-course-meta-bar">
+        <span>👨‍🏫 <strong>Giảng viên:</strong> ThS. Đường Khánh Sơn (MLAB)</span>
+        <span>📞 <strong>Hotline / Zalo:</strong> 0946.469.720</span>
+        <span>🛠️ <strong>Hình thức:</strong> Vừa học vừa thực hành 100% trên máy</span>
+        <span>♾️ <strong>Quyền lợi:</strong> Hỗ trợ cài đặt & đồng hành trọn đời</span>
+      </div>
+    </div>
+
+    <div class="mlab-course-body">
+      <div class="mlab-course-intro">
+        <strong>Bạn đang gặp phải những trăn trở này?</strong>
+        <ul style="margin: 8px 0 12px 0; padding-left: 20px; color: #334155;">
+          <li>👨‍🎓 Sắp tốt nghiệp đại học nhưng vẫn <strong>chưa thành thạo phần mềm thiết kế 3D</strong>, chưa đọc hiểu bản vẽ kỹ thuật hay tự thiết kế được sản phẩm hoàn chỉnh?</li>
+          <li>📌 Sắp báo cáo đồ án chuyên ngành, đồ án thiết kế máy, luận văn tốt nghiệp nhưng vẫn chưa dựng và mô phỏng được mô hình cơ khí trên máy tính?</li>
+          <li>💼 Kỹ năng vẽ và thiết kế 3D còn yếu khiến hiệu suất công việc chưa cao, mất nhiều cơ hội thăng tiến?</li>
+          <li>✏️ Muốn học <strong>VẼ & THIẾT KẾ CƠ KHÍ 3D</strong> bài bản nhưng không biết bắt đầu từ đâu và học như thế nào cho hiệu quả?</li>
+        </ul>
+        👉 <strong>Các khóa học Thiết kế Cơ khí trên phần mềm Autodesk Inventor tại MLAB</strong> sẽ giúp bạn giải quyết triệt để tất cả các vấn đề đó với bài giảng chi tiết, trực quan, dễ hiểu – vừa học vừa thực hành trực tiếp trên máy tính, nâng cao kỹ năng ngay sau từng buổi học!
+      </div>
+
+      <div class="mlab-project-tags">
+        <strong>💡 Điểm khác biệt của khóa học Inventor tại MLAB:</strong><br>
+        Nhận học viên mỗi ngày – Lịch học sắp xếp linh hoạt theo thời gian của học viên (Sáng / Chiều / Tối, Online hoặc Offline). Lộ trình đào tạo toàn diện từ <em>Thiết kế chi tiết 3D, Lắp ráp cơ cấu máy, Kim loại tấm, Khung dầm, Đường ống & Dây dẫn, Thiết kế khuôn nhựa, Phân tích sức bền hữu hạn (FEA/Nastran), Gia công CNC (HSM Inventor) đến xuất mô hình sang MATLAB/Simscape để mô phỏng động lực học và thiết kế bộ điều khiển Robot!</em>
+      </div>
+
+      <div class="mlab-grid-2">
+        <div class="mlab-info-box">
+          <h4>🎯 Sau khóa học bạn sẽ làm chủ 13 kỹ năng:</h4>
+          <ul>
+            <li>Đọc hiểu và phân tích thành thạo bản vẽ kỹ thuật 2D/3D.</li>
+            <li>Xây dựng chi tiết (Part Modeling) và mô hình 3D phức tạp.</li>
+            <li>Mô phỏng lắp ráp (Assembly) các chi tiết thành cơ cấu, máy hoàn chỉnh.</li>
+            <li>Khai thác thư viện chi tiết máy tiêu chuẩn đồ sộ (Content Center & Design Accelerator: bánh răng, trục, ổ lăn, đai, xích...).</li>
+            <li>Mô phỏng động học và động lực học cơ cấu – máy (Dynamic Simulation).</li>
+            <li>Phân tích sức bền (Stress Analysis / Nastran CAE), tối ưu hóa kết cấu sản phẩm.</li>
+            <li>Thành thạo tính toán, thiết kế và trải phẳng chi tiết kim loại tấm (Sheet Metal).</li>
+          </ul>
+        </div>
+        <div class="mlab-info-box">
+          <h4>🚀 Kỹ năng Chuyên sâu & Tích hợp Cơ điện tử:</h4>
+          <ul>
+            <li>Thành thạo thiết kế hệ thống đường ống và dây dẫn điện (Tube & Pipe, Cable & Harness).</li>
+            <li>Thành thạo thiết kế sản phẩm nhựa và tách khuôn ép nhựa (Mold Design).</li>
+            <li>Render hình ảnh thực tế (Inventor Studio) và tạo video trình diễn nguyên lý hoạt động của máy móc, dây chuyền sản xuất.</li>
+            <li><strong>Đặc biệt:</strong> Xuất mô hình 3D liên kết trực tiếp với <strong>MATLAB / Simulink (Simscape Multibody)</strong> để mô phỏng và thiết kế bộ điều khiển tự động, Robot.</li>
+            <li>Liên kết đa nền tảng CAD/CAM/CAE, lập trình gia công CNC với <strong>Inventor HSM / CAM</strong>.</li>
+            <li>Xuất file chuẩn in 3D (.STL/.OBJ), tạo mẫu nhanh và gia công thực tế trên máy CNC.</li>
+          </ul>
+        </div>
+      </div>
+
+      <details class="mlab-curriculum-details" open>
+        <summary>
+          <span>🖼️ Thư viện Mô hình 3D, Mô phỏng CAE/Simscape & Sản phẩm thực tế của Khóa học Inventor</span>
+          <span style="color: #0b8a42; font-size: 0.82rem;">Nhấn để thu gọn / mở rộng ▼</span>
+        </summary>
+        <div class="mlab-curriculum-content" style="max-height: none;">
+          <div class="mlab-gallery-grid">
+            <div class="mlab-gallery-item">
+              <img src="{{ site.baseurl }}/assets/images/inventor/he-thong-dong-nap-chai-ctut.png" alt="Mô hình 3D hệ thống đóng nắp chai tự động CTUT">
+              <div class="mlab-gallery-caption">Thiết kế 3D Hệ thống băng tải & đóng nắp chai tự động hoàn chỉnh</div>
+            </div>
+            <div class="mlab-gallery-item">
+              <img src="{{ site.baseurl }}/assets/images/inventor/he-thong-dong-nap-chai-3d.jpg" alt="Bản vẽ lắp ráp chi tiết máy đóng nắp chai">
+              <div class="mlab-gallery-caption">Bố trí cụm cơ cấu máy & đánh số bản vẽ lắp ráp kỹ thuật</div>
+            </div>
+            <div class="mlab-gallery-item">
+              <img src="{{ site.baseurl }}/assets/images/inventor/scara-parallel-system-3d.png" alt="Mô hình 3D hệ thống SCARA Parallel Robot MLAB">
+              <div class="mlab-gallery-caption">Thiết kế 3D hệ thống Robot SCARA song song kết hợp băng tải MLAB</div>
+            </div>
+            <div class="mlab-gallery-item">
+              <img src="{{ site.baseurl }}/assets/images/inventor/scara-phan-loai-mau-sac.png" alt="Thực nghiệm Robot SCARA phân loại sản phẩm theo màu sắc">
+              <div class="mlab-gallery-caption">Sản phẩm thực tế: Robot SCARA phân loại màu sắc qua xử lý ảnh</div>
+            </div>
+            <div class="mlab-gallery-item">
+              <img src="{{ site.baseurl }}/assets/images/inventor/scara-phan-loai-hinh-dang.jpg" alt="Thực nghiệm Robot SCARA phân loại hình dạng sản phẩm">
+              <div class="mlab-gallery-caption">Sản phẩm thực tế: Robot SCARA nhận diện & phân loại hình dạng</div>
+            </div>
+            <div class="mlab-gallery-item">
+              <img src="{{ site.baseurl }}/assets/images/inventor/xe-may-tu-can-bang-3d.jpg" alt="Thiết kế 3D các cụm chi tiết xe máy tự cân bằng bằng bánh đà">
+              <div class="mlab-gallery-caption">Thiết kế 3D cụm bánh đà phản ứng & hệ truyền động xe tự cân bằng</div>
+            </div>
+            <div class="mlab-gallery-item">
+              <img src="{{ site.baseurl }}/assets/images/inventor/xe-may-tu-can-bang-thuc-te.jpg" alt="Sản phẩm thực tế mô hình xe máy tự cân bằng MLAB in 3D và gia công CNC">
+              <div class="mlab-gallery-caption">Sản phẩm thực tế: Mô hình Xe máy tự cân bằng MLAB (In 3D & CNC)</div>
+            </div>
+            <div class="mlab-gallery-item">
+              <img src="{{ site.baseurl }}/assets/images/inventor/xe-may-tu-can-bang-leo-doc.jpg" alt="Thử nghiệm xe máy tự cân bằng trên mặt phẳng nghiêng">
+              <div class="mlab-gallery-caption">Thực nghiệm kiểm chứng khả năng tự cân bằng trên mặt dốc nghiêng</div>
+            </div>
+            <div class="mlab-gallery-item">
+              <img src="{{ site.baseurl }}/assets/images/inventor/dog-robot-simscape.png" alt="Xuất mô hình Robot 4 chân từ Inventor sang MATLAB Simscape Multibody">
+              <div class="mlab-gallery-caption">Liên kết mô hình 3D Inventor sang MATLAB Simscape Multibody</div>
+            </div>
+            <div class="mlab-gallery-item">
+              <img src="{{ site.baseurl }}/assets/images/inventor/dog-robot-gui-ik.png" alt="Giao diện điều khiển động học thuận nghịch Dog Robot trên MATLAB">
+              <div class="mlab-gallery-caption">Mô phỏng Động học thuận/nghịch & Điều khiển Robot 4 chân (Dog Robot)</div>
+            </div>
+            <div class="mlab-gallery-item">
+              <img src="{{ site.baseurl }}/assets/images/inventor/inventor-gearbox.jpg" alt="Thiết kế hộp giảm tốc và chi tiết máy">
+              <div class="mlab-gallery-caption">Thiết kế Hộp giảm tốc & Thư viện chi tiết máy tiêu chuẩn</div>
+            </div>
+            <div class="mlab-gallery-item">
+              <img src="{{ site.baseurl }}/assets/images/inventor/inventor-mold.jpg" alt="Thiết kế sản phẩm nhựa và làm khuôn">
+              <div class="mlab-gallery-caption">Thiết kế sản phẩm nhựa & Tách khuôn ép nhựa (Mold Design)</div>
+            </div>
+            <div class="mlab-gallery-item">
+              <img src="{{ site.baseurl }}/assets/images/inventor/inventor-cae.jpg" alt="Phân tích sức bền và mô phỏng CAE">
+              <div class="mlab-gallery-caption">Phân tích ứng suất, biến dạng, tần số & nhiệt (CAE / Nastran)</div>
+            </div>
+            <div class="mlab-gallery-item">
+              <img src="{{ site.baseurl }}/assets/images/inventor/inventor-conveyor.jpg" alt="Thiết kế hệ thống băng tải tự động">
+              <div class="mlab-gallery-caption">Thiết kế máy & Hệ thống băng tải tự động hóa công nghiệp</div>
+            </div>
+            <div class="mlab-gallery-item">
+              <img src="{{ site.baseurl }}/assets/images/inventor/inventor-robot-scara.jpg" alt="Thiết kế Robot song song liên kết MATLAB">
+              <div class="mlab-gallery-caption">Thiết kế cơ khí Robot song song 2 bậc tự do trên Inventor</div>
+            </div>
+            <div class="mlab-gallery-item">
+              <img src="{{ site.baseurl }}/assets/images/inventor/inventor-robot-omni.jpg" alt="Thiết kế Robot di động đa hướng Omni">
+              <div class="mlab-gallery-caption">Thiết kế mô hình Mobile Robot đa hướng phục vụ Đồ án & NCKH</div>
+            </div>
+            <div class="mlab-gallery-item">
+              <img src="{{ site.baseurl }}/assets/images/inventor/inventor-car-render.jpg" alt="Thiết kế Surface nâng cao và Render Inventor Studio">
+              <div class="mlab-gallery-caption">Thiết kế bề mặt phức tạp (Surfacing) & Render Inventor Studio</div>
+            </div>
+            <div class="mlab-gallery-item">
+              <img src="{{ site.baseurl }}/assets/images/inventor/inventor-overview.jpg" alt="Hệ sinh thái thiết kế Autodesk Inventor">
+              <div class="mlab-gallery-caption">Hệ sinh thái Thiết kế CAD/CAM/CAE toàn diện trên Autodesk Inventor</div>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="mlab-curriculum-details" open>
+        <summary>
+          <span>📋 Xem chi tiết Nội dung 3 Khóa học Đào tạo (Khóa Cơ Bản &rarr; Khóa Nâng Cao CAM, CNC &rarr; Khóa Chuyên Sâu Khuôn Mẫu)</span>
+          <span style="color: #0b8a42; font-size: 0.82rem;">Nhấn để thu gọn / mở rộng ▼</span>
+        </summary>
+        <div class="mlab-curriculum-content" style="max-height: none;">
+          <ol style="margin-bottom: 0; padding-left: 20px;">
+            <li style="margin-bottom: 12px;">
+              <strong style="color: #0b8a42;">Khóa 1 – Khóa Cơ Bản: Thiết Kế & Lắp Ráp 3D Inventor (Học phí: 1.500.000đ):</strong>
+              <ul style="margin-top: 4px; padding-left: 18px;">
+                <li>Làm chủ giao diện Autodesk Inventor, phương pháp đọc hiểu bản vẽ kỹ thuật 2D/3D và tư duy dựng hình tham số (Parametric Modeling).</li>
+                <li>Thiết lập ràng buộc hình học (Geometric Constraints) và kích thước chuẩn trong phác thảo 2D Sketch.</li>
+                <li>Thực hành thành thạo các lệnh dựng khối 3D chi tiết máy (Extrude, Revolve, Sweep, Loft, Coil, Rib, Shell, Hole, Fillet, Chamfer, Pattern, Mirror...).</li>
+                <li>Lắp ráp các chi tiết thành cụm cơ cấu và máy hoàn chỉnh (Assembly Constraints & Joints), kiểm tra va chạm (Interference) và mô phỏng tháo lắp (Presentation).</li>
+                <li>Xuất bản vẽ gia công 2D tiêu chuẩn TCVN/ISO (Drawing: hình chiếu, mặt cắt, hình trích, dung sai, độ nhám và bảng kê vật tư BOM tự động).</li>
+              </ul>
+            </li>
+            <li style="margin-bottom: 12px;">
+              <strong style="color: #3b6ca8;">Khóa 2 – Khóa Nâng Cao: Gia Công CAM, CNC & Mô Phỏng Kỹ Thuật (Học phí: 2.500.000đ):</strong>
+              <ul style="margin-top: 4px; padding-left: 18px;">
+                <li>Thiết kế và tính toán chi tiết kim loại tấm (Sheet Metal), trải phẳng phôi (Flat Pattern) xuất file DXF phục vụ cắt Laser/Plasma/Chấn CNC.</li>
+                <li>Thiết kế hệ thống khung giàn thép định hình (Frame Generator), mối hàn (Weldments) và khai thác thư viện truyền động cơ khí tiêu chuẩn (Design Accelerator: Trục, ổ lăn, bánh răng trụ/côn/trục vít, bộ truyền đai, xích, cam, lò xo...).</li>
+                <li>Mô phỏng động học & động lực học cơ cấu máy (Dynamic Simulation), phân tích bền phần tử hữu hạn (Stress Analysis / Nastran CAE: ứng suất, biến dạng, tần số dao động riêng, tải nhiệt).</li>
+                <li><strong>Lập trình gia công CAM & CNC thực chiến (Inventor CAM / HSM):</strong> Thiết lập gốc tọa độ phôi, chọn dao, lập trình đường chạy dao Phay CNC 2.5D/3D (Facing, 2D/3D Adaptive Clearing, Pocket, Contour, Drill...) và Tiện CNC; Mô phỏng kiểm tra va chạm dao và xuất mã G-code chuẩn cho máy CNC thực tế; Xuất file chuẩn in 3D tạo mẫu nhanh.</li>
+              </ul>
+            </li>
+            <li>
+              <strong style="color: #9d0c4c;">Khóa 3 – Khóa Chuyên Sâu: Thiết Kế Khuôn Mẫu & Sản Phẩm Nhựa + Liên Kết MATLAB (Học phí: 4.500.000đ):</strong>
+              <ul style="margin-top: 4px; padding-left: 18px;">
+                <li>Dựng hình bề mặt cong phức tạp và kiểu dáng công nghiệp (Advanced Surfacing, Freeform Modeling & Multi-body Part) cho các sản phẩm nhựa kỹ thuật và tiêu dùng.</li>
+                <li>Thiết kế đặc thù cho sản phẩm nhựa (Plastic Part Features: gân tăng cứng, vấu lẫy Snap-fit, vấu bắt vít Boss, lưới thoát nhiệt Grill, góc thoát khuôn Draft Analysis).</li>
+                <li><strong>Quy trình thiết kế và tách khuôn ép nhựa hoàn chỉnh (Inventor Mold Design):</strong> Thiết lập độ co rút vật liệu nhựa, xác định mặt phân khuôn (Parting Surface), tách Lõi và Lòng khuôn (Core & Cavity), thiết kế kênh dẫn nhựa (Runner), cổng phun (Gate), hệ thống làm mát, chốt đẩy (Ejector Pins) và lắp ráp bộ đế khuôn tiêu chuẩn (Mold Base), mô phỏng dòng chảy nhựa (Moldflow).</li>
+                <li>Thiết kế hệ thống đường ống và dây dẫn phức tạp (Tube & Pipe, Cable & Harness); Render hình ảnh sản phẩm & xuất video diễn hoạt dây chuyền sản xuất (Inventor Studio).</li>
+                <li><strong>Tích hợp hệ thống Cơ điện tử & Robot:</strong> Xuất mô hình 3D cơ khí và thông số quán tính từ Inventor sang <strong>MATLAB / Simulink (Simscape Multibody)</strong> để mô phỏng động học/động lực học và thiết kế bộ điều khiển tự động cho đồ án, luận văn và dự án nghiên cứu.</li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+      </details>
+
+      <div class="mlab-course-footer">
+        <div style="width: 100%; margin-bottom: 6px;">
+          <div style="font-size: 0.85rem; color: #063d1e; font-weight: 800; text-transform: uppercase; margin-bottom: 4px;">
+            👇 CHỌN KHÓA HỌC INVENTOR BẠN MUỐN ĐĂNG KÝ (Nhấn chọn khóa học trước khi bấm Ghi danh):
+          </div>
+          <div class="mlab-tier-selector">
+            <button type="button" id="tierBtn_INV_BASIC" class="mlab-tier-btn active" onclick="selectInventorTier('INV_BASIC')">
+              <div>
+                <span class="mlab-tier-badge" style="background: #0b8a42;">Khóa 1 • Cơ Bản</span>
+                <div class="mlab-tier-title">Khóa Cơ Bản: Thiết Kế & Lắp Ráp 3D Inventor</div>
+                <div class="mlab-tier-desc">Đọc bản vẽ, Sketch 2D, Dựng khối 3D, Lắp ráp cơ cấu máy & Xuất bản vẽ tiêu chuẩn.</div>
+              </div>
+              <div class="mlab-tier-price">1.500.000đ</div>
+            </button>
+
+            <button type="button" id="tierBtn_INV_CAM" class="mlab-tier-btn" onclick="selectInventorTier('INV_CAM')">
+              <div>
+                <span class="mlab-tier-badge" style="background: #3b6ca8;">Khóa 2 • Nâng Cao</span>
+                <div class="mlab-tier-title">Khóa Nâng Cao: Gia Công CAM, CNC & Mô Phỏng</div>
+                <div class="mlab-tier-desc">Kim loại tấm, Truyền động, Mô phỏng động lực học, Sức bền CAE & Lập trình gia công CAM/CNC.</div>
+              </div>
+              <div class="mlab-tier-price">2.500.000đ</div>
+            </button>
+
+            <button type="button" id="tierBtn_INV_MOLD" class="mlab-tier-btn" onclick="selectInventorTier('INV_MOLD')">
+              <div>
+                <span class="mlab-tier-badge" style="background: #9d0c4c;">Khóa 3 • Chuyên Sâu</span>
+                <div class="mlab-tier-title">Khóa Chuyên Sâu: Thiết Kế Khuôn Mẫu & Sản Phẩm Nhựa</div>
+                <div class="mlab-tier-desc">Thiết kế Surface nâng cao, Sản phẩm nhựa, Tách khuôn ép nhựa hoàn chỉnh & Liên kết MATLAB.</div>
+              </div>
+              <div class="mlab-tier-price">4.500.000đ</div>
+            </button>
+          </div>
+        </div>
+
+        <div>
+          <div id="inventorSelectedLabel" style="font-size: 0.8rem; color: #076b33; font-weight: 700; text-transform: uppercase;">
+            Đang chọn: Khóa Cơ Bản – Thiết Kế & Lắp Ráp 3D Inventor
+          </div>
+          <div class="mlab-price-box">
+            <span id="inventorSelectedPrice" class="mlab-price-current">1.500.000đ</span>
+            <span style="font-size: 0.82rem; color: #0b8a42; font-weight: 700;">(Học 1 khóa – Hỗ trợ trọn đời)</span>
+          </div>
+        </div>
+        <div class="mlab-action-group">
+          <a href="tel:0946469720" class="mlab-btn-outline">
+            📞 Tư vấn: 0946.469.720
+          </a>
+          <button type="button" class="mlab-btn-enroll" onclick="openMlabEnrollModal(selectedInventorTierKey)">
+            ✍️ Ghi Danh & Thanh Toán QR
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== KHÓA HỌC 2: IoT CHO SINH VIÊN KỸ THUẬT ==================== -->
   <div class="mlab-course-card">
     <div class="mlab-course-header">
       <div class="mlab-course-tag-row">
@@ -719,194 +965,6 @@ author_profile: true
       </div>
     </div>
   </div>
-
-  <!-- ==================== KHÓA HỌC 2: THIẾT KẾ CƠ KHÍ BẰNG AUTODESK INVENTOR ==================== -->
-  <div class="mlab-course-card">
-    <div class="mlab-course-header">
-      <div class="mlab-course-tag-row">
-        <span class="mlab-badge mlab-badge-mode">🌐 Học Online & Offline tại MLAB</span>
-        <span class="mlab-badge mlab-badge-discount">🔥 Học 1 Khóa – Hỗ Trợ Trọn Đời</span>
-      </div>
-      <div class="mlab-course-tag-row">
-        <span class="mlab-badge mlab-badge-cert">🎓 Lịch học linh hoạt theo học viên</span>
-        <button type="button" class="mlab-btn-enroll-top" onclick="openMlabEnrollModal(selectedInventorTierKey)">
-          ✍️ Ghi Danh & Thanh Toán QR
-        </button>
-      </div>
-      <h2 class="mlab-course-title">THIẾT KẾ CƠ KHÍ & MÔ PHỎNG 3D BẰNG AUTODESK INVENTOR</h2>
-      <p class="mlab-course-subtitle">⚙️ Đào tạo từ Căn Bản &rarr; Nâng Cao &rarr; Chuyên Đề Chuyên Sâu (CAD / CAM / CAE / Khuôn mẫu / MATLAB Simscape)</p>
-      <div class="mlab-course-meta-bar">
-        <span>👨‍🏫 <strong>Giảng viên:</strong> ThS. Đường Khánh Sơn (MLAB)</span>
-        <span>📞 <strong>Hotline / Zalo:</strong> 0946.469.720</span>
-        <span>🛠️ <strong>Hình thức:</strong> Vừa học vừa thực hành 100% trên máy</span>
-        <span>♾️ <strong>Quyền lợi:</strong> Hỗ trợ cài đặt & đồng hành trọn đời</span>
-      </div>
-    </div>
-
-    <div class="mlab-course-body">
-      <div class="mlab-course-intro">
-        <strong>Bạn đang gặp phải những trăn trở này?</strong>
-        <ul style="margin: 8px 0 12px 0; padding-left: 20px; color: #334155;">
-          <li>👨‍🎓 Sắp tốt nghiệp đại học nhưng vẫn <strong>chưa thành thạo phần mềm thiết kế 3D</strong>, chưa đọc hiểu bản vẽ kỹ thuật hay tự thiết kế được sản phẩm hoàn chỉnh?</li>
-          <li>📌 Sắp báo cáo đồ án chuyên ngành, đồ án thiết kế máy, luận văn tốt nghiệp nhưng vẫn chưa dựng và mô phỏng được mô hình cơ khí trên máy tính?</li>
-          <li>💼 Kỹ năng vẽ và thiết kế 3D còn yếu khiến hiệu suất công việc chưa cao, mất nhiều cơ hội thăng tiến?</li>
-          <li>✏️ Muốn học <strong>VẼ & THIẾT KẾ CƠ KHÍ 3D</strong> bài bản nhưng không biết bắt đầu từ đâu và học như thế nào cho hiệu quả?</li>
-        </ul>
-        👉 <strong>Các khóa học Thiết kế Cơ khí trên phần mềm Autodesk Inventor tại MLAB</strong> sẽ giúp bạn giải quyết triệt để tất cả các vấn đề đó với bài giảng chi tiết, trực quan, dễ hiểu – vừa học vừa thực hành trực tiếp trên máy tính, nâng cao kỹ năng ngay sau từng buổi học!
-      </div>
-
-      <div class="mlab-project-tags">
-        <strong>💡 Điểm khác biệt của khóa học Inventor tại MLAB:</strong><br>
-        Nhận học viên mỗi ngày – Lịch học sắp xếp linh hoạt theo thời gian của học viên (Sáng / Chiều / Tối, Online hoặc Offline). Lộ trình đào tạo toàn diện từ <em>Thiết kế chi tiết 3D, Lắp ráp cơ cấu máy, Kim loại tấm, Khung dầm, Đường ống & Dây dẫn, Thiết kế khuôn nhựa, Phân tích sức bền hữu hạn (FEA/Nastran), Gia công CNC (HSM Inventor) đến xuất mô hình sang MATLAB/Simscape để mô phỏng động lực học và thiết kế bộ điều khiển Robot!</em>
-      </div>
-
-      <div class="mlab-grid-2">
-        <div class="mlab-info-box">
-          <h4>🎯 Sau khóa học bạn sẽ làm chủ 13 kỹ năng:</h4>
-          <ul>
-            <li>Đọc hiểu và phân tích thành thạo bản vẽ kỹ thuật 2D/3D.</li>
-            <li>Xây dựng chi tiết (Part Modeling) và mô hình 3D phức tạp.</li>
-            <li>Mô phỏng lắp ráp (Assembly) các chi tiết thành cơ cấu, máy hoàn chỉnh.</li>
-            <li>Khai thác thư viện chi tiết máy tiêu chuẩn đồ sộ (Content Center & Design Accelerator: bánh răng, trục, ổ lăn, đai, xích...).</li>
-            <li>Mô phỏng động học và động lực học cơ cấu – máy (Dynamic Simulation).</li>
-            <li>Phân tích sức bền (Stress Analysis / Nastran CAE), tối ưu hóa kết cấu sản phẩm.</li>
-            <li>Thành thạo tính toán, thiết kế và trải phẳng chi tiết kim loại tấm (Sheet Metal).</li>
-          </ul>
-        </div>
-        <div class="mlab-info-box">
-          <h4>🚀 Kỹ năng Chuyên sâu & Tích hợp Cơ điện tử:</h4>
-          <ul>
-            <li>Thành thạo thiết kế hệ thống đường ống và dây dẫn điện (Tube & Pipe, Cable & Harness).</li>
-            <li>Thành thạo thiết kế sản phẩm nhựa và tách khuôn ép nhựa (Mold Design).</li>
-            <li>Render hình ảnh thực tế (Inventor Studio) và tạo video trình diễn nguyên lý hoạt động của máy móc, dây chuyền sản xuất.</li>
-            <li><strong>Đặc biệt:</strong> Xuất mô hình 3D liên kết trực tiếp với <strong>MATLAB / Simulink (Simscape Multibody)</strong> để mô phỏng và thiết kế bộ điều khiển tự động, Robot.</li>
-            <li>Liên kết đa nền tảng CAD/CAM/CAE, lập trình gia công CNC với <strong>Inventor HSM / CAM</strong>.</li>
-            <li>Xuất file chuẩn in 3D (.STL/.OBJ), tạo mẫu nhanh và gia công thực tế trên máy CNC.</li>
-          </ul>
-        </div>
-      </div>
-
-      <details class="mlab-curriculum-details" open>
-        <summary>
-          <span>🖼️ Thư viện Mô hình 3D, Mô phỏng CAE & Sản phẩm thực tế của Khóa học Inventor</span>
-          <span style="color: #0b8a42; font-size: 0.82rem;">Nhấn để thu gọn / mở rộng ▼</span>
-        </summary>
-        <div class="mlab-curriculum-content" style="max-height: none;">
-          <div class="mlab-gallery-grid">
-            <div class="mlab-gallery-item">
-              <img src="{{ site.baseurl }}/assets/images/inventor/inventor-overview.jpg" alt="Hệ sinh thái thiết kế Autodesk Inventor">
-              <div class="mlab-gallery-caption">Hệ sinh thái Thiết kế & Mô phỏng toàn diện trên Autodesk Inventor</div>
-            </div>
-            <div class="mlab-gallery-item">
-              <img src="{{ site.baseurl }}/assets/images/inventor/inventor-gearbox.jpg" alt="Thiết kế hộp giảm tốc và chi tiết máy">
-              <div class="mlab-gallery-caption">Thiết kế Hộp giảm tốc & Thư viện chi tiết máy tiêu chuẩn</div>
-            </div>
-            <div class="mlab-gallery-item">
-              <img src="{{ site.baseurl }}/assets/images/inventor/inventor-mold.jpg" alt="Thiết kế sản phẩm nhựa và làm khuôn">
-              <div class="mlab-gallery-caption">Thiết kế sản phẩm nhựa & Tách khuôn ép nhựa (Mold Design)</div>
-            </div>
-            <div class="mlab-gallery-item">
-              <img src="{{ site.baseurl }}/assets/images/inventor/inventor-cae.jpg" alt="Phân tích sức bền và mô phỏng CAE">
-              <div class="mlab-gallery-caption">Phân tích ứng suất, biến dạng, tần số & nhiệt (CAE / Nastran)</div>
-            </div>
-            <div class="mlab-gallery-item">
-              <img src="{{ site.baseurl }}/assets/images/inventor/inventor-conveyor.jpg" alt="Thiết kế hệ thống băng tải tự động">
-              <div class="mlab-gallery-caption">Thiết kế máy & Hệ thống băng tải tự động hóa công nghiệp</div>
-            </div>
-            <div class="mlab-gallery-item">
-              <img src="{{ site.baseurl }}/assets/images/inventor/inventor-robot-scara.jpg" alt="Thiết kế Robot song song liên kết MATLAB">
-              <div class="mlab-gallery-caption">Thiết kế Robot song song & Liên kết mô phỏng điều khiển MATLAB</div>
-            </div>
-            <div class="mlab-gallery-item">
-              <img src="{{ site.baseurl }}/assets/images/inventor/inventor-robot-omni.jpg" alt="Thiết kế Robot di động đa hướng Omni">
-              <div class="mlab-gallery-caption">Thiết kế mô hình Mobile Robot đa hướng phục vụ Đồ án & NCKH</div>
-            </div>
-            <div class="mlab-gallery-item">
-              <img src="{{ site.baseurl }}/assets/images/inventor/inventor-car-render.jpg" alt="Thiết kế Surface nâng cao và Render Inventor Studio">
-              <div class="mlab-gallery-caption">Thiết kế bề mặt phức tạp (Surfacing) & Render Inventor Studio</div>
-            </div>
-          </div>
-        </div>
-      </details>
-
-      <details class="mlab-curriculum-details">
-        <summary>
-          <span>📋 Xem chi tiết 3 Cấp độ Đào tạo (Căn Bản &rarr; Nâng Cao &rarr; Chuyên Đề Chuyên Sâu)</span>
-          <span style="color: #0b8a42; font-size: 0.82rem;">Nhấn để mở rộng ▼</span>
-        </summary>
-        <div class="mlab-curriculum-content">
-          <ol style="margin-bottom: 0; padding-left: 20px;">
-            <li style="margin-bottom: 10px;">
-              <strong>Cấp độ 1 – Inventor Căn Bản (Nền tảng vững chắc):</strong>
-              Làm quen giao diện, tư duy dựng hình tham số; Thiết lập ràng buộc hình học & kích thước chuẩn trong 2D Sketch; Các lệnh tạo khối 3D cơ bản và nâng cao (Extrude, Revolve, Sweep, Loft, Coil, Rib, Shell, Pattern...); Lắp ráp cụm chi tiết (Assembly Constraints & Joints); Xuất bản vẽ kỹ thuật 2D đúng tiêu chuẩn TCVN/ISO (Drawing, mặt cắt, trích xuất BOM tự động).
-            </li>
-            <li style="margin-bottom: 10px;">
-              <strong>Cấp độ 2 – Inventor Nâng Cao (Thiết kế máy & Mô phỏng):</strong>
-              Thiết kế kim loại tấm (Sheet Metal) và xuất phôi cắt Laser/CNC; Thiết kế khung giàn thép định hình (Frame Generator); Tính toán và thiết kế truyền động cơ khí tự động (Trục, ổ bi, bánh răng trụ/côn/trục vít, bộ truyền đai, xích, cam, lò xo); Mô phỏng chuyển động, phân tích động học – động lực học (Dynamic Simulation) và kiểm nghiệm bền phần tử hữu hạn (Stress Analysis / FEA); Render ảnh và xuất video mô phỏng lắp ráp/vận hành máy (Presentation & Studio).
-            </li>
-            <li>
-              <strong>Cấp độ 3 – Chuyên Đề Chuyên Sâu (Đồ án, Khuôn mẫu, CAD/CAM/MATLAB):</strong>
-              Thiết kế mặt cong phức tạp (Surface & Freeform Modeling); Thiết kế khuôn ép nhựa (Plastic Part & Mold Design); Thiết kế hệ thống đường ống công nghiệp và đi dây điện (Tube & Pipe, Cable & Harness); Lập trình gia công phay/tiện CNC với Inventor CAM (HSM); Xuất mô hình cơ khí và ma trận quán tính sang <strong>MATLAB Simscape Multibody</strong> để mô phỏng điều khiển hệ thống Cơ điện tử & Robot; Xuất file chuẩn in 3D tạo mẫu nhanh.
-            </li>
-          </ol>
-        </div>
-      </details>
-
-      <div class="mlab-course-footer">
-        <div style="width: 100%; margin-bottom: 6px;">
-          <div style="font-size: 0.85rem; color: #063d1e; font-weight: 800; text-transform: uppercase; margin-bottom: 4px;">
-            👇 CHỌN KHÓA HỌC INVENTOR BẠN MUỐN ĐĂNG KÝ (Nhấn chọn khóa học trước khi bấm Ghi danh):
-          </div>
-          <div class="mlab-tier-selector">
-            <button type="button" id="tierBtn_INV_BASIC" class="mlab-tier-btn active" onclick="selectInventorTier('INV_BASIC')">
-              <div>
-                <span class="mlab-tier-badge" style="background: #0b8a42;">Khóa 1 • Căn Bản</span>
-                <div class="mlab-tier-title">Khóa Cơ Bản: Thiết Kế & Lắp Ráp 3D Inventor</div>
-                <div class="mlab-tier-desc">Đọc bản vẽ, Sketch 2D, Dựng khối 3D, Lắp ráp cơ cấu máy & Xuất bản vẽ tiêu chuẩn.</div>
-              </div>
-              <div class="mlab-tier-price">1.500.000đ</div>
-            </button>
-
-            <button type="button" id="tierBtn_INV_CAM" class="mlab-tier-btn" onclick="selectInventorTier('INV_CAM')">
-              <div>
-                <span class="mlab-tier-badge" style="background: #3b6ca8;">Khóa 2 • Nâng Cao</span>
-                <div class="mlab-tier-title">Khóa Nâng Cao: Gia Công CAM, CNC & Mô Phỏng</div>
-                <div class="mlab-tier-desc">Kim loại tấm, Truyền động, Mô phỏng động lực học, Sức bền CAE & Lập trình gia công CAM/CNC.</div>
-              </div>
-              <div class="mlab-tier-price">2.500.000đ</div>
-            </button>
-
-            <button type="button" id="tierBtn_INV_MOLD" class="mlab-tier-btn" onclick="selectInventorTier('INV_MOLD')">
-              <div>
-                <span class="mlab-tier-badge" style="background: #9d0c4c;">Khóa 3 • Chuyên Sâu</span>
-                <div class="mlab-tier-title">Khóa Chuyên Sâu: Thiết Kế Khuôn Mẫu & Sản Phẩm Nhựa</div>
-                <div class="mlab-tier-desc">Thiết kế Surface nâng cao, Sản phẩm nhựa, Tách khuôn ép nhựa hoàn chỉnh & Liên kết MATLAB.</div>
-              </div>
-              <div class="mlab-tier-price">4.500.000đ</div>
-            </button>
-          </div>
-        </div>
-
-        <div>
-          <div id="inventorSelectedLabel" style="font-size: 0.8rem; color: #076b33; font-weight: 700; text-transform: uppercase;">
-            Đang chọn: Khóa Cơ Bản – Thiết Kế & Lắp Ráp 3D Inventor
-          </div>
-          <div class="mlab-price-box">
-            <span id="inventorSelectedPrice" class="mlab-price-current">1.500.000đ</span>
-            <span style="font-size: 0.82rem; color: #0b8a42; font-weight: 700;">(Học 1 khóa – Hỗ trợ trọn đời)</span>
-          </div>
-        </div>
-        <div class="mlab-action-group">
-          <a href="tel:0946469720" class="mlab-btn-outline">
-            📞 Tư vấn: 0946.469.720
-          </a>
-          <button type="button" class="mlab-btn-enroll" onclick="openMlabEnrollModal(selectedInventorTierKey)">
-            ✍️ Ghi Danh & Thanh Toán QR
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
 
 <!-- ==================== MODAL GHI DANH & MÃ VIETQR ĐỘNG ==================== -->
@@ -930,10 +988,10 @@ author_profile: true
           <div class="mlab-form-group">
             <label for="mlabCourseSelect">Khóa học đăng ký <span style="color:#dc2626">*</span></label>
             <select id="mlabCourseSelect" class="mlab-form-control" onchange="updateCourseSelectionUI()" required>
-              <option value="IOT">IoT CHO SINH VIÊN KỸ THUẬT (Học phí: 1.500.000đ)</option>
               <option value="INV_BASIC">INVENTOR CƠ BẢN: THIẾT KẾ & LẮP RÁP 3D (Học phí: 1.500.000đ)</option>
               <option value="INV_CAM">INVENTOR NÂNG CAO: GIA CÔNG CAM, CNC & MÔ PHỎNG (Học phí: 2.500.000đ)</option>
               <option value="INV_MOLD">INVENTOR CHUYÊN SÂU: THIẾT KẾ KHUÔN MẪU & SẢN PHẨM NHỰA (Học phí: 4.500.000đ)</option>
+              <option value="IOT">IoT CHO SINH VIÊN KỸ THUẬT (Học phí: 1.500.000đ)</option>
             </select>
           </div>
 
