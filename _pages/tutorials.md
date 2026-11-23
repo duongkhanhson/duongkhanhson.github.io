@@ -32,6 +32,41 @@ author_profile: true
     box-shadow: 0 10px 25px -5px rgba(11, 138, 66, 0.1), 0 4px 10px -2px rgba(11, 138, 66, 0.05);
     overflow: hidden;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-bottom: 28px;
+  }
+  .mlab-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
+    gap: 12px;
+    margin-top: 10px;
+  }
+  .mlab-gallery-item {
+    background: #ffffff;
+    border: 1px solid #d1e7dd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+  }
+  .mlab-gallery-item img {
+    width: 100%;
+    height: 135px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 1px solid #eef8f2;
+  }
+  .mlab-gallery-caption {
+    padding: 8px 10px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #063d1e;
+    text-align: center;
+    background: #f8faf9;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .mlab-course-header {
     background: linear-gradient(135deg, #063d1e 0%, #076b33 55%, #0b8a42 100%);
@@ -470,7 +505,7 @@ author_profile: true
       </div>
       <div class="mlab-course-tag-row">
         <span class="mlab-badge mlab-badge-cert">🎓 Cấp chứng nhận hoàn thành</span>
-        <button type="button" class="mlab-btn-enroll-top" onclick="openMlabEnrollModal()">
+        <button type="button" class="mlab-btn-enroll-top" onclick="openMlabEnrollModal('IOT')">
           ✍️ Ghi Danh & Thanh Toán QR
         </button>
       </div>
@@ -571,7 +606,160 @@ author_profile: true
           <a href="https://emechatronix.edubit.vn/iot-cho-sinh-vien-ky-thuat" target="_blank" rel="noopener" class="mlab-btn-outline">
             🔗 Xem trên Edubit
           </a>
-          <button type="button" class="mlab-btn-enroll" onclick="openMlabEnrollModal()">
+          <button type="button" class="mlab-btn-enroll" onclick="openMlabEnrollModal('IOT')">
+            ✍️ Ghi Danh & Thanh Toán QR
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== KHÓA HỌC 2: THIẾT KẾ CƠ KHÍ BẰNG AUTODESK INVENTOR ==================== -->
+  <div class="mlab-course-card">
+    <div class="mlab-course-header">
+      <div class="mlab-course-tag-row">
+        <span class="mlab-badge mlab-badge-mode">🌐 Học Online & Offline tại MLAB</span>
+        <span class="mlab-badge mlab-badge-discount">🔥 Học 1 Khóa – Hỗ Trợ Trọn Đời</span>
+      </div>
+      <div class="mlab-course-tag-row">
+        <span class="mlab-badge mlab-badge-cert">🎓 Lịch học linh hoạt theo học viên</span>
+        <button type="button" class="mlab-btn-enroll-top" onclick="openMlabEnrollModal('INVENTOR')">
+          ✍️ Ghi Danh & Thanh Toán QR
+        </button>
+      </div>
+      <h2 class="mlab-course-title">THIẾT KẾ CƠ KHÍ & MÔ PHỎNG 3D BẰNG AUTODESK INVENTOR</h2>
+      <p class="mlab-course-subtitle">⚙️ Đào tạo từ Căn Bản &rarr; Nâng Cao &rarr; Chuyên Đề Chuyên Sâu (CAD / CAM / CAE / Khuôn mẫu / MATLAB Simscape)</p>
+      <div class="mlab-course-meta-bar">
+        <span>👨‍🏫 <strong>Giảng viên:</strong> ThS. Đường Khánh Sơn (MLAB)</span>
+        <span>📞 <strong>Hotline / Zalo:</strong> 0946.469.720</span>
+        <span>🛠️ <strong>Hình thức:</strong> Vừa học vừa thực hành 100% trên máy</span>
+        <span>♾️ <strong>Quyền lợi:</strong> Hỗ trợ cài đặt & đồng hành trọn đời</span>
+      </div>
+    </div>
+
+    <div class="mlab-course-body">
+      <div class="mlab-course-intro">
+        <strong>Bạn đang gặp phải những trăn trở này?</strong>
+        <ul style="margin: 8px 0 12px 0; padding-left: 20px; color: #334155;">
+          <li>👨‍🎓 Sắp tốt nghiệp đại học nhưng vẫn <strong>chưa thành thạo phần mềm thiết kế 3D</strong>, chưa đọc hiểu bản vẽ kỹ thuật hay tự thiết kế được sản phẩm hoàn chỉnh?</li>
+          <li>📌 Sắp báo cáo đồ án chuyên ngành, đồ án thiết kế máy, luận văn tốt nghiệp nhưng vẫn chưa dựng và mô phỏng được mô hình cơ khí trên máy tính?</li>
+          <li>💼 Kỹ năng vẽ và thiết kế 3D còn yếu khiến hiệu suất công việc chưa cao, mất nhiều cơ hội thăng tiến?</li>
+          <li>✏️ Muốn học <strong>VẼ & THIẾT KẾ CƠ KHÍ 3D</strong> bài bản nhưng không biết bắt đầu từ đâu và học như thế nào cho hiệu quả?</li>
+        </ul>
+        👉 <strong>Các khóa học Thiết kế Cơ khí trên phần mềm Autodesk Inventor tại MLAB</strong> sẽ giúp bạn giải quyết triệt để tất cả các vấn đề đó với bài giảng chi tiết, trực quan, dễ hiểu – vừa học vừa thực hành trực tiếp trên máy tính, nâng cao kỹ năng ngay sau từng buổi học!
+      </div>
+
+      <div class="mlab-project-tags">
+        <strong>💡 Điểm khác biệt của khóa học Inventor tại MLAB:</strong><br>
+        Nhận học viên mỗi ngày – Lịch học sắp xếp linh hoạt theo thời gian của học viên (Sáng / Chiều / Tối, Online hoặc Offline). Lộ trình đào tạo toàn diện từ <em>Thiết kế chi tiết 3D, Lắp ráp cơ cấu máy, Kim loại tấm, Khung dầm, Đường ống & Dây dẫn, Thiết kế khuôn nhựa, Phân tích sức bền hữu hạn (FEA/Nastran), Gia công CNC (HSM Inventor) đến xuất mô hình sang MATLAB/Simscape để mô phỏng động lực học và thiết kế bộ điều khiển Robot!</em>
+      </div>
+
+      <div class="mlab-grid-2">
+        <div class="mlab-info-box">
+          <h4>🎯 Sau khóa học bạn sẽ làm chủ 13 kỹ năng:</h4>
+          <ul>
+            <li>Đọc hiểu và phân tích thành thạo bản vẽ kỹ thuật 2D/3D.</li>
+            <li>Xây dựng chi tiết (Part Modeling) và mô hình 3D phức tạp.</li>
+            <li>Mô phỏng lắp ráp (Assembly) các chi tiết thành cơ cấu, máy hoàn chỉnh.</li>
+            <li>Khai thác thư viện chi tiết máy tiêu chuẩn đồ sộ (Content Center & Design Accelerator: bánh răng, trục, ổ lăn, đai, xích...).</li>
+            <li>Mô phỏng động học và động lực học cơ cấu – máy (Dynamic Simulation).</li>
+            <li>Phân tích sức bền (Stress Analysis / Nastran CAE), tối ưu hóa kết cấu sản phẩm.</li>
+            <li>Thành thạo tính toán, thiết kế và trải phẳng chi tiết kim loại tấm (Sheet Metal).</li>
+          </ul>
+        </div>
+        <div class="mlab-info-box">
+          <h4>🚀 Kỹ năng Chuyên sâu & Tích hợp Cơ điện tử:</h4>
+          <ul>
+            <li>Thành thạo thiết kế hệ thống đường ống và dây dẫn điện (Tube & Pipe, Cable & Harness).</li>
+            <li>Thành thạo thiết kế sản phẩm nhựa và tách khuôn ép nhựa (Mold Design).</li>
+            <li>Render hình ảnh thực tế (Inventor Studio) và tạo video trình diễn nguyên lý hoạt động của máy móc, dây chuyền sản xuất.</li>
+            <li><strong>Đặc biệt:</strong> Xuất mô hình 3D liên kết trực tiếp với <strong>MATLAB / Simulink (Simscape Multibody)</strong> để mô phỏng và thiết kế bộ điều khiển tự động, Robot.</li>
+            <li>Liên kết đa nền tảng CAD/CAM/CAE, lập trình gia công CNC với <strong>Inventor HSM / CAM</strong>.</li>
+            <li>Xuất file chuẩn in 3D (.STL/.OBJ), tạo mẫu nhanh và gia công thực tế trên máy CNC.</li>
+          </ul>
+        </div>
+      </div>
+
+      <details class="mlab-curriculum-details" open>
+        <summary>
+          <span>🖼️ Thư viện Mô hình 3D, Mô phỏng CAE & Sản phẩm thực tế của Khóa học Inventor</span>
+          <span style="color: #0b8a42; font-size: 0.82rem;">Nhấn để thu gọn / mở rộng ▼</span>
+        </summary>
+        <div class="mlab-curriculum-content" style="max-height: none;">
+          <div class="mlab-gallery-grid">
+            <div class="mlab-gallery-item">
+              <img src="{{ site.baseurl }}/assets/images/inventor/inventor-overview.jpg" alt="Hệ sinh thái thiết kế Autodesk Inventor">
+              <div class="mlab-gallery-caption">Hệ sinh thái Thiết kế & Mô phỏng toàn diện trên Autodesk Inventor</div>
+            </div>
+            <div class="mlab-gallery-item">
+              <img src="{{ site.baseurl }}/assets/images/inventor/inventor-gearbox.jpg" alt="Thiết kế hộp giảm tốc và chi tiết máy">
+              <div class="mlab-gallery-caption">Thiết kế Hộp giảm tốc & Thư viện chi tiết máy tiêu chuẩn</div>
+            </div>
+            <div class="mlab-gallery-item">
+              <img src="{{ site.baseurl }}/assets/images/inventor/inventor-mold.jpg" alt="Thiết kế sản phẩm nhựa và làm khuôn">
+              <div class="mlab-gallery-caption">Thiết kế sản phẩm nhựa & Tách khuôn ép nhựa (Mold Design)</div>
+            </div>
+            <div class="mlab-gallery-item">
+              <img src="{{ site.baseurl }}/assets/images/inventor/inventor-cae.jpg" alt="Phân tích sức bền và mô phỏng CAE">
+              <div class="mlab-gallery-caption">Phân tích ứng suất, biến dạng, tần số & nhiệt (CAE / Nastran)</div>
+            </div>
+            <div class="mlab-gallery-item">
+              <img src="{{ site.baseurl }}/assets/images/inventor/inventor-conveyor.jpg" alt="Thiết kế hệ thống băng tải tự động">
+              <div class="mlab-gallery-caption">Thiết kế máy & Hệ thống băng tải tự động hóa công nghiệp</div>
+            </div>
+            <div class="mlab-gallery-item">
+              <img src="{{ site.baseurl }}/assets/images/inventor/inventor-robot-scara.jpg" alt="Thiết kế Robot song song liên kết MATLAB">
+              <div class="mlab-gallery-caption">Thiết kế Robot song song & Liên kết mô phỏng điều khiển MATLAB</div>
+            </div>
+            <div class="mlab-gallery-item">
+              <img src="{{ site.baseurl }}/assets/images/inventor/inventor-robot-omni.jpg" alt="Thiết kế Robot di động đa hướng Omni">
+              <div class="mlab-gallery-caption">Thiết kế mô hình Mobile Robot đa hướng phục vụ Đồ án & NCKH</div>
+            </div>
+            <div class="mlab-gallery-item">
+              <img src="{{ site.baseurl }}/assets/images/inventor/inventor-car-render.jpg" alt="Thiết kế Surface nâng cao và Render Inventor Studio">
+              <div class="mlab-gallery-caption">Thiết kế bề mặt phức tạp (Surfacing) & Render Inventor Studio</div>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="mlab-curriculum-details">
+        <summary>
+          <span>📋 Xem chi tiết 3 Cấp độ Đào tạo (Căn Bản &rarr; Nâng Cao &rarr; Chuyên Đề Chuyên Sâu)</span>
+          <span style="color: #0b8a42; font-size: 0.82rem;">Nhấn để mở rộng ▼</span>
+        </summary>
+        <div class="mlab-curriculum-content">
+          <ol style="margin-bottom: 0; padding-left: 20px;">
+            <li style="margin-bottom: 10px;">
+              <strong>Cấp độ 1 – Inventor Căn Bản (Nền tảng vững chắc):</strong>
+              Làm quen giao diện, tư duy dựng hình tham số; Thiết lập ràng buộc hình học & kích thước chuẩn trong 2D Sketch; Các lệnh tạo khối 3D cơ bản và nâng cao (Extrude, Revolve, Sweep, Loft, Coil, Rib, Shell, Pattern...); Lắp ráp cụm chi tiết (Assembly Constraints & Joints); Xuất bản vẽ kỹ thuật 2D đúng tiêu chuẩn TCVN/ISO (Drawing, mặt cắt, trích xuất BOM tự động).
+            </li>
+            <li style="margin-bottom: 10px;">
+              <strong>Cấp độ 2 – Inventor Nâng Cao (Thiết kế máy & Mô phỏng):</strong>
+              Thiết kế kim loại tấm (Sheet Metal) và xuất phôi cắt Laser/CNC; Thiết kế khung giàn thép định hình (Frame Generator); Tính toán và thiết kế truyền động cơ khí tự động (Trục, ổ bi, bánh răng trụ/côn/trục vít, bộ truyền đai, xích, cam, lò xo); Mô phỏng chuyển động, phân tích động học – động lực học (Dynamic Simulation) và kiểm nghiệm bền phần tử hữu hạn (Stress Analysis / FEA); Render ảnh và xuất video mô phỏng lắp ráp/vận hành máy (Presentation & Studio).
+            </li>
+            <li>
+              <strong>Cấp độ 3 – Chuyên Đề Chuyên Sâu (Đồ án, Khuôn mẫu, CAD/CAM/MATLAB):</strong>
+              Thiết kế mặt cong phức tạp (Surface & Freeform Modeling); Thiết kế khuôn ép nhựa (Plastic Part & Mold Design); Thiết kế hệ thống đường ống công nghiệp và đi dây điện (Tube & Pipe, Cable & Harness); Lập trình gia công phay/tiện CNC với Inventor CAM (HSM); Xuất mô hình cơ khí và ma trận quán tính sang <strong>MATLAB Simscape Multibody</strong> để mô phỏng điều khiển hệ thống Cơ điện tử & Robot; Xuất file chuẩn in 3D tạo mẫu nhanh.
+            </li>
+          </ol>
+        </div>
+      </details>
+
+      <div class="mlab-course-footer">
+        <div>
+          <div style="font-size: 0.78rem; color: #64748b; font-weight: 600; text-transform: uppercase;">Học phí khóa học (Học 1 khóa - Hỗ trợ trọn đời)</div>
+          <div class="mlab-price-box">
+            <span class="mlab-price-current">3.000đ</span>
+            <span class="mlab-price-old">2.500.000đ</span>
+            <span style="font-size: 0.8rem; color: #0b8a42; font-weight: 700;">(Giá chạy thử nghiệm QR)</span>
+          </div>
+        </div>
+        <div class="mlab-action-group">
+          <a href="tel:0946469720" class="mlab-btn-outline">
+            📞 Tư vấn: 0946.469.720
+          </a>
+          <button type="button" class="mlab-btn-enroll" onclick="openMlabEnrollModal('INVENTOR')">
             ✍️ Ghi Danh & Thanh Toán QR
           </button>
         </div>
@@ -584,7 +772,7 @@ author_profile: true
 <div id="mlabEnrollModal" class="mlab-modal-overlay" onclick="if(event.target===this) closeMlabEnrollModal()">
   <div class="mlab-modal">
     <div class="mlab-modal-header">
-      <h3>🎓 Ghi Danh: IoT Cho Sinh Viên Kỹ Thuật</h3>
+      <h3 id="mlabModalTitle">🎓 Ghi Danh Khóa Học Ngắn Hạn - MLAB</h3>
       <button type="button" class="mlab-modal-close" onclick="closeMlabEnrollModal()" aria-label="Đóng">&times;</button>
     </div>
 
@@ -598,6 +786,14 @@ author_profile: true
       <!-- BƯỚC 1: ĐIỀN THÔNG TIN -->
       <div id="mlabStep1">
         <form id="mlabInfoForm" onsubmit="proceedToVietQR(event)">
+          <div class="mlab-form-group">
+            <label for="mlabCourseSelect">Khóa học đăng ký <span style="color:#dc2626">*</span></label>
+            <select id="mlabCourseSelect" class="mlab-form-control" onchange="updateCourseSelectionUI()" required>
+              <option value="IOT">IoT CHO SINH VIÊN KỸ THUẬT (Học phí: 3.000đ)</option>
+              <option value="INVENTOR">THIẾT KẾ CƠ KHÍ & MÔ PHỎNG 3D BẰNG AUTODESK INVENTOR (Học phí: 3.000đ)</option>
+            </select>
+          </div>
+
           <div class="mlab-form-group">
             <label for="mlabFullName">Họ và tên học viên <span style="color:#dc2626">*</span></label>
             <input type="text" id="mlabFullName" class="mlab-form-control" placeholder="Ví dụ: Nguyễn Văn A" required>
@@ -698,15 +894,40 @@ author_profile: true
 </div>
 
 <script>
-  // Cấu hình thông tin thanh toán VietQR động & Email nhận thông báo
+  // Cấu hình danh sách khóa học & thông tin thanh toán VietQR động
+  const MLAB_COURSES = {
+    IOT: {
+      code: "IOT",
+      name: "IoT CHO SINH VIÊN KỸ THUẬT",
+      amount: 3000,
+      feeText: "3.000 VNĐ",
+      notePlaceholder: "Ví dụ: Em muốn làm đồ án Nhà thông minh ESP32...",
+      modes: [
+        "Kết hợp Online & Offline (3.000đ)",
+        "Học Online qua hệ thống (3.000đ)",
+        "Học Offline thực hành tại MLAB (3.000đ)"
+      ]
+    },
+    INVENTOR: {
+      code: "INV",
+      name: "THIẾT KẾ CƠ KHÍ & MÔ PHỎNG 3D BẰNG AUTODESK INVENTOR",
+      amount: 3000,
+      feeText: "3.000 VNĐ",
+      notePlaceholder: "Ví dụ: Đăng ký khóa Căn bản / Nâng cao / Chuyên sâu, lịch học buổi tối...",
+      modes: [
+        "Khóa Căn bản -> Nâng cao (Online / Offline - 3.000đ)",
+        "Khóa Chuyên đề Chuyên sâu CAD/CAM/CAE/Khuôn/MATLAB (3.000đ)",
+        "Học Kèm thực hành trực tiếp theo lịch cá nhân (3.000đ)"
+      ]
+    }
+  };
+
   const MLAB_PAYMENT_CONFIG = {
     bankId: "ICB", // Mã ngân hàng VietinBank chuẩn Napas VietQR
     accountNo: "107005679531",
     accountName: "DUONG KHANH SON",
-    amount: 3000,
-    courseName: "IoT CHO SINH VIÊN KỸ THUẬT",
     notifyEmail: "sonduongkhanh@gmail.com",
-    // URL Web App của Google Apps Script để tự động ghi vào Google Sheets (nếu đã dán URL)
+    // URL Web App của Google Apps Script để tự động ghi vào Google Sheets
     googleScriptUrl: "https://script.google.com/macros/s/AKfycbzT-V4IbA9lEHcce9cTtjPFRhoMcJ9NJDoZn_tmJVcCNpATbHXEKT5QtS5tUvHNbSjBWw/exec"
   };
 
@@ -723,7 +944,29 @@ author_profile: true
       .toUpperCase();
   }
 
-  function openMlabEnrollModal() {
+  function updateCourseSelectionUI() {
+    const courseKey = document.getElementById("mlabCourseSelect").value || "IOT";
+    const course = MLAB_COURSES[courseKey] || MLAB_COURSES.IOT;
+
+    document.getElementById("mlabModalTitle").textContent = "🎓 Ghi Danh: " + course.name;
+    document.getElementById("mlabNote").placeholder = course.notePlaceholder;
+
+    const modeSelect = document.getElementById("mlabMode");
+    modeSelect.innerHTML = "";
+    course.modes.forEach(function(m) {
+      const opt = document.createElement("option");
+      opt.value = m;
+      opt.textContent = m;
+      modeSelect.appendChild(opt);
+    });
+  }
+
+  function openMlabEnrollModal(courseKey) {
+    const selectEl = document.getElementById("mlabCourseSelect");
+    if (courseKey && MLAB_COURSES[courseKey]) {
+      selectEl.value = courseKey;
+    }
+    updateCourseSelectionUI();
     document.getElementById("mlabEnrollModal").classList.add("active");
     backToStep1();
   }
@@ -744,6 +987,9 @@ author_profile: true
 
   function proceedToVietQR(event) {
     event.preventDefault();
+    const courseKey = document.getElementById("mlabCourseSelect").value || "IOT";
+    const course = MLAB_COURSES[courseKey] || MLAB_COURSES.IOT;
+
     const fullName = document.getElementById("mlabFullName").value.trim();
     const phone = document.getElementById("mlabPhone").value.replace(/\s+/g, "");
     const email = document.getElementById("mlabEmail").value.trim();
@@ -751,9 +997,9 @@ author_profile: true
     const learningMode = document.getElementById("mlabMode").value;
     const note = document.getElementById("mlabNote").value.trim();
 
-    // Tạo mã nội dung chuyển khoản ngắn gọn, không dấu: IOT <SĐT> <TÊN>
+    // Tạo mã nội dung chuyển khoản ngắn gọn, không dấu: <IOT|INV> <SĐT> <TÊN>
     const cleanName = removeVietnameseTones(fullName).split(/\s+/).slice(-2).join(" ");
-    const orderCode = ("IOT " + phone + " " + cleanName).substring(0, 45);
+    const orderCode = (course.code + " " + phone + " " + cleanName).substring(0, 45);
 
     currentEnrollmentData = {
       orderCode: orderCode,
@@ -761,14 +1007,15 @@ author_profile: true
       phone: phone,
       email: email,
       organization: org || "Không ghi",
-      courseName: MLAB_PAYMENT_CONFIG.courseName,
+      courseName: course.name,
       learningMode: learningMode,
-      fee: "3.000 VNĐ",
+      fee: course.feeText,
+      amount: course.amount,
       note: note
     };
 
-    // Tạo URL ảnh VietQR động chuẩn Napas (tự động điền sẵn số tiền 1.500.000đ và nội dung CK)
-    const qrUrl = `https://img.vietqr.io/image/${MLAB_PAYMENT_CONFIG.bankId}-${MLAB_PAYMENT_CONFIG.accountNo}-compact2.png?amount=${MLAB_PAYMENT_CONFIG.amount}&addInfo=${encodeURIComponent(orderCode)}&accountName=${encodeURIComponent(MLAB_PAYMENT_CONFIG.accountName)}`;
+    // Tạo URL ảnh VietQR động chuẩn Napas
+    const qrUrl = `https://img.vietqr.io/image/${MLAB_PAYMENT_CONFIG.bankId}-${MLAB_PAYMENT_CONFIG.accountNo}-compact2.png?amount=${course.amount}&addInfo=${encodeURIComponent(orderCode)}&accountName=${encodeURIComponent(MLAB_PAYMENT_CONFIG.accountName)}`;
 
     document.getElementById("mlabVietQrImg").src = qrUrl;
     document.getElementById("mlabOrderCodeDisplay").textContent = orderCode;
@@ -793,11 +1040,11 @@ author_profile: true
     const payload = {
       ...currentEnrollmentData,
       note: combinedNote,
-      paymentStatus: "Học viên đã xác nhận quét mã VietQR (3.000 VNĐ)"
+      paymentStatus: `Học viên đã xác nhận quét mã VietQR (${currentEnrollmentData.fee})`
     };
 
     try {
-      // 1. Nếu đã cấu hình Google Apps Script URL -> Gửi thẳng vào Google Sheets + Gmail Apps Script
+      // 1. Gửi thẳng vào Google Sheets + Gmail Apps Script
       if (MLAB_PAYMENT_CONFIG.googleScriptUrl && MLAB_PAYMENT_CONFIG.googleScriptUrl.startsWith("https://")) {
         await fetch(MLAB_PAYMENT_CONFIG.googleScriptUrl, {
           method: "POST",
@@ -815,7 +1062,7 @@ author_profile: true
           "Accept": "application/json"
         },
         body: JSON.stringify({
-          _subject: `[MLAB - Ghi danh IoT] ${payload.fullName} - ${payload.phone}`,
+          _subject: `[MLAB - Ghi danh] ${payload.fullName} - ${payload.phone} (${payload.courseName})`,
           _template: "table",
           "Khóa học": payload.courseName,
           "Mã đối soát CK (VietQR)": payload.orderCode,
