@@ -533,9 +533,9 @@ author_profile: true
         <div>
           <div style="font-size: 0.78rem; color: #64748b; font-weight: 600; text-transform: uppercase;">Học phí trọn khóa (Online & Offline)</div>
           <div class="mlab-price-box">
-            <span class="mlab-price-current">1.500.000đ</span>
+            <span class="mlab-price-current">1.000đ</span>
             <span class="mlab-price-old">3.500.000đ</span>
-            <span style="font-size: 0.8rem; color: #16a34a; font-weight: 700;">(Tiết kiệm 57%)</span>
+            <span style="font-size: 0.8rem; color: #16a34a; font-weight: 700;">(Giá chạy thử nghiệm)</span>
           </div>
         </div>
         <div class="mlab-action-group">
@@ -593,9 +593,9 @@ author_profile: true
             <div class="mlab-form-group">
               <label for="mlabMode">Hình thức đăng ký học <span style="color:#dc2626">*</span></label>
               <select id="mlabMode" class="mlab-form-control" required>
-                <option value="Kết hợp Online & Offline (1.500.000đ)">Kết hợp Online & Offline (1.500.000đ)</option>
-                <option value="Học Online qua hệ thống (1.500.000đ)">Học Online qua hệ thống (1.500.000đ)</option>
-                <option value="Học Offline thực hành tại MLAB (1.500.000đ)">Học Offline thực hành tại MLAB (1.500.000đ)</option>
+                <option value="Kết hợp Online & Offline (1.000đ)">Kết hợp Online & Offline (1.000đ)</option>
+                <option value="Học Online qua hệ thống (1.000đ)">Học Online qua hệ thống (1.000đ)</option>
+                <option value="Học Offline thực hành tại MLAB (1.000đ)">Học Offline thực hành tại MLAB (1.000đ)</option>
               </select>
             </div>
           </div>
@@ -606,7 +606,7 @@ author_profile: true
           </div>
 
           <button type="submit" class="mlab-btn-primary">
-            Tiếp tục: Tạo mã QR Thanh toán Học phí (1.500.000đ) &rarr;
+            Tiếp tục: Tạo mã QR Thanh toán Học phí (1.000đ) &rarr;
           </button>
         </form>
       </div>
@@ -619,14 +619,14 @@ author_profile: true
           </div>
           <img id="mlabVietQrImg" src="" alt="Mã VietQR Thanh toán học phí" />
           <div style="font-size: 0.78rem; color: #475569;">
-            (Mã QR đã tích hợp sẵn số tiền <strong>1.500.000 VNĐ</strong> và nội dung chuyển khoản tự động)
+            (Mã QR đã tích hợp sẵn số tiền <strong>1.000 VNĐ</strong> và nội dung chuyển khoản tự động)
           </div>
 
           <div class="mlab-bank-details">
             <div><span>Ngân hàng thụ hưởng:</span> <strong>VietinBank (NH Công Thương VN)</strong></div>
             <div><span>Số tài khoản:</span> <strong style="color:#1d4ed8;">107005679531</strong></div>
             <div><span>Chủ tài khoản:</span> <strong>DUONG KHANH SON</strong></div>
-            <div><span>Số tiền học phí:</span> <strong style="color:#dc2626;">1.500.000 VNĐ</strong></div>
+            <div><span>Số tiền học phí:</span> <strong style="color:#dc2626;">1.000 VNĐ</strong></div>
             <div><span>Nội dung chuyển khoản:</span> <strong id="mlabOrderCodeDisplay" style="background:#fef3c7; padding: 1px 6px; border-radius: 4px; font-family: monospace;">IOT</strong></div>
           </div>
         </div>
@@ -674,7 +674,7 @@ author_profile: true
     bankId: "ICB", // Mã ngân hàng VietinBank chuẩn Napas VietQR
     accountNo: "107005679531",
     accountName: "DUONG KHANH SON",
-    amount: 1500000,
+    amount: 1000,
     courseName: "IoT CHO SINH VIÊN KỸ THUẬT",
     notifyEmail: "sonduongkhanh@gmail.com",
     // URL Web App của Google Apps Script để tự động ghi vào Google Sheets (nếu đã dán URL)
@@ -734,7 +734,7 @@ author_profile: true
       organization: org || "Không ghi",
       courseName: MLAB_PAYMENT_CONFIG.courseName,
       learningMode: learningMode,
-      fee: "1.500.000 VNĐ",
+      fee: "1.000 VNĐ",
       note: note
     };
 
@@ -764,7 +764,7 @@ author_profile: true
     const payload = {
       ...currentEnrollmentData,
       note: combinedNote,
-      paymentStatus: "Học viên đã xác nhận quét mã VietQR (1.500.000 VNĐ)"
+      paymentStatus: "Học viên đã xác nhận quét mã VietQR (1.000 VNĐ)"
     };
 
     try {
