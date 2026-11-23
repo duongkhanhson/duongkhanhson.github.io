@@ -68,6 +68,112 @@ author_profile: true
     align-items: center;
     justify-content: center;
   }
+  .mlab-tier-selector {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+    margin: 14px 0 20px 0;
+  }
+  .mlab-tier-btn {
+    background: #f8faf9;
+    border: 2px solid #cbd5e1;
+    border-radius: 12px;
+    padding: 14px 16px;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .mlab-tier-btn:hover {
+    border-color: #0b8a42;
+    background: #f2fbf6;
+    transform: translateY(-2px);
+  }
+  .mlab-tier-btn.active {
+    background: #eef8f2;
+    border-color: #0b8a42;
+    box-shadow: 0 6px 16px rgba(11, 138, 66, 0.16);
+  }
+  .mlab-tier-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 99px;
+    margin-bottom: 8px;
+    width: fit-content;
+    color: #ffffff;
+  }
+  .mlab-tier-title {
+    font-size: 0.93rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 5px;
+    line-height: 1.35;
+  }
+  .mlab-tier-desc {
+    font-size: 0.79rem;
+    color: #475569;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+  .mlab-tier-price {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #0b8a42;
+  }
+  .mlab-proof-box {
+    background: #fffbeb;
+    border: 1.5px solid #f59e0b;
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 14px;
+  }
+  .mlab-upload-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 6px;
+  }
+  .mlab-upload-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #ffffff;
+    border: 1.5px dashed #0b8a42;
+    color: #076b33;
+    font-weight: 700;
+    font-size: 0.83rem;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .mlab-upload-label:hover {
+    background: #eef8f2;
+  }
+  .mlab-receipt-preview {
+    display: none;
+    margin-top: 10px;
+    align-items: center;
+    gap: 10px;
+    background: #ffffff;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #d1e7dd;
+  }
+  .mlab-receipt-preview img {
+    width: 54px;
+    height: 54px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid #cbd5e1;
+  }
   .mlab-course-header {
     background: linear-gradient(135deg, #063d1e 0%, #076b33 55%, #0b8a42 100%);
     color: #ffffff;
@@ -597,9 +703,9 @@ author_profile: true
         <div>
           <div style="font-size: 0.78rem; color: #64748b; font-weight: 600; text-transform: uppercase;">Học phí trọn khóa (Online & Offline)</div>
           <div class="mlab-price-box">
-            <span class="mlab-price-current">3.000đ</span>
+            <span class="mlab-price-current">1.500.000đ</span>
             <span class="mlab-price-old">3.500.000đ</span>
-            <span style="font-size: 0.8rem; color: #0b8a42; font-weight: 700;">(Giá chạy thử nghiệm)</span>
+            <span style="font-size: 0.8rem; color: #0b8a42; font-weight: 700;">(Tiết kiệm 57%)</span>
           </div>
         </div>
         <div class="mlab-action-group">
@@ -623,7 +729,7 @@ author_profile: true
       </div>
       <div class="mlab-course-tag-row">
         <span class="mlab-badge mlab-badge-cert">🎓 Lịch học linh hoạt theo học viên</span>
-        <button type="button" class="mlab-btn-enroll-top" onclick="openMlabEnrollModal('INVENTOR')">
+        <button type="button" class="mlab-btn-enroll-top" onclick="openMlabEnrollModal(selectedInventorTierKey)">
           ✍️ Ghi Danh & Thanh Toán QR
         </button>
       </div>
@@ -747,19 +853,54 @@ author_profile: true
       </details>
 
       <div class="mlab-course-footer">
+        <div style="width: 100%; margin-bottom: 6px;">
+          <div style="font-size: 0.85rem; color: #063d1e; font-weight: 800; text-transform: uppercase; margin-bottom: 4px;">
+            👇 CHỌN KHÓA HỌC INVENTOR BẠN MUỐN ĐĂNG KÝ (Nhấn chọn khóa học trước khi bấm Ghi danh):
+          </div>
+          <div class="mlab-tier-selector">
+            <button type="button" id="tierBtn_INV_BASIC" class="mlab-tier-btn active" onclick="selectInventorTier('INV_BASIC')">
+              <div>
+                <span class="mlab-tier-badge" style="background: #0b8a42;">Khóa 1 • Căn Bản</span>
+                <div class="mlab-tier-title">Khóa Cơ Bản: Thiết Kế & Lắp Ráp 3D Inventor</div>
+                <div class="mlab-tier-desc">Đọc bản vẽ, Sketch 2D, Dựng khối 3D, Lắp ráp cơ cấu máy & Xuất bản vẽ tiêu chuẩn.</div>
+              </div>
+              <div class="mlab-tier-price">1.500.000đ</div>
+            </button>
+
+            <button type="button" id="tierBtn_INV_CAM" class="mlab-tier-btn" onclick="selectInventorTier('INV_CAM')">
+              <div>
+                <span class="mlab-tier-badge" style="background: #3b6ca8;">Khóa 2 • Nâng Cao</span>
+                <div class="mlab-tier-title">Khóa Nâng Cao: Gia Công CAM, CNC & Mô Phỏng</div>
+                <div class="mlab-tier-desc">Kim loại tấm, Truyền động, Mô phỏng động lực học, Sức bền CAE & Lập trình gia công CAM/CNC.</div>
+              </div>
+              <div class="mlab-tier-price">2.500.000đ</div>
+            </button>
+
+            <button type="button" id="tierBtn_INV_MOLD" class="mlab-tier-btn" onclick="selectInventorTier('INV_MOLD')">
+              <div>
+                <span class="mlab-tier-badge" style="background: #9d0c4c;">Khóa 3 • Chuyên Sâu</span>
+                <div class="mlab-tier-title">Khóa Chuyên Sâu: Thiết Kế Khuôn Mẫu & Sản Phẩm Nhựa</div>
+                <div class="mlab-tier-desc">Thiết kế Surface nâng cao, Sản phẩm nhựa, Tách khuôn ép nhựa hoàn chỉnh & Liên kết MATLAB.</div>
+              </div>
+              <div class="mlab-tier-price">4.500.000đ</div>
+            </button>
+          </div>
+        </div>
+
         <div>
-          <div style="font-size: 0.78rem; color: #64748b; font-weight: 600; text-transform: uppercase;">Học phí khóa học (Học 1 khóa - Hỗ trợ trọn đời)</div>
+          <div id="inventorSelectedLabel" style="font-size: 0.8rem; color: #076b33; font-weight: 700; text-transform: uppercase;">
+            Đang chọn: Khóa Cơ Bản – Thiết Kế & Lắp Ráp 3D Inventor
+          </div>
           <div class="mlab-price-box">
-            <span class="mlab-price-current">3.000đ</span>
-            <span class="mlab-price-old">2.500.000đ</span>
-            <span style="font-size: 0.8rem; color: #0b8a42; font-weight: 700;">(Giá chạy thử nghiệm QR)</span>
+            <span id="inventorSelectedPrice" class="mlab-price-current">1.500.000đ</span>
+            <span style="font-size: 0.82rem; color: #0b8a42; font-weight: 700;">(Học 1 khóa – Hỗ trợ trọn đời)</span>
           </div>
         </div>
         <div class="mlab-action-group">
           <a href="tel:0946469720" class="mlab-btn-outline">
             📞 Tư vấn: 0946.469.720
           </a>
-          <button type="button" class="mlab-btn-enroll" onclick="openMlabEnrollModal('INVENTOR')">
+          <button type="button" class="mlab-btn-enroll" onclick="openMlabEnrollModal(selectedInventorTierKey)">
             ✍️ Ghi Danh & Thanh Toán QR
           </button>
         </div>
@@ -789,8 +930,10 @@ author_profile: true
           <div class="mlab-form-group">
             <label for="mlabCourseSelect">Khóa học đăng ký <span style="color:#dc2626">*</span></label>
             <select id="mlabCourseSelect" class="mlab-form-control" onchange="updateCourseSelectionUI()" required>
-              <option value="IOT">IoT CHO SINH VIÊN KỸ THUẬT (Học phí: 3.000đ)</option>
-              <option value="INVENTOR">THIẾT KẾ CƠ KHÍ & MÔ PHỎNG 3D BẰNG AUTODESK INVENTOR (Học phí: 3.000đ)</option>
+              <option value="IOT">IoT CHO SINH VIÊN KỸ THUẬT (Học phí: 1.500.000đ)</option>
+              <option value="INV_BASIC">INVENTOR CƠ BẢN: THIẾT KẾ & LẮP RÁP 3D (Học phí: 1.500.000đ)</option>
+              <option value="INV_CAM">INVENTOR NÂNG CAO: GIA CÔNG CAM, CNC & MÔ PHỎNG (Học phí: 2.500.000đ)</option>
+              <option value="INV_MOLD">INVENTOR CHUYÊN SÂU: THIẾT KẾ KHUÔN MẪU & SẢN PHẨM NHỰA (Học phí: 4.500.000đ)</option>
             </select>
           </div>
 
@@ -830,8 +973,8 @@ author_profile: true
             <input type="text" id="mlabNote" class="mlab-form-control" placeholder="Ví dụ: Em muốn làm đồ án Nhà thông minh ESP32...">
           </div>
 
-          <button type="submit" class="mlab-btn-primary">
-            Tiếp tục: Tạo mã QR Thanh toán Học phí (3.000đ) &rarr;
+          <button type="submit" id="mlabProceedQrBtn" class="mlab-btn-primary">
+            Tiếp tục: Tạo mã QR Thanh toán Học phí &rarr;
           </button>
         </form>
       </div>
@@ -844,24 +987,52 @@ author_profile: true
           </div>
           <img id="mlabVietQrImg" src="" alt="Mã VietQR Thanh toán học phí" />
           <div style="font-size: 0.78rem; color: #475569;">
-            (Mã QR đã tích hợp sẵn số tiền <strong>3.000 VNĐ</strong> và nội dung chuyển khoản tự động)
+            (Mã QR đã tích hợp sẵn số tiền <strong id="mlabQrAmountNote">1.500.000 VNĐ</strong> và nội dung chuyển khoản tự động)
           </div>
 
           <div class="mlab-bank-details">
             <div><span>Ngân hàng thụ hưởng:</span> <strong>VietinBank (NH Công Thương VN)</strong></div>
             <div><span>Số tài khoản:</span> <strong style="color:#076b33;">107005679531</strong></div>
             <div><span>Chủ tài khoản:</span> <strong>DUONG KHANH SON</strong></div>
-            <div><span>Số tiền học phí:</span> <strong style="color:#9d0c4c;">3.000 VNĐ</strong></div>
+            <div><span>Số tiền học phí:</span> <strong id="mlabBankFeeDisplay" style="color:#9d0c4c;">1.500.000 VNĐ</strong></div>
             <div><span>Nội dung chuyển khoản:</span> <strong id="mlabOrderCodeDisplay" style="background:#fef3c7; padding: 1px 6px; border-radius: 4px; font-family: monospace;">IOT</strong></div>
           </div>
         </div>
 
-        <div class="mlab-form-group">
-          <label for="mlabTxRef">Mã giao dịch ngân hàng hoặc thời gian chuyển khoản (Tùy chọn để đối soát nhanh):</label>
-          <input type="text" id="mlabTxRef" class="mlab-form-control" placeholder="Ví dụ: Đã chuyển khoản lúc 18:30 từ VCB...">
+        <div class="mlab-proof-box">
+          <div style="font-weight: 800; color: #92400e; font-size: 0.85rem; margin-bottom: 8px;">
+            🔒 XÁC THỰC THANH TOÁN (Vui lòng tải ảnh chụp biên lai CK HOẶC nhập mã giao dịch ngân hàng để mở nút Gửi thông báo):
+          </div>
+
+          <div class="mlab-form-group" style="margin-bottom: 10px;">
+            <label style="color: #1e293b;">Cách 1: Tải lên ảnh chụp màn hình chuyển khoản thành công</label>
+            <div class="mlab-upload-area">
+              <label for="mlabReceiptFile" class="mlab-upload-label">
+                📷 Chọn ảnh biên lai chuyển khoản
+              </label>
+              <input type="file" id="mlabReceiptFile" accept="image/*" style="display: none;" onchange="handleReceiptUpload(event)">
+              <span id="mlabReceiptFileName" style="font-size: 0.78rem; color: #475569;">Chưa chọn ảnh nào</span>
+            </div>
+            <div id="mlabReceiptPreviewBox" class="mlab-receipt-preview">
+              <img id="mlabReceiptPreviewImg" src="" alt="Ảnh biên lai" />
+              <div style="flex: 1; font-size: 0.78rem; color: #076b33; font-weight: 700;">
+                ✅ Đã đính kèm ảnh biên lai chuyển khoản
+              </div>
+              <button type="button" onclick="clearReceiptUpload()" style="background: #fee2e2; color: #b91c1c; border: none; border-radius: 6px; padding: 4px 8px; font-size: 0.75rem; font-weight: 700; cursor: pointer;">Xóa ảnh</button>
+            </div>
+          </div>
+
+          <div class="mlab-form-group" style="margin-bottom: 0;">
+            <label for="mlabTxRef" style="color: #1e293b;">Cách 2: Hoặc nhập Mã giao dịch ngân hàng / Thời gian chuyển khoản (Tối thiểu 4 ký tự):</label>
+            <input type="text" id="mlabTxRef" class="mlab-form-control" placeholder="Ví dụ: FT2432891023 hoặc Đã CK lúc 20:30 từ VCB..." oninput="checkPaymentVerification()">
+          </div>
         </div>
 
-        <button type="button" id="mlabSubmitBtn" class="mlab-btn-success" onclick="submitEnrollmentNotification()">
+        <div id="mlabVerifyHint" style="text-align: center; padding: 10px 12px; border-radius: 8px; background: #f1f5f9; color: #64748b; font-size: 0.82rem; font-weight: 600; margin-bottom: 6px;">
+          ⚠️ Nút <strong>"Tôi đã thanh toán – Gửi thông báo ghi danh"</strong> sẽ tự động hiển thị ngay khi bạn tải ảnh biên lai hoặc nhập mã giao dịch ở trên.
+        </div>
+
+        <button type="button" id="mlabSubmitBtn" class="mlab-btn-success" style="display: none;" onclick="submitEnrollmentNotification()">
           ✅ Tôi đã thanh toán – Gửi thông báo ghi danh cho Thầy Sơn
         </button>
         <button type="button" class="mlab-btn-back" onclick="backToStep1()">
@@ -899,28 +1070,64 @@ author_profile: true
     IOT: {
       code: "IOT",
       name: "IoT CHO SINH VIÊN KỸ THUẬT",
-      amount: 3000,
-      feeText: "3.000 VNĐ",
+      shortLabel: "Khóa học IoT Cho Sinh Viên Kỹ Thuật",
+      amount: 1500000,
+      feeText: "1.500.000 VNĐ",
+      priceDisplay: "1.500.000đ",
       notePlaceholder: "Ví dụ: Em muốn làm đồ án Nhà thông minh ESP32...",
       modes: [
-        "Kết hợp Online & Offline (3.000đ)",
-        "Học Online qua hệ thống (3.000đ)",
-        "Học Offline thực hành tại MLAB (3.000đ)"
+        "Kết hợp Online & Offline (1.500.000đ)",
+        "Học Online qua hệ thống (1.500.000đ)",
+        "Học Offline thực hành tại MLAB (1.500.000đ)"
       ]
     },
-    INVENTOR: {
-      code: "INV",
-      name: "THIẾT KẾ CƠ KHÍ & MÔ PHỎNG 3D BẰNG AUTODESK INVENTOR",
-      amount: 3000,
-      feeText: "3.000 VNĐ",
-      notePlaceholder: "Ví dụ: Đăng ký khóa Căn bản / Nâng cao / Chuyên sâu, lịch học buổi tối...",
+    INV_BASIC: {
+      code: "INVCB",
+      name: "INVENTOR CƠ BẢN: THIẾT KẾ & LẮP RÁP 3D",
+      shortLabel: "Khóa Cơ Bản – Thiết Kế & Lắp Ráp 3D Inventor",
+      amount: 1500000,
+      feeText: "1.500.000 VNĐ",
+      priceDisplay: "1.500.000đ",
+      notePlaceholder: "Ví dụ: Đăng ký Khóa Cơ bản Inventor, lịch học buổi tối 2-4-6...",
       modes: [
-        "Khóa Căn bản -> Nâng cao (Online / Offline - 3.000đ)",
-        "Khóa Chuyên đề Chuyên sâu CAD/CAM/CAE/Khuôn/MATLAB (3.000đ)",
-        "Học Kèm thực hành trực tiếp theo lịch cá nhân (3.000đ)"
+        "Học Online + Thực hành trực tiếp tại MLAB (1.500.000đ)",
+        "Học Online tương tác trực tiếp cùng Giảng viên (1.500.000đ)",
+        "Học Offline thực hành theo lịch linh hoạt tại MLAB (1.500.000đ)"
+      ]
+    },
+    INV_CAM: {
+      code: "INVCAM",
+      name: "INVENTOR NÂNG CAO: GIA CÔNG CAM, CNC & MÔ PHỎNG",
+      shortLabel: "Khóa Nâng Cao – Gia Công CAM, CNC & Mô Phỏng",
+      amount: 2500000,
+      feeText: "2.500.000 VNĐ",
+      priceDisplay: "2.500.000đ",
+      notePlaceholder: "Ví dụ: Đăng ký Khóa Nâng cao CAM/CNC & Mô phỏng CAE...",
+      modes: [
+        "Học Online + Thực hành CAM/CNC tại MLAB (2.500.000đ)",
+        "Học Online tương tác trực tiếp cùng Giảng viên (2.500.000đ)",
+        "Học Offline thực hành theo lịch linh hoạt tại MLAB (2.500.000đ)"
+      ]
+    },
+    INV_MOLD: {
+      code: "INVKHUON",
+      name: "INVENTOR CHUYÊN SÂU: THIẾT KẾ KHUÔN MẪU & SẢN PHẨM NHỰA",
+      shortLabel: "Khóa Chuyên Sâu – Thiết Kế Khuôn Mẫu & Sản Phẩm Nhựa",
+      amount: 4500000,
+      feeText: "4.500.000 VNĐ",
+      priceDisplay: "4.500.000đ",
+      notePlaceholder: "Ví dụ: Đăng ký Khóa Chuyên sâu Thiết kế Khuôn mẫu & Sản phẩm nhựa...",
+      modes: [
+        "Học Kèm Chuyên sâu Online & Offline tại MLAB (4.500.000đ)",
+        "Học Online tương tác trực tiếp 1-1 / Nhóm nhỏ (4.500.000đ)",
+        "Học Offline thực hành chuyên sâu tại MLAB (4.500.000đ)"
       ]
     }
   };
+
+  let selectedInventorTierKey = "INV_BASIC";
+  let uploadedReceiptBase64 = "";
+  let uploadedReceiptFileName = "";
 
   const MLAB_PAYMENT_CONFIG = {
     bankId: "ICB", // Mã ngân hàng VietinBank chuẩn Napas VietQR
@@ -932,6 +1139,24 @@ author_profile: true
   };
 
   let currentEnrollmentData = {};
+
+  function selectInventorTier(tierKey) {
+    if (!MLAB_COURSES[tierKey]) return;
+    selectedInventorTierKey = tierKey;
+    const course = MLAB_COURSES[tierKey];
+
+    ["INV_BASIC", "INV_CAM", "INV_MOLD"].forEach(function(k) {
+      const btn = document.getElementById("tierBtn_" + k);
+      if (btn) {
+        btn.className = (k === tierKey) ? "mlab-tier-btn active" : "mlab-tier-btn";
+      }
+    });
+
+    const labelEl = document.getElementById("inventorSelectedLabel");
+    const priceEl = document.getElementById("inventorSelectedPrice");
+    if (labelEl) labelEl.textContent = "Đang chọn: " + course.shortLabel;
+    if (priceEl) priceEl.textContent = course.priceDisplay;
+  }
 
   function removeVietnameseTones(str) {
     return str
@@ -950,6 +1175,7 @@ author_profile: true
 
     document.getElementById("mlabModalTitle").textContent = "🎓 Ghi Danh: " + course.name;
     document.getElementById("mlabNote").placeholder = course.notePlaceholder;
+    document.getElementById("mlabProceedQrBtn").innerHTML = `Tiếp tục: Tạo mã QR Thanh toán Học phí (${course.priceDisplay}) &rarr;`;
 
     const modeSelect = document.getElementById("mlabMode");
     modeSelect.innerHTML = "";
@@ -963,8 +1189,9 @@ author_profile: true
 
   function openMlabEnrollModal(courseKey) {
     const selectEl = document.getElementById("mlabCourseSelect");
-    if (courseKey && MLAB_COURSES[courseKey]) {
-      selectEl.value = courseKey;
+    const targetKey = (courseKey === "INVENTOR") ? selectedInventorTierKey : (courseKey || "IOT");
+    if (targetKey && MLAB_COURSES[targetKey]) {
+      selectEl.value = targetKey;
     }
     updateCourseSelectionUI();
     document.getElementById("mlabEnrollModal").classList.add("active");
@@ -985,6 +1212,78 @@ author_profile: true
     document.getElementById("mlabStepPill3").className = "mlab-step-pill";
   }
 
+  function checkPaymentVerification() {
+    const txRef = document.getElementById("mlabTxRef").value.trim();
+    const hasReceiptImage = Boolean(uploadedReceiptBase64);
+    const hasValidTxRef = txRef.length >= 4;
+    const isVerified = hasReceiptImage || hasValidTxRef;
+
+    const submitBtn = document.getElementById("mlabSubmitBtn");
+    const hintBox = document.getElementById("mlabVerifyHint");
+
+    if (isVerified) {
+      submitBtn.style.display = "block";
+      hintBox.style.display = "none";
+    } else {
+      submitBtn.style.display = "none";
+      hintBox.style.display = "block";
+    }
+  }
+
+  function handleReceiptUpload(event) {
+    const file = event.target.files && event.target.files[0];
+    if (!file) {
+      clearReceiptUpload();
+      return;
+    }
+
+    uploadedReceiptFileName = file.name;
+    document.getElementById("mlabReceiptFileName").textContent = file.name;
+
+    // Nén ảnh biên lai xuống kích thước vừa phải để gửi nhanh qua Google Sheets / Email
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      const img = new Image();
+      img.onload = function() {
+        const canvas = document.createElement("canvas");
+        const maxDim = 900;
+        let w = img.width;
+        let h = img.height;
+        if (w > maxDim || h > maxDim) {
+          if (w > h) {
+            h = Math.round((h * maxDim) / w);
+            w = maxDim;
+          } else {
+            w = Math.round((w * maxDim) / h);
+            h = maxDim;
+          }
+        }
+        canvas.width = w;
+        canvas.height = h;
+        const ctx = canvas.getContext("2d");
+        ctx.drawImage(img, 0, 0, w, h);
+        uploadedReceiptBase64 = canvas.toDataURL("image/jpeg", 0.75);
+
+        document.getElementById("mlabReceiptPreviewImg").src = uploadedReceiptBase64;
+        document.getElementById("mlabReceiptPreviewBox").style.display = "flex";
+        checkPaymentVerification();
+      };
+      img.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  }
+
+  function clearReceiptUpload() {
+    uploadedReceiptBase64 = "";
+    uploadedReceiptFileName = "";
+    const fileInput = document.getElementById("mlabReceiptFile");
+    if (fileInput) fileInput.value = "";
+    document.getElementById("mlabReceiptFileName").textContent = "Chưa chọn ảnh nào";
+    document.getElementById("mlabReceiptPreviewBox").style.display = "none";
+    document.getElementById("mlabReceiptPreviewImg").src = "";
+    checkPaymentVerification();
+  }
+
   function proceedToVietQR(event) {
     event.preventDefault();
     const courseKey = document.getElementById("mlabCourseSelect").value || "IOT";
@@ -997,7 +1296,7 @@ author_profile: true
     const learningMode = document.getElementById("mlabMode").value;
     const note = document.getElementById("mlabNote").value.trim();
 
-    // Tạo mã nội dung chuyển khoản ngắn gọn, không dấu: <IOT|INV> <SĐT> <TÊN>
+    // Tạo mã nội dung chuyển khoản ngắn gọn, không dấu
     const cleanName = removeVietnameseTones(fullName).split(/\s+/).slice(-2).join(" ");
     const orderCode = (course.code + " " + phone + " " + cleanName).substring(0, 45);
 
@@ -1018,7 +1317,14 @@ author_profile: true
     const qrUrl = `https://img.vietqr.io/image/${MLAB_PAYMENT_CONFIG.bankId}-${MLAB_PAYMENT_CONFIG.accountNo}-compact2.png?amount=${course.amount}&addInfo=${encodeURIComponent(orderCode)}&accountName=${encodeURIComponent(MLAB_PAYMENT_CONFIG.accountName)}`;
 
     document.getElementById("mlabVietQrImg").src = qrUrl;
+    document.getElementById("mlabQrAmountNote").textContent = course.feeText;
+    document.getElementById("mlabBankFeeDisplay").textContent = course.feeText;
     document.getElementById("mlabOrderCodeDisplay").textContent = orderCode;
+
+    // Reset trạng thái xác thực ở Bước 2 để bắt buộc người dùng tải ảnh hoặc nhập mã GD
+    document.getElementById("mlabTxRef").value = "";
+    clearReceiptUpload();
+    checkPaymentVerification();
 
     document.getElementById("mlabStep1").style.display = "none";
     document.getElementById("mlabStep2").style.display = "block";
@@ -1032,15 +1338,27 @@ author_profile: true
   async function submitEnrollmentNotification() {
     const submitBtn = document.getElementById("mlabSubmitBtn");
     const txRef = document.getElementById("mlabTxRef").value.trim();
-    const combinedNote = [currentEnrollmentData.note, txRef ? ("GD: " + txRef) : ""].filter(Boolean).join(" | ");
+    if (!uploadedReceiptBase64 && txRef.length < 4) {
+      alert("Vui lòng tải ảnh biên lai chuyển khoản hoặc nhập Mã giao dịch ngân hàng trước khi gửi thông báo!");
+      return;
+    }
+
+    const proofMethod = uploadedReceiptBase64
+      ? (txRef ? `Đã đính kèm ảnh biên lai (${uploadedReceiptFileName}) + Mã GD: ${txRef}` : `Đã đính kèm ảnh biên lai (${uploadedReceiptFileName})`)
+      : `Mã giao dịch CK: ${txRef}`;
+
+    const combinedNote = [currentEnrollmentData.note, proofMethod].filter(Boolean).join(" | ");
 
     submitBtn.disabled = true;
-    submitBtn.textContent = "⏳ Đang gửi thông tin ghi danh cho Giảng viên...";
+    submitBtn.textContent = "⏳ Đang gửi thông tin & biên lai ghi danh cho Thầy Sơn...";
 
     const payload = {
       ...currentEnrollmentData,
       note: combinedNote,
-      paymentStatus: `Học viên đã xác nhận quét mã VietQR (${currentEnrollmentData.fee})`
+      txRef: txRef || "Không nhập",
+      receiptFileName: uploadedReceiptFileName || "",
+      receiptImage: uploadedReceiptBase64 || "",
+      paymentStatus: `Đã xác thực thanh toán (${proofMethod}) - Học phí: ${currentEnrollmentData.fee}`
     };
 
     try {
@@ -1072,8 +1390,8 @@ author_profile: true
           "Trường / Đơn vị": payload.organization,
           "Hình thức học": payload.learningMode,
           "Học phí": payload.fee,
-          "Trạng thái": payload.paymentStatus,
-          "Ghi chú / Mã giao dịch": payload.note || "Không có"
+          "Xác thực thanh toán": proofMethod,
+          "Ghi chú học viên": currentEnrollmentData.note || "Không có"
         })
       });
     } catch (err) {
