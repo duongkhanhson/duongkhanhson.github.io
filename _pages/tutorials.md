@@ -859,7 +859,6 @@ author_profile: true
         <span class="mlab-badge mlab-badge-discount">🔥 Ưu đãi Giảm 57%</span>
       </div>
       <div class="mlab-course-tag-row">
-        <span class="mlab-badge mlab-badge-cert">🎓 Cấp chứng nhận hoàn thành</span>
         <button type="button" class="mlab-btn-enroll-top" onclick="openMlabEnrollModal('IOT')">
           ✍️ Ghi Danh & Thanh Toán QR
         </button>
@@ -958,9 +957,6 @@ author_profile: true
           </div>
         </div>
         <div class="mlab-action-group">
-          <a href="https://emechatronix.edubit.vn/iot-cho-sinh-vien-ky-thuat" target="_blank" rel="noopener" class="mlab-btn-outline">
-            🔗 Xem trên Edubit
-          </a>
           <button type="button" class="mlab-btn-enroll" onclick="openMlabEnrollModal('IOT')">
             ✍️ Ghi Danh & Thanh Toán QR
           </button>
