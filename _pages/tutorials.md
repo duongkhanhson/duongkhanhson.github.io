@@ -781,11 +781,12 @@ author_profile: true
               </ul>
             </li>
             <li>
-              <strong style="color: #9d0c4c;">Khóa 3 – Khóa Chuyên Sâu: Thiết Kế Khuôn Mẫu & Sản Phẩm Nhựa + Liên Kết MATLAB (Học phí: 4.500.000đ):</strong>
+              <strong style="color: #9d0c4c;">Khóa 3 – Inventor Chuyên Sâu Theo Yêu Cầu Học Viên (Khuôn mẫu, Sản phẩm, AI trong thiết kế...) (Học phí: 4.500.000đ):</strong>
               <ul style="margin-top: 4px; padding-left: 18px;">
                 <li>Dựng hình bề mặt cong phức tạp và kiểu dáng công nghiệp (Advanced Surfacing, Freeform Modeling & Multi-body Part) cho các sản phẩm nhựa kỹ thuật và tiêu dùng.</li>
                 <li>Thiết kế đặc thù cho sản phẩm nhựa (Plastic Part Features: gân tăng cứng, vấu lẫy Snap-fit, vấu bắt vít Boss, lưới thoát nhiệt Grill, góc thoát khuôn Draft Analysis).</li>
                 <li><strong>Quy trình thiết kế và tách khuôn ép nhựa hoàn chỉnh (Inventor Mold Design):</strong> Thiết lập độ co rút vật liệu nhựa, xác định mặt phân khuôn (Parting Surface), tách Lõi và Lòng khuôn (Core & Cavity), thiết kế kênh dẫn nhựa (Runner), cổng phun (Gate), hệ thống làm mát, chốt đẩy (Ejector Pins) và lắp ráp bộ đế khuôn tiêu chuẩn (Mold Base), mô phỏng dòng chảy nhựa (Moldflow).</li>
+                <li><strong>Ứng dụng AI trong thiết kế cơ khí & tối ưu hóa (Generative Design / Topology Optimization / Tự động hóa iLogic & VBA):</strong> Tối ưu hóa hình học chi tiết máy theo tải trọng bằng AI, tự động hóa thiết kế tham số hàng loạt.</li>
                 <li>Thiết kế hệ thống đường ống và dây dẫn phức tạp (Tube & Pipe, Cable & Harness); Render hình ảnh sản phẩm & xuất video diễn hoạt dây chuyền sản xuất (Inventor Studio).</li>
                 <li><strong>Tích hợp hệ thống Cơ điện tử & Robot:</strong> Xuất mô hình 3D cơ khí và thông số quán tính từ Inventor sang <strong>MATLAB / Simulink (Simscape Multibody)</strong> để mô phỏng động học/động lực học và thiết kế bộ điều khiển tự động cho đồ án, luận văn và dự án nghiên cứu.</li>
               </ul>
@@ -802,8 +803,8 @@ author_profile: true
           <div class="mlab-tier-selector">
             <button type="button" id="tierBtn_INV_BASIC" class="mlab-tier-btn active" onclick="selectInventorTier('INV_BASIC')">
               <div>
-                <span class="mlab-tier-badge" style="background: #0b8a42;">Khóa 1 • Cơ Bản</span>
-                <div class="mlab-tier-title">Khóa Cơ Bản: Thiết Kế & Lắp Ráp 3D Inventor</div>
+                <span class="mlab-tier-badge" style="background: #0b8a42;">Khóa 1 • Căn Bản</span>
+                <div class="mlab-tier-title">Inventor Căn Bản</div>
                 <div class="mlab-tier-desc">Thành thạo vẽ 3D từ ý tưởng đến bản vẽ lắp, xuất bản vẽ 2D gia công (Laser, CNC...), xuất video mô phỏng lắp ráp & hoạt động máy móc, robot.</div>
               </div>
               <div class="mlab-tier-price">1.500.000đ</div>
@@ -812,7 +813,7 @@ author_profile: true
             <button type="button" id="tierBtn_INV_CAM" class="mlab-tier-btn" onclick="selectInventorTier('INV_CAM')">
               <div>
                 <span class="mlab-tier-badge" style="background: #3b6ca8;">Khóa 2 • Nâng Cao</span>
-                <div class="mlab-tier-title">Khóa Nâng Cao: Gia Công CAM, CNC & Mô Phỏng</div>
+                <div class="mlab-tier-title">Inventor Nâng Cao CAM, CNC</div>
                 <div class="mlab-tier-desc">Thiết kế cơ cấu máy, tính toán truyền động (đai, xích, bánh răng...), mô phỏng CAE, thành thạo G-code, lập trình xuất NC & vận hành Phay/Tiện CNC.</div>
               </div>
               <div class="mlab-tier-price">2.500.000đ</div>
@@ -821,8 +822,8 @@ author_profile: true
             <button type="button" id="tierBtn_INV_MOLD" class="mlab-tier-btn" onclick="selectInventorTier('INV_MOLD')">
               <div>
                 <span class="mlab-tier-badge" style="background: #9d0c4c;">Khóa 3 • Chuyên Sâu</span>
-                <div class="mlab-tier-title">Khóa Chuyên Sâu: Thiết Kế Khuôn Mẫu & Sản Phẩm Nhựa</div>
-                <div class="mlab-tier-desc">Thiết kế Surface nâng cao, Sản phẩm nhựa, Tách khuôn ép nhựa hoàn chỉnh & Liên kết MATLAB.</div>
+                <div class="mlab-tier-title">Inventor Chuyên Sâu Theo Yêu Cầu Học Viên (Khuôn mẫu, sản phẩm, AI trong thiết kế...)</div>
+                <div class="mlab-tier-desc">Thiết kế khuôn mẫu & sản phẩm nhựa, Surface nâng cao, ứng dụng AI trong thiết kế cơ khí & liên kết mô phỏng điều khiển MATLAB.</div>
               </div>
               <div class="mlab-tier-price">4.500.000đ</div>
             </button>
@@ -831,7 +832,7 @@ author_profile: true
 
         <div>
           <div id="inventorSelectedLabel" style="font-size: 0.8rem; color: #076b33; font-weight: 700; text-transform: uppercase;">
-            Đang chọn: Khóa Cơ Bản – Thiết Kế & Lắp Ráp 3D Inventor
+            Đang chọn: Inventor Căn Bản
           </div>
           <div class="mlab-price-box">
             <span id="inventorSelectedPrice" class="mlab-price-current">1.500.000đ</span>
@@ -990,10 +991,10 @@ author_profile: true
           <div class="mlab-form-group">
             <label for="mlabCourseSelect">Khóa học đăng ký <span style="color:#dc2626">*</span></label>
             <select id="mlabCourseSelect" class="mlab-form-control" onchange="updateCourseSelectionUI()" required>
-              <option value="INV_BASIC">INVENTOR CƠ BẢN: THIẾT KẾ & LẮP RÁP 3D (Học phí: 1.500.000đ)</option>
-              <option value="INV_CAM">INVENTOR NÂNG CAO: GIA CÔNG CAM, CNC & MÔ PHỎNG (Học phí: 2.500.000đ)</option>
-              <option value="INV_MOLD">INVENTOR CHUYÊN SÂU: THIẾT KẾ KHUÔN MẪU & SẢN PHẨM NHỰA (Học phí: 4.500.000đ)</option>
-              <option value="IOT">IoT CHO SINH VIÊN KỸ THUẬT (Học phí: 1.500.000đ)</option>
+              <option value="INV_BASIC">Inventor căn bản (Học phí: 1.500.000đ)</option>
+              <option value="INV_CAM">Inventor nâng cao CAM , CNC (Học phí: 2.500.000đ)</option>
+              <option value="INV_MOLD">Inventor chuyên sâu theo yêu cầu học viên (khuôn mẫu, sản phẩm, AI trong thiết kế...) (Học phí: 4.500.000đ)</option>
+              <option value="IOT">IoT cho sinh viên kỹ thuật (Học phí: 1.500.000đ)</option>
             </select>
           </div>
 
@@ -1021,16 +1022,15 @@ author_profile: true
             <div class="mlab-form-group">
               <label for="mlabMode">Hình thức đăng ký học <span style="color:#dc2626">*</span></label>
               <select id="mlabMode" class="mlab-form-control" required>
-                <option value="Kết hợp Online & Offline (3.000đ)">Kết hợp Online & Offline (3.000đ)</option>
-                <option value="Học Online qua hệ thống (3.000đ)">Học Online qua hệ thống (3.000đ)</option>
-                <option value="Học Offline thực hành tại MLAB (3.000đ)">Học Offline thực hành tại MLAB (3.000đ)</option>
+                <option value="Học online">Học online</option>
+                <option value="Học offline">Học offline</option>
               </select>
             </div>
           </div>
 
           <div class="mlab-form-group">
-            <label for="mlabNote">Ghi chú thêm cho Giảng viên (Lịch học mong muốn / Đồ án quan tâm)</label>
-            <input type="text" id="mlabNote" class="mlab-form-control" placeholder="Ví dụ: Em muốn làm đồ án Nhà thông minh ESP32...">
+            <label for="mlabNote">Lịch trống có thể sắp xếp học :</label>
+            <input type="text" id="mlabNote" class="mlab-form-control" placeholder="Ví dụ: sáng hoặc chiều thứ :...">
           </div>
 
           <button type="submit" id="mlabProceedQrBtn" class="mlab-btn-primary">
@@ -1129,58 +1129,54 @@ author_profile: true
   const MLAB_COURSES = {
     IOT: {
       code: "IOT",
-      name: "IoT CHO SINH VIÊN KỸ THUẬT",
-      shortLabel: "Khóa học IoT Cho Sinh Viên Kỹ Thuật",
+      name: "IoT cho sinh viên kỹ thuật",
+      shortLabel: "IoT cho sinh viên kỹ thuật",
       amount: 1500000,
       feeText: "1.500.000 VNĐ",
       priceDisplay: "1.500.000đ",
-      notePlaceholder: "Ví dụ: Em muốn làm đồ án Nhà thông minh ESP32...",
+      notePlaceholder: "Ví dụ: sáng hoặc chiều thứ :...",
       modes: [
-        "Kết hợp Online & Offline (1.500.000đ)",
-        "Học Online qua hệ thống (1.500.000đ)",
-        "Học Offline thực hành tại MLAB (1.500.000đ)"
+        "Học online",
+        "Học offline"
       ]
     },
     INV_BASIC: {
       code: "INVCB",
-      name: "INVENTOR CƠ BẢN: THIẾT KẾ & LẮP RÁP 3D",
-      shortLabel: "Khóa Cơ Bản – Thiết Kế & Lắp Ráp 3D Inventor",
+      name: "Inventor căn bản",
+      shortLabel: "Inventor căn bản",
       amount: 1500000,
       feeText: "1.500.000 VNĐ",
       priceDisplay: "1.500.000đ",
-      notePlaceholder: "Ví dụ: Đăng ký Khóa Cơ bản Inventor, lịch học buổi tối 2-4-6...",
+      notePlaceholder: "Ví dụ: sáng hoặc chiều thứ :...",
       modes: [
-        "Học Online + Thực hành trực tiếp tại MLAB (1.500.000đ)",
-        "Học Online tương tác trực tiếp cùng Giảng viên (1.500.000đ)",
-        "Học Offline thực hành theo lịch linh hoạt tại MLAB (1.500.000đ)"
+        "Học online",
+        "Học offline"
       ]
     },
     INV_CAM: {
       code: "INVCAM",
-      name: "INVENTOR NÂNG CAO: GIA CÔNG CAM, CNC & MÔ PHỎNG",
-      shortLabel: "Khóa Nâng Cao – Gia Công CAM, CNC & Mô Phỏng",
+      name: "Inventor nâng cao CAM , CNC",
+      shortLabel: "Inventor nâng cao CAM , CNC",
       amount: 2500000,
       feeText: "2.500.000 VNĐ",
       priceDisplay: "2.500.000đ",
-      notePlaceholder: "Ví dụ: Đăng ký Khóa Nâng cao CAM/CNC & Mô phỏng CAE...",
+      notePlaceholder: "Ví dụ: sáng hoặc chiều thứ :...",
       modes: [
-        "Học Online + Thực hành CAM/CNC tại MLAB (2.500.000đ)",
-        "Học Online tương tác trực tiếp cùng Giảng viên (2.500.000đ)",
-        "Học Offline thực hành theo lịch linh hoạt tại MLAB (2.500.000đ)"
+        "Học online",
+        "Học offline"
       ]
     },
     INV_MOLD: {
-      code: "INVKHUON",
-      name: "INVENTOR CHUYÊN SÂU: THIẾT KẾ KHUÔN MẪU & SẢN PHẨM NHỰA",
-      shortLabel: "Khóa Chuyên Sâu – Thiết Kế Khuôn Mẫu & Sản Phẩm Nhựa",
+      code: "INVCS",
+      name: "Inventor chuyên sâu theo yêu cầu học viên (khuôn mẫu, sản phẩm, AI trong thiết kế...)",
+      shortLabel: "Inventor chuyên sâu theo yêu cầu học viên (khuôn mẫu, sản phẩm, AI trong thiết kế...)",
       amount: 4500000,
       feeText: "4.500.000 VNĐ",
       priceDisplay: "4.500.000đ",
-      notePlaceholder: "Ví dụ: Đăng ký Khóa Chuyên sâu Thiết kế Khuôn mẫu & Sản phẩm nhựa...",
+      notePlaceholder: "Ví dụ: sáng hoặc chiều thứ :...",
       modes: [
-        "Học Kèm Chuyên sâu Online & Offline tại MLAB (4.500.000đ)",
-        "Học Online tương tác trực tiếp 1-1 / Nhóm nhỏ (4.500.000đ)",
-        "Học Offline thực hành chuyên sâu tại MLAB (4.500.000đ)"
+        "Học online",
+        "Học offline"
       ]
     }
   };
