@@ -1,18 +1,20 @@
 /**
  * GOOGLE APPS SCRIPT - HỆ THỐNG GHI DANH KHÓA HỌC NGẮN HẠN (MLAB - THẦY ĐƯỜNG KHÁNH SƠN)
  * --------------------------------------------------------------------------------------
- * Hỗ trợ:
- * - Tự động ghi danh sách học viên vào Google Sheets
- * - Tự động gửi Email thông báo cho Giảng viên (kèm ảnh chụp biên lai chuyển khoản nếu học viên tải ảnh lên)
+ * TÍNH NĂNG ĐẦY ĐỦ:
+ * 1. Tự động lưu ảnh chụp biên lai chuyển khoản của học viên vào thư mục "Bien_Lai_Hoc_Vien_MLAB" trong Google Drive.
+ * 2. Tự động điền thông tin học viên + tạo Link bấm xem ảnh biên lai ngay ở cột 12 trong Google Sheets.
+ * 3. Tự động gửi Email thông báo cho Giảng viên (hiển thị ảnh trực tiếp trong Email + đính kèm file ảnh gốc + link mở trên Drive).
  */
 
 const NOTIFY_EMAIL = "sonduongkhanh@gmail.com";
+const DRIVE_FOLDER_NAME = "Bien_Lai_Hoc_Vien_MLAB";
 
 function doPost(e) {
   try {
     const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
     
-    // Tạo dòng tiêu đề nếu trang tính đang trống
+    // Tạo dòng tiêu đề 12 cột nếu trang tính đang trống
     if (sheet.getLastRow() === 0) {
       sheet.appendRow([
         "Thời gian đăng ký",
@@ -25,9 +27,17 @@ function doPost(e) {
         "Hình thức học",
         "Học phí (VNĐ)",
         "Trạng thái báo CK",
-        "Ghi chú / Mã GD"
+        "Lịch trống & Ghi chú",
+        "Link Ảnh Biên Lai (Google Drive)"
       ]);
-      sheet.getRange(1, 1, 1, 11).setFontWeight("bold").setBackground("#076b33").setFontColor("#ffffff");
+      sheet.getRange(1, 1, 1, 12).setFontWeight("bold").setBackground("#076b33").setFontColor("#ffffff");
+    } else if (sheet.getRange(1, 12).getValue() === "") {
+      // Nếu bảng cũ mới có 11 cột, tự động thêm tiêu đề cột 12 "Link Ảnh Biên Lai (Google Drive)"
+      sheet.getRange(1, 12)
+        .setValue("Link Ảnh Biên Lai (Google Drive)")
+        .setFontWeight("bold")
+        .setBackground("#076b33")
+        .setFontColor("#ffffff");
     }
 
     let data = {};
@@ -47,14 +57,55 @@ function doPost(e) {
     const phone = data.phone || "";
     const email = data.email || "";
     const org = data.organization || "";
-    const courseName = data.courseName || "IoT CHO SINH VIÊN KỸ THUẬT";
-    const learningMode = data.learningMode || "Online / Offline";
-    const fee = data.fee || "1.500.000 VNĐ";
-    const paymentStatus = data.paymentStatus || "Học viên xác nhận đã chuyển khoản QR";
+    const courseName = data.courseName || "";
+    const learningMode = data.learningMode || "";
+    const fee = data.fee || "";
+    const paymentStatus = data.paymentStatus || "";
     const note = data.note || "";
     const receiptImage = data.receiptImage || "";
 
-    // Ghi vào dòng mới trong Google Sheets
+    // Xử lý ảnh biên lai: Lưu vào Google Drive + Tạo link trong Google Sheets + Đính kèm Email
+    let inlineImages = {};
+    let attachments = [];
+    let receiptHtmlSection = "";
+    let driveFileUrl = "";
+
+    if (receiptImage && receiptImage.indexOf("base64,") !== -1) {
+      try {
+        const base64Data = receiptImage.split("base64,")[1];
+        const decoded = Utilities.base64Decode(base64Data);
+        const timeTag = Utilities.formatDate(new Date(), "GMT+7", "yyyyMMdd_HHmmss");
+        const safeFileName = "Bien_Lai_" + orderCode.replace(/[^a-zA-Z0-9]/g, "_") + "_" + timeTag + ".jpg";
+        const blob = Utilities.newBlob(decoded, "image/jpeg", safeFileName);
+
+        // 1. Đính kèm vào Email
+        inlineImages["receiptImg"] = blob;
+        attachments.push(blob);
+
+        // 2. Lưu vào thư mục Google Drive "Bien_Lai_Hoc_Vien_MLAB"
+        try {
+          const folders = DriveApp.getFoldersByName(DRIVE_FOLDER_NAME);
+          const folder = folders.hasNext() ? folders.next() : DriveApp.createFolder(DRIVE_FOLDER_NAME);
+          const file = folder.createFile(blob);
+          file.setDescription("Biên lai học phí của: " + fullName + " (" + phone + ") - Khóa: " + courseName);
+          driveFileUrl = file.getUrl();
+        } catch (driveErr) {
+          driveFileUrl = "Lỗi quyền Drive: " + driveErr.toString();
+        }
+
+        receiptHtmlSection = `
+          <div style="margin-top: 16px; padding: 14px; background: #f2fbf6; border: 1.5px solid #0b8a42; border-radius: 10px; text-align: center;">
+            <p style="margin: 0 0 10px 0; font-weight: bold; color: #076b33; font-size: 14px;">📷 Ảnh chụp biên lai chuyển khoản của học viên:</p>
+            <img src="cid:receiptImg" style="max-width: 420px; width: 100%; border-radius: 8px; border: 1px solid #cbd5e1;" />
+            ${driveFileUrl.indexOf("http") === 0 ? `<p style="margin: 10px 0 0 0; font-size: 13px;"><a href="${driveFileUrl}" target="_blank" style="display:inline-block; background:#0b8a42; color:#ffffff; text-decoration:none; padding:8px 14px; border-radius:6px; font-weight:bold;">🔗 Xem ảnh biên lai trên Google Drive</a></p>` : ""}
+          </div>
+        `;
+      } catch (imgErr) {
+        receiptHtmlSection = `<p style="color:#b91c1c;">Lỗi giải mã ảnh: ${imgErr.toString()}</p>`;
+      }
+    }
+
+    // Ghi dòng dữ liệu mới vào Google Sheets
     sheet.appendRow([
       timestamp,
       orderCode,
@@ -66,27 +117,19 @@ function doPost(e) {
       learningMode,
       fee,
       paymentStatus,
-      note
+      note,
+      driveFileUrl || "Không đính kèm ảnh (Xác thực bằng mã GD)"
     ]);
 
-    // Xử lý ảnh biên lai đính kèm (nếu có)
-    let inlineImages = {};
-    let receiptHtmlSection = "";
-    if (receiptImage && receiptImage.indexOf("base64,") !== -1) {
-      try {
-        const base64Data = receiptImage.split("base64,")[1];
-        const decoded = Utilities.base64Decode(base64Data);
-        const blob = Utilities.newBlob(decoded, "image/jpeg", "Bien-Lai-" + orderCode.replace(/\s+/g, "_") + ".jpg");
-        inlineImages["receiptImg"] = blob;
-        receiptHtmlSection = `
-          <div style="margin-top: 16px; padding: 12px; background: #f8faf9; border: 1px solid #d1e7dd; border-radius: 8px; text-align: center;">
-            <p style="margin: 0 0 8px 0; font-weight: bold; color: #076b33;">📷 Ảnh chụp biên lai chuyển khoản đính kèm:</p>
-            <img src="cid:receiptImg" style="max-width: 360px; width: 100%; border-radius: 8px; border: 1px solid #cbd5e1;" />
-          </div>
-        `;
-      } catch (imgErr) {
-        receiptHtmlSection = `<p style="color:#b91c1c;">(Học viên có tải ảnh biên lai nhưng không giải mã được file đính kèm)</p>`;
-      }
+    // Nếu có link Google Drive hợp lệ, chuyển ô cột 12 thành nút bấm Hyperlink rõ ràng trong Google Sheets
+    const lastRow = sheet.getLastRow();
+    if (driveFileUrl && driveFileUrl.indexOf("http") === 0) {
+      const linkCell = sheet.getRange(lastRow, 12);
+      const richText = SpreadsheetApp.newRichTextValue()
+        .setText("🖼️ Xem Ảnh Biên Lai (" + fullName + ")")
+        .setLinkUrl(driveFileUrl)
+        .build();
+      linkCell.setRichTextValue(richText).setFontColor("#0b8a42").setFontWeight("bold");
     }
 
     // Gửi email thông báo cho giảng viên
@@ -109,10 +152,11 @@ function doPost(e) {
             <tr><td style="padding: 8px; border-bottom: 1px solid #eee; font-weight: bold;">Trường / Đơn vị:</td><td style="padding: 8px; border-bottom: 1px solid #eee;">${org}</td></tr>
             <tr><td style="padding: 8px; border-bottom: 1px solid #eee; font-weight: bold;">Học phí:</td><td style="padding: 8px; border-bottom: 1px solid #eee; color: #9d0c4c; font-weight: bold;">${fee}</td></tr>
             <tr><td style="padding: 8px; border-bottom: 1px solid #eee; font-weight: bold;">Nội dung CK (Mã QR):</td><td style="padding: 8px; border-bottom: 1px solid #eee; font-family: monospace; background: #fef3c7;">${orderCode}</td></tr>
-            <tr><td style="padding: 8px; border-bottom: 1px solid #eee; font-weight: bold;">Xác thực & Ghi chú:</td><td style="padding: 8px; border-bottom: 1px solid #eee;">${note || "Không có"}</td></tr>
+            <tr><td style="padding: 8px; border-bottom: 1px solid #eee; font-weight: bold;">Lịch trống & Xác thực:</td><td style="padding: 8px; border-bottom: 1px solid #eee;">${note || "Không có"}</td></tr>
+            <tr><td style="padding: 8px; border-bottom: 1px solid #eee; font-weight: bold;">Link Google Drive:</td><td style="padding: 8px; border-bottom: 1px solid #eee;">${driveFileUrl.indexOf("http") === 0 ? `<a href="${driveFileUrl}" target="_blank" style="color:#0b8a42;font-weight:bold;">Mở ảnh biên lai trên Drive</a>` : "Không có ảnh"}</td></tr>
           </table>
           ${receiptHtmlSection}
-          <p style="font-size: 13px; color: #6b7280; margin-top: 14px;">Dữ liệu cũng đã được lưu tự động vào Google Sheets của Thầy.</p>
+          <p style="font-size: 13px; color: #6b7280; margin-top: 14px;">Dữ liệu và link ảnh biên lai cũng đã được lưu tự động vào Google Sheets của Thầy.</p>
         </div>
       </div>
     `;
@@ -125,12 +169,13 @@ function doPost(e) {
     };
     if (Object.keys(inlineImages).length > 0) {
       mailOptions.inlineImages = inlineImages;
+      mailOptions.attachments = attachments;
     }
 
     MailApp.sendEmail(mailOptions);
 
     return ContentService
-      .createTextOutput(JSON.stringify({ status: "success", message: "Recorded and emailed" }))
+      .createTextOutput(JSON.stringify({ status: "success", driveUrl: driveFileUrl }))
       .setMimeType(ContentService.MimeType.JSON);
 
   } catch (error) {
@@ -138,4 +183,13 @@ function doPost(e) {
       .createTextOutput(JSON.stringify({ status: "error", message: error.toString() }))
       .setMimeType(ContentService.MimeType.JSON);
   }
+}
+
+/**
+ * HÀM CẤP QUYỀN NHANH (Chạy thử 1 lần trong Apps Script để cấp quyền Google Drive + Sheets + Mail)
+ */
+function authorizePermissions() {
+  const folders = DriveApp.getFoldersByName(DRIVE_FOLDER_NAME);
+  const folder = folders.hasNext() ? folders.next() : DriveApp.createFolder(DRIVE_FOLDER_NAME);
+  Logger.log("Đã sẵn sàng thư mục lưu biên lai trên Google Drive: " + folder.getUrl());
 }
